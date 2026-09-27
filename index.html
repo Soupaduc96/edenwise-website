@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EdenWise — Christ-Centered Counseling</title>
+<meta name="description" content="Biblically rooted, clinically informed counseling and formation for singles, engaged couples, marriages and families.">
+<meta name="theme-color" content="#081a13">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%20120%20120'%3E%3Crect%20width%3D'120'%20height%3D'120'%20rx%3D'28'%20fill%3D'%230c241b'%2F%3E%3Cg%20fill%3D'none'%20stroke%3D'%23cfa968'%20stroke-linecap%3D'round'%3E%3Ccircle%20cx%3D'60'%20cy%3D'60'%20r%3D'44'%20stroke-width%3D'5'%2F%3E%3Cpath%20d%3D'M60%2028V92M47%2042H73'%20stroke-width%3D'7'%2F%3E%3Cpath%20d%3D'M60%2064C50%2059%2045%2051%2047%2041M60%2064C70%2059%2075%2051%2073%2041M60%2080C48%2077%2042%2068%2042%2058M60%2080C72%2077%2078%2068%2078%2058'%20stroke-width%3D'5'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EdenWise — Christ-Centered Counseling">
+<meta property="og:description" content="Biblically rooted, clinically informed counseling and formation for singles, engaged couples, marriages and families.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1648221350871-e3ae3c8d0f58?auto=format&fit=crop&w=1200&h=630&q=70">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1648221350871-e3ae3c8d0f58?auto=format&fit=crop&w=2000&q=70">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-loading">
+<a class="skip" href="#app">Skip to content</a>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <svg class="pre-mark" viewBox="0 0 120 120" fill="none">
+      <circle cx="60" cy="60" r="54" stroke="url(#gg)" stroke-width="1"/>
+      <circle cx="60" cy="60" r="44" stroke="url(#gg)" stroke-width=".6" opacity=".5"/>
+      <path d="M60 22 V98 M44 40 H76" stroke="url(#gg)" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M60 64 C48 58 42 48 44 36 M60 64 C72 58 78 48 76 36 M60 82 C46 78 38 68 38 56 M60 82 C74 78 82 68 82 56" stroke="url(#gg)" stroke-width="1" stroke-linecap="round"/>
+      <defs><linearGradient id="gg" x1="0" y1="0" x2="120" y2="120"><stop stop-color="#F3E3BC"/><stop offset=".5" stop-color="#C9A36A"/><stop offset="1" stop-color="#8C6A3A"/></linearGradient></defs>
+    </svg>
+    <div class="pre-word"><span>EDEN</span><em>WISE</em></div>
+    <div class="pre-tag">Wisdom · Covenant · Glory</div>
+    <div class="pre-bar"><i></i></div>
+    <div class="pre-count"><span id="preCount" data-i18n-skip>0</span>%</div>
+  </div>
+</div>
+
+<!-- ============ PAGE TRANSITION ============ -->
+<div class="curtain" id="curtain" aria-hidden="true">
+  <div class="panel p1"></div>
+  <div class="panel p2"><div class="curtain-label" id="curtainLabel" data-i18n-skip>Home</div><div class="curtain-line"></div></div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"><div class="c-dot"></div><div class="c-ring"><span></span></div></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#/home" class="brand" aria-label="EdenWise home">
+    <svg viewBox="0 0 120 120" fill="none" class="brand-mark"><circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="4"/><path d="M60 24 V96 M44 40 H76" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M60 64 C48 58 42 48 44 36 M60 64 C72 58 78 48 76 36 M60 82 C46 78 38 68 38 56 M60 82 C74 78 82 68 82 56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+    <span class="brand-word">EDEN<b>WISE</b></span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <span class="nav-indicator" id="navIndicator"></span>
+    <a href="#/home" data-route="home">Home</a>
+    <a href="#/about" data-route="about">About</a>
+    <a href="#/counseling" data-route="counseling">Counseling</a>
+    <a href="#/programs" data-route="programs">Programs</a>
+    <a href="#/academy" data-route="academy">Academy</a>
+    <a href="#/edenseed" data-route="edenseed">EdenSeed</a>
+    <a href="#/circle" data-route="circle">Circle</a>
+  </nav>
+  <div class="nav-actions">
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en" title="English">EN</button><button data-lang="fr" title="Français">FR</button><button data-lang="ht" title="Kreyòl ayisyen">KR</button>
+    </div>
+    <a href="#/counseling" class="btn btn-gold btn-sm magnetic" data-book><span>Book a Session</span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-bg"></div>
+  <nav class="menu-links">
+    <a href="#/home"><small>01</small>Home</a>
+    <a href="#/about"><small>02</small>About</a>
+    <a href="#/counseling"><small>03</small>Counseling</a>
+    <a href="#/programs"><small>04</small>Programs</a>
+    <a href="#/academy"><small>05</small>Academy</a>
+    <a href="#/edenseed"><small>06</small>EdenSeed</a>
+    <a href="#/circle"><small>07</small>Covenant Circle</a>
+  </nav>
+  <div class="menu-foot">hello@edenwise.org · Fort-Liberté, Haïti</div>
+</div>
+
+<main id="app" tabindex="-1">
+
+<!-- ======================================================
+     HOME
+====================================================== -->
+<section class="view" data-view="home" data-title="Home">
+
+  <div class="hero">
+    <div class="hero-photo" style="--img:url('https://images.unsplash.com/photo-1648221350871-e3ae3c8d0f58?auto=format&fit=crop&w=2000&q=70')" aria-hidden="true"></div>
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-rays" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="hero-orb" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="eyebrow-pill r" style="--d:.1s"><span class="pulse"></span>Faith · Healing · Stronger Together</div>
+      <h1 class="display split" data-split>Building <em>Christ-centered</em> relationships that transform generations.</h1>
+      <p class="lead r" style="--d:.7s">Biblically rooted, clinically informed counseling and formation for singles, engaged couples, marriages and families — with a special heart for the Haitian community.</p>
+      <div class="hero-cta r" style="--d:.85s">
+        <a href="#/counseling" class="btn btn-gold magnetic"><span>Book Counseling</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#checkin" class="btn btn-ghost magnetic" data-scroll><span>Take the Relationship Check-in</span></a>
+      </div>
+      <ul class="hero-trust r" style="--d:1s">
+        <li><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg>Strictly confidential</li>
+        <li><svg viewBox="0 0 24 24"><path d="M4 19V5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zm0 0a2 2 0 002 2h13"/></svg>Scripture-anchored</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11a5 5 0 019-3 5 5 0 019 3c0 6-8 11-8 11z" transform="translate(-1 0)"/></svg>Trauma-informed care</li>
+      </ul>
+    </div>
+    <div class="hero-scroll" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </div>
+
+  <!-- marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Biblical Truth</span><b>✦</b><span>Covenant Living</span><b>✦</b><span>Wisdom-Centered Love</span><b>✦</b><span>Healing & Restoration</span><b>✦</b><span>Holistic Growth</span><b>✦</b><span>Kingdom Impact</span><b>✦</b>
+      <span>Biblical Truth</span><b>✦</b><span>Covenant Living</span><b>✦</b><span>Wisdom-Centered Love</span><b>✦</b><span>Healing & Restoration</span><b>✦</b><span>Holistic Growth</span><b>✦</b><span>Kingdom Impact</span><b>✦</b>
+    </div>
+  </div>
+
+  <!-- today devotional -->
+  <div class="section ivory">
+    <div class="wrap devo-strip">
+      <div class="devo-meta r">
+        <div class="kicker">EdenSeed · Today</div>
+        <div class="devo-theme">Theme — <em>Love</em></div>
+        <div class="devo-date" id="todayDate" data-i18n-skip></div>
+      </div>
+      <blockquote class="devo-quote r" style="--d:.15s">
+        “This is my commandment, That ye love one another, as I have loved you.”
+        <cite>John 15:12</cite>
+      </blockquote>
+      <a href="#/edenseed" class="link-arrow r" style="--d:.3s">Open today’s devotional <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+
+  <!-- pathways -->
+  <div class="section ivory">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker r">Care Pathways</div>
+        <h2 class="h2 split" data-split>Care designed for <em>every season</em> of life.</h2>
+        <p class="sec-sub r" style="--d:.3s">Each pathway begins with a careful intake, so the care you receive fits your story, your stage and your goals.</p>
+      </div>
+      <div class="path-grid">
+        <a href="#/counseling" class="path-card tilt r" data-photo style="--img:url('https://images.unsplash.com/photo-1522008342704-6b265b543c37?auto=format&fit=crop&w=900&q=70')" style="--d:.05s" data-tilt data-cursor="Begin">
+          <div class="path-num">01</div>
+          <div class="path-icon"><svg viewBox="0 0 48 48"><circle cx="24" cy="16" r="7"/><path d="M10 42c0-8 6-14 14-14s14 6 14 14"/></svg></div>
+          <h3>Singles</h3>
+          <p>Identity in Christ, emotional health, wise boundaries and preparation for godly relationships.</p>
+          <span class="path-go">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="glare"></div>
+        </a>
+        <a href="#/programs" class="path-card tilt r" data-photo style="--img:url('https://images.unsplash.com/photo-1627964464837-6328f5931576?auto=format&fit=crop&w=900&q=70')" style="--d:.12s" data-tilt data-cursor="Begin">
+          <div class="path-num">02</div>
+          <div class="path-icon"><svg viewBox="0 0 48 48"><circle cx="18" cy="26" r="10"/><circle cx="30" cy="26" r="10"/></svg></div>
+          <h3>Engaged Couples</h3>
+          <p>An 8-week premarital journey to build a strong covenant foundation before the wedding day.</p>
+          <span class="path-go">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="glare"></div>
+        </a>
+        <a href="#/counseling" class="path-card tilt r" data-photo style="--img:url('https://images.unsplash.com/photo-1529634597503-139d3726fed5?auto=format&fit=crop&w=900&q=70')" style="--d:.19s" data-tilt data-cursor="Begin">
+          <div class="path-num">03</div>
+          <div class="path-icon"><svg viewBox="0 0 48 48"><path d="M24 40S8 30 8 19a8 8 0 0116-3 8 8 0 0116 3c0 11-16 21-16 21z"/></svg></div>
+          <h3>Married Couples</h3>
+          <p>Restore communication, repair conflict patterns and deepen spiritual and emotional intimacy.</p>
+          <span class="path-go">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="glare"></div>
+        </a>
+        <a href="#/counseling" class="path-card tilt r" data-photo style="--img:url('https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?auto=format&fit=crop&w=900&q=70')" style="--d:.26s" data-tilt data-cursor="Begin">
+          <div class="path-num">04</div>
+          <div class="path-icon"><svg viewBox="0 0 48 48"><path d="M8 40V22L24 10l16 12v18z"/><path d="M19 40V29h10v11"/></svg></div>
+          <h3>Families</h3>
+          <p>Parenting with grace and truth, generational healing and a home built on the Rock.</p>
+          <span class="path-go">Explore <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          <div class="glare"></div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- method -->
+  <div class="section dark method">
+    <div class="method-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="sec-head light">
+        <div class="kicker r">The EdenWise Method</div>
+        <h2 class="h2 split" data-split>Where <em>Scripture</em>, science and soul meet.</h2>
+        <p class="sec-sub r" style="--d:.3s">We join the authority of God’s Word with sound psychological practice. Faith and good clinical care are not in competition here. Both serve the whole person.</p>
+      </div>
+      <div class="triad">
+        <div class="triad-item r" style="--d:.1s">
+          <div class="triad-ring"><span>I</span></div>
+          <h3>Scripture</h3>
+          <p>God’s design for identity, covenant and love is the foundation. Every conversation is framed by the Gospel.</p>
+        </div>
+        <div class="triad-item r" style="--d:.2s">
+          <div class="triad-ring"><span>II</span></div>
+          <h3>Science</h3>
+          <p>We use research-informed tools for attachment, communication, conflict repair and emotional regulation.</p>
+        </div>
+        <div class="triad-item r" style="--d:.3s">
+          <div class="triad-ring"><span>III</span></div>
+          <h3>Soul</h3>
+          <p>Prayer, lament, confession and spiritual disciplines bring lasting healing, not only managed symptoms.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- journey -->
+  <div class="section ivory journey" id="journey">
+    <div class="wrap journey-grid">
+      <div class="journey-sticky">
+        <div class="kicker r">Your Journey</div>
+        <h2 class="h2 split" data-split>From first step to <em>lasting fruit</em>.</h2>
+        <p class="sec-sub r" style="--d:.3s">A clear, gentle process, so you always know where you are and what comes next.</p>
+        <div class="journey-meter"><i id="journeyFill"></i></div>
+      </div>
+      <ol class="journey-steps">
+        <li class="jstep r"><span class="jnum">01</span><div><h4>Request &amp; intake</h4><p>Share a little of your story in a confidential intake. We listen first.</p></div></li>
+        <li class="jstep r"><span class="jnum">02</span><div><h4>Discernment session</h4><p>We explore your goals together, assess safety and needs, and pray for direction.</p></div></li>
+        <li class="jstep r"><span class="jnum">03</span><div><h4>A tailored care plan</h4><p>You get a clear pathway: sessions, readings, practices and measurable next steps.</p></div></li>
+        <li class="jstep r"><span class="jnum">04</span><div><h4>Growth &amp; accountability</h4><p>Regular sessions, EdenSeed devotionals and Academy courses reinforce the work between meetings.</p></div></li>
+        <li class="jstep r"><span class="jnum">05</span><div><h4>Community &amp; commissioning</h4><p>Join the Covenant Circle, and in time become the one who walks others through.</p></div></li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- scripture parallax -->
+  <div class="scripture">
+    <div class="scripture-bg" data-speed="-0.25" style="--img:url('https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?auto=format&fit=crop&w=2000&q=70')" aria-hidden="true"></div>
+    <div class="wrap scripture-inner">
+      <div class="kicker r">Foundation Scripture</div>
+      <blockquote class="scripture-quote split" data-split>“Except the <em>Lord</em> build the house, they labour in vain that build it.”</blockquote>
+      <cite class="r" style="--d:.5s">Psalm 127 : 1</cite>
+    </div>
+  </div>
+
+  <!-- check-in -->
+  <div class="section dark" id="checkin">
+    <div class="wrap checkin">
+      <div class="checkin-copy">
+        <div class="kicker r">Relationship Check-in</div>
+        <h2 class="h2 split" data-split>Two minutes. <em>An honest</em> look.</h2>
+        <p class="sec-sub r" style="--d:.3s">Rate five areas of your relationship from 1 (struggling) to 5 (flourishing). We’ll show your profile and suggest a gentle next step.</p>
+        <p class="fine r" style="--d:.4s">This is a reflection tool, not a clinical assessment or diagnosis. Your answers stay on your device.</p>
+      </div>
+      <div class="checkin-card glass r" style="--d:.2s">
+        <div class="ci-rows" id="ciRows" data-i18n-skip></div>
+        <div class="ci-result">
+          <svg viewBox="0 0 220 220" class="radar" id="radar" data-i18n-skip></svg>
+          <div class="ci-rec" id="ciRec" data-i18n-skip></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- counselors -->
+  <div class="section ivory">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker r">Care Team</div>
+        <h2 class="h2 split" data-split>Shepherds who <em>listen</em> well.</h2>
+      </div>
+      <div class="team-grid">
+        <article class="team-card r" style="--d:.05s">
+          <div class="avatar av1"><span>DC</span></div>
+          <div><h3>Pastor David Chen</h3><div class="role">Family &amp; Relationship Coach</div>
+          <div class="chips"><span>Family</span><span>Individual</span><span>Relationship coaching</span></div></div>
+          <a href="#/counseling" class="btn btn-line btn-sm" data-counselor="Pastor David Chen"><span>Book</span></a>
+        </article>
+        <article class="team-card r" style="--d:.15s">
+          <div class="avatar av2"><span>MJ</span></div>
+          <div><h3>Marie-Claire Jean</h3><div class="role">Pastoral Counselor</div>
+          <div class="chips"><span>Individual</span><span>Family</span><span>Trauma healing</span></div></div>
+          <a href="#/counseling" class="btn btn-line btn-sm" data-counselor="Marie-Claire Jean"><span>Book</span></a>
+        </article>
+        <article class="team-card r" style="--d:.25s">
+          <div class="avatar av3"><span>LS</span></div>
+          <div><h3>Landy P. Souffrant</h3><div class="role">Founder, EdenWise Ministry</div>
+          <div class="chips"><span>Marriage</span><span>Premarital</span><span>Vision</span></div></div>
+          <a href="#/about" class="btn btn-line btn-sm"><span>Meet</span></a>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-band">
+    <div class="cta-aurora" aria-hidden="true"></div>
+    <div class="wrap cta-inner">
+      <h2 class="display-sm split" data-split>A threefold cord is <em>not quickly broken.</em></h2>
+      <p class="r" style="--d:.4s">Ecclesiastes 4 : 12 — take the first step today.</p>
+      <div class="r" style="--d:.55s"><a href="#/counseling" class="btn btn-gold btn-lg magnetic"><span>Request a Session</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     ABOUT
+====================================================== -->
+<section class="view" data-view="about" data-title="About">
+  <div class="page-hero">
+    <div class="ph-photo" style="--img:url('https://images.unsplash.com/photo-1529180979161-06b8b6d6f2be?auto=format&fit=crop&w=2000&q=70')" aria-hidden="true"></div><div class="ph-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="kicker r">About EdenWise</div>
+      <h1 class="display split" data-split>Cultivating wisdom. <em>Restoring hope.</em></h1>
+      <p class="lead r" style="--d:.6s">A ministry that guides young people, engaged couples and married couples to understand and live by God’s design for marriage and family.</p>
+    </div>
+  </div>
+
+  <div class="section ivory">
+    <div class="wrap two-col">
+      <div>
+        <div class="kicker r">Our Purpose</div>
+        <h2 class="h2 split" data-split>Our <em>Mission</em></h2>
+      </div>
+      <div class="prose">
+        <p class="r">The mission of EdenWise is to guide young people, engaged couples and married couples to understand and live according to God’s design for marriage.</p>
+        <p class="r" style="--d:.1s">Through biblical teaching, counseling, prayer, conferences and practical resources, we equip individuals and families to build healthy relationships, fulfil their God-given destinies and live marriage under Kingdom wisdom. We serve everyone who seeks guidance, with a special focus on the Haitian community.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <figure class="wide-photo reveal-img"><div class="photo" style="--img:url('https://images.unsplash.com/photo-1496275068113-fff8c90750d1?auto=format&fit=crop&w=2200&q=70')"></div><figcaption>Every generation, every home, every season.</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="section ivory tight">
+    <div class="wrap mvv">
+      <article class="mvv-card dark-card r" data-tilt>
+        <div class="mvv-k">Mission</div>
+        <p>To guide young people, engaged and married couples in living by God’s design for marriage through biblical teaching, counseling and prayer.</p>
+        <div class="glare"></div>
+      </article>
+      <article class="mvv-card r" style="--d:.1s" data-tilt>
+        <div class="mvv-k">Vision</div>
+        <p>To see individuals, couples and families walking in God’s design for marriage, living as Kingdom-minded people in healthy, strong, covenant-centered relationships.</p>
+        <div class="glare"></div>
+      </article>
+      <article class="mvv-card r" style="--d:.2s" data-tilt>
+        <div class="mvv-k">Values</div>
+        <p>Rooted in biblical truth, covenant marriage, wisdom-centered living, love with responsibility, healing, holistic growth and Kingdom impact.</p>
+        <div class="glare"></div>
+      </article>
+    </div>
+  </div>
+
+  <div class="section dark">
+    <div class="wrap founder">
+      <div class="founder-art r">
+        <div class="founder-frame"><span>LS</span></div>
+        <div class="founder-orbit" aria-hidden="true"></div>
+      </div>
+      <div class="founder-copy">
+        <div class="kicker r">A Word from the Founder</div>
+        <blockquote class="founder-quote split" data-split>“Healthy homes are not built by accident. They are built <em>on purpose</em>, on the Rock, one faithful choice at a time.”</blockquote>
+        <div class="sig r" style="--d:.5s">Landy P. Souffrant</div>
+        <div class="sig-role r" style="--d:.6s">Founder of EdenWise Ministry</div>
+        <div class="r" style="--d:.7s"><a href="#/counseling" class="btn btn-gold magnetic"><span>Book Counseling</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section ivory">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kicker r">What We Do</div>
+        <h2 class="h2 split" data-split>Five ways we <em>serve</em>.</h2>
+      </div>
+      <div class="serve-list">
+        <div class="serve-row r"><span>01</span><h3>Biblical Teaching</h3><p>Sound, practical instruction on identity, covenant and family.</p></div>
+        <div class="serve-row r"><span>02</span><h3>Counseling</h3><p>Confidential one-on-one, couple and family sessions.</p></div>
+        <div class="serve-row r"><span>03</span><h3>Prayer</h3><p>Intercession and prayer ministry woven into every stage of care.</p></div>
+        <div class="serve-row r"><span>04</span><h3>Conferences</h3><p>Gatherings that equip churches and communities at scale.</p></div>
+        <div class="serve-row r"><span>05</span><h3>Resources</h3><p>Courses, devotionals and tools for growth between sessions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     COUNSELING / BOOKING
+====================================================== -->
+<section class="view" data-view="counseling" data-title="Counseling">
+  <div class="page-hero compact">
+    <div class="ph-photo" style="--img:url('https://images.unsplash.com/photo-1484876632310-ddb3b48133cc?auto=format&fit=crop&w=2000&q=70')" aria-hidden="true"></div><div class="ph-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="kicker r">Pastoral Counseling</div>
+      <h1 class="display split" data-split>Request a <em>Session</em></h1>
+      <p class="lead r" style="--d:.5s">Biblically grounded pastoral guidance for your season of life. It takes about three minutes.</p>
+    </div>
+  </div>
+
+  <div class="section ivory booking-sec">
+    <div class="wrap booking">
+      <aside class="book-side r">
+        <ol class="steps" id="steps" data-i18n-skip></ol>
+        <div class="side-note">
+          <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg>
+          <div><b>Confidential by design.</b> Only your assigned counselor sees your intake.</div>
+        </div>
+        <div class="side-note crisis">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5v.5"/></svg>
+          <div><b>In crisis or danger?</b> Please contact local emergency services right away. Pastoral counseling is not an emergency service.</div>
+        </div>
+      </aside>
+
+      <div class="book-panel r" style="--d:.1s">
+        <div class="book-progress"><i id="bookBar"></i></div>
+        <div class="book-stage" id="bookStage" data-i18n-skip></div>
+        <div class="book-nav">
+          <button class="btn btn-line" id="bookBack"><span>Back</span></button>
+          <button class="btn btn-dark magnetic" id="bookNext" data-i18n-skip><span>Continue</span><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     PROGRAMS
+====================================================== -->
+<section class="view" data-view="programs" data-title="Programs">
+  <div class="page-hero">
+    <div class="ph-photo" style="--img:url('https://images.unsplash.com/photo-1627964464837-6328f5931576?auto=format&fit=crop&w=2000&q=70')" aria-hidden="true"></div><div class="ph-glow" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="kicker r">Programs</div>
+      <h1 class="display split" data-split>Equipping for <em>every season</em>.</h1>
+      <p class="lead r" style="--d:.5s">Structured, cohort-based journeys that combine teaching, guided practice and pastoral care.</p>
+    </div>
+  </div>
+
+  <div class="section ivory">
+    <div class="wrap prog-list" id="progList" data-i18n-skip></div>
+  </div>
+</section>
+
+<!-- ======================================================
+     ACADEMY
+====================================================== -->
+<section class="view" data-view="academy" data-title="Academy">
+  <div class="page-hero compact">
+    <div class="ph-photo" style="--img:url('https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=2000&q=70')" aria-hidden="true"></div><div class="ph-glow" aria-hidden="true"></div>
+    <div class="wrap acad-hero">
+      <div>
+        <div class="kicker r">EdenWise Academy</div>
+        <h1 class="display split" data-split>Wisdom, <em>on demand</em>.</h1>
+        <p class="lead r" style="--d:.5s">Equipping the saints with deeply theological and practical wisdom for every season of life.</p>
+      </div>
+      <div class="acad-progress glass r" style="--d:.6s">
+        <div class="ap-ring" data-i18n-skip><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle cx="22" cy="22" r="19" class="ap-val"/></svg><span>0</span></div>
+        <div><div class="ap-k">Academy progress</div><div class="ap-v" data-i18n-skip>0 lessons completed</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section ivory acad-sec">
+    <div class="wrap">
+      <div class="acad-tools glass-light r">
+        <label class="search"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="acadSearch" type="search" placeholder="Search courses, instructors, topics…"></label>
+        <div class="filters" id="acadFilters" data-i18n-skip></div>
+      </div>
+      <div class="course-grid" id="courseGrid" data-i18n-skip></div>
+      <div class="empty" id="acadEmpty" hidden>No courses match that search yet.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     EDENSEED
+====================================================== -->
+<section class="view" data-view="edenseed" data-title="EdenSeed">
+  <div class="page-hero seed-hero">
+    <div class="seed-word" aria-hidden="true" data-speed="-.15">LOVE</div>
+    <div class="wrap center">
+      <div class="eyebrow-pill r"><span class="pulse"></span>EdenSeed · Daily walk with Christ</div>
+      <h1 class="display split" data-split>The Blueprint <em>of Love</em></h1>
+      <div class="seed-meta r" style="--d:.5s"><span id="seedDate" data-i18n-skip></span><button class="chip-btn" id="saveDevo" data-i18n-skip><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>Save devotional</span></button></div>
+    </div>
+  </div>
+
+  <div class="section ivory">
+    <div class="wrap seed-grid">
+      <article class="seed-body">
+        <div class="seed-verse r" style="--img:url('https://images.unsplash.com/photo-1492052722242-2554d0e99e3a?auto=format&fit=crop&w=1400&q=70')">
+          <div class="kicker">Read</div>
+          <p>“This is my commandment, That ye love one another, as I have loved you.”</p>
+          <cite>John 15:12 (KJV)</cite>
+        </div>
+        <div class="prose r">
+          <p class="dropcap">Jesus does not leave love undefined. He gives it a measure: <em>as I have loved you</em>. That measure moves love out of feelings alone and into covenant. It becomes patient, costly, forgiving and faithful.</p>
+          <p>In counseling we often see couples who love each other sincerely but have no shared blueprint. Each partner builds from their own family’s plans, their own wounds and their own expectations. Christ offers a better blueprint. It is one we learn together and practise daily. It turns small, repeated choices into a house that stands.</p>
+        </div>
+        <div class="reflect r">
+          <div class="kicker">Reflect</div>
+          <ol>
+            <li>Where have I measured love by how I feel instead of how Christ loves?</li>
+            <li>What one small act of costly love can I offer today?</li>
+            <li>Is there a hurt I need to bring to God before I can love freely?</li>
+          </ol>
+        </div>
+        <div class="breath r">
+          <div class="breath-orb" id="breathOrb"><span id="breathTxt" data-i18n-skip>Begin</span></div>
+          <div>
+            <div class="kicker">Practise · Breath Prayer</div>
+            <p>Breathe in: <em>“Lord Jesus, You have loved me.”</em><br>Breathe out: <em>“Teach me to love like You.”</em></p>
+            <button class="btn btn-line btn-sm" id="breathBtn" data-i18n-skip><span>Start 1-minute prayer</span></button>
+          </div>
+        </div>
+        <label class="journal r">
+          <span class="kicker">Journal</span>
+          <textarea id="journal" rows="5" placeholder="Write a short prayer or response… (saved only on this device)"></textarea>
+        </label>
+      </article>
+
+      <aside class="seed-side">
+        <div class="plan-card r">
+          <div class="plan-head"><span class="kicker">Reading Plan</span><span class="badge">Day 12</span></div>
+          <h4>Covenant Love · 30 days</h4>
+          <div class="plan-bar"><i style="width:40%"></i></div>
+          <ul class="plan-days">
+            <li class="done">Day 10 · Ruth 1</li>
+            <li class="done">Day 11 · Hosea 3</li>
+            <li class="now">Day 12 · John 15</li>
+            <li>Day 13 · 1 Corinthians 13</li>
+            <li>Day 14 · Ephesians 5</li>
+          </ul>
+        </div>
+        <div class="plan-card dark-card r" style="--d:.1s">
+          <div class="kicker">Delivered daily</div>
+          <h4>Get EdenSeed each morning</h4>
+          <form class="mini-form" data-form="newsletter"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true"><input type="email" name="email" placeholder="Email address" required aria-label="Email address"><button class="btn btn-gold btn-sm"><span>Subscribe</span></button></form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================
+     COVENANT CIRCLE
+====================================================== -->
+<section class="view" data-view="circle" data-title="Covenant Circle">
+  <div class="page-hero">
+    <div class="ph-photo" style="--img:url('https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=2000&q=70')" aria-hidden="true"></div><div class="ph-glow" aria-hidden="true"></div>
+    <div class="wrap center">
+      <div class="kicker r">The Covenant Circle</div>
+      <h1 class="display split" data-split>Faith grows <em>in fellowship</em>.</h1>
+      <blockquote class="ph-quote r" style="--d:.5s">“…breaking bread from house to house, did eat their meat with gladness and singleness of heart.” <cite>Acts 2 : 46</cite></blockquote>
+      <div class="circle-tabs r" style="--d:.65s" id="circleTabs">
+        <button class="on" data-tab="0">Fellowship Circles</button>
+        <button data-tab="1">Scripture Exchange</button>
+        <button data-tab="2">Intercession Wall</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section ivory">
+    <div class="wrap circle-grid">
+      <div class="circle-panel" id="circlePanel" data-i18n-skip></div>
+      <aside class="harvest glass-dark r">
+        <div class="kicker">Spiritual Harvest</div>
+        <div class="hv-row"><span>Prayers lifted this week</span><b data-i18n-skip class="count" data-to="1245">0</b></div>
+        <div class="hv-row"><span>Active circles</span><b data-i18n-skip class="count" data-to="38">0</b></div>
+        <div class="hv-row"><span>Scriptures shared</span><b data-i18n-skip class="count" data-to="612">0</b></div>
+        <p class="fine">Sample figures for this preview.</p>
+      </aside>
+    </div>
+  </div>
+
+  <div class="section dark">
+    <div class="wrap">
+      <div class="sec-head light center">
+        <div class="kicker r">Membership</div>
+        <h2 class="h2 split" data-split>Choose your <em>path</em>.</h2>
+        <div class="billing r" style="--d:.3s"><button class="on" data-bill="m">Monthly</button><button data-bill="y">Yearly <small>−20%</small></button></div>
+      </div>
+      <div class="tiers">
+        <article class="tier r" style="--d:.05s">
+          <div class="tier-name">Pilgrim</div>
+          <div class="tier-price" data-i18n-skip><span class="cur">$</span><b data-m="0" data-y="0">0</b><small>/ forever</small></div>
+          <p>Begin the walk with daily devotionals and open fellowship.</p>
+          <ul><li>EdenSeed daily devotional</li><li>Public intercession wall</li><li>2 free Academy lessons</li></ul>
+          <a href="#/edenseed" class="btn btn-line-light"><span>Start free</span></a>
+        </article>
+        <article class="tier featured r" style="--d:.15s">
+          <div class="tier-badge">Most chosen</div>
+          <div class="tier-name">Covenant</div>
+          <div class="tier-price" data-i18n-skip><span class="cur">$</span><b data-m="19" data-y="15">19</b><small>/ month</small></div>
+          <p>Full Academy access and a place in a guided fellowship circle.</p>
+          <ul><li>All Academy courses</li><li>Private fellowship circle</li><li>Monthly live Q&amp;A with counselors</li><li>Priority session booking</li></ul>
+          <a href="#/counseling" class="btn btn-gold magnetic"><span>Join Covenant</span></a>
+        </article>
+        <article class="tier r" style="--d:.25s">
+          <div class="tier-name">Covenant Family</div>
+          <div class="tier-price" data-i18n-skip><span class="cur">$</span><b data-m="39" data-y="31">39</b><small>/ month</small></div>
+          <p>Designed for households, with individual journeys for everyone.</p>
+          <ul><li>Everything in Covenant</li><li>Up to 4 family profiles</li><li>Parenting &amp; family tracks</li><li>Quarterly family check-in</li></ul>
+          <a href="#/counseling" class="btn btn-line-light"><span>Choose Family</span></a>
+        </article>
+      </div>
+    </div>
+  </div>
+
+  <div class="section ivory">
+    <div class="wrap faq-wrap">
+      <div class="sec-head">
+        <div class="kicker r">Questions</div>
+        <h2 class="h2 split" data-split>Frequently <em>asked</em>.</h2>
+      </div>
+      <div class="faq" id="faq">
+        <details class="r"><summary><span>01</span>Is counseling confidential?</summary><p>Yes. Your intake and sessions are shared only with your assigned counselor. The only exceptions are situations where someone’s safety is at risk, and we explain these limits clearly at your first session.</p></details>
+        <details class="r"><summary><span>02</span>Do I need to be a Christian to receive care?</summary><p>No. Our care is openly Christ-centered, and everyone seeking guidance is welcome. We never pressure you. We invite you.</p></details>
+        <details class="r"><summary><span>03</span>Are sessions online or in person?</summary><p>Both. You can meet by secure video from anywhere, or in person in Fort-Liberté, Haïti.</p></details>
+        <details class="r"><summary><span>04</span>What happens if I cancel my membership?</summary><p>You keep access until the end of your current billing period. Your account then moves to the free Pilgrim level, and your progress is preserved.</p></details>
+        <details class="r"><summary><span>05</span>Do you offer multi-user family plans?</summary><p>Yes. The Covenant Family tier is built for households and gives up to four family members their own profile and journey.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-news">
+      <div>
+        <h3>Wisdom to your inbox.</h3>
+        <p>Weekly biblical insight on marriage, family and relationships.</p>
+      </div>
+      <form class="news-form" data-form="newsletter">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
+        <input type="email" name="email" placeholder="Email address" required aria-label="Email address">
+        <button class="btn btn-gold magnetic"><span>Subscribe</span></button>
+      </form>
+    </div>
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#/home" class="brand light">
+          <svg viewBox="0 0 120 120" fill="none" class="brand-mark"><circle cx="60" cy="60" r="54" stroke="currentColor" stroke-width="4"/><path d="M60 24 V96 M44 40 H76" stroke="currentColor" stroke-width="6" stroke-linecap="round"/><path d="M60 64 C48 58 42 48 44 36 M60 64 C72 58 78 48 76 36 M60 82 C46 78 38 68 38 56 M60 82 C74 78 82 68 82 56" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
+          <span class="brand-word">EDEN<b>WISE</b></span>
+        </a>
+        <p>Cultivating wisdom, restoring hope, and reaching the world with the transformative truth of the Gospel.</p>
+        <div class="socials">
+          <a href="#" data-soon="Instagram" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
+          <a href="#" data-soon="TikTok" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M14 3v11a4 4 0 11-4-4M14 3c.5 3 2.5 5 5 5"/></svg></a>
+          <a href="#" data-soon="WhatsApp" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1112 20a8 8 0 01-4-1z"/></svg></a>
+        </div>
+      </div>
+      <div><h5>Ministry</h5><a href="#/about">About</a><a href="#/counseling">Counseling</a><a href="#/programs">Programs</a><a href="#/academy">Academy</a><a href="#/circle">Covenant Circle</a></div>
+      <div><h5>Support</h5><a href="#/circle" data-tab="2">Request Prayer</a><a href="#/circle" data-soon="Online giving">Give to Ministry</a><a href="mailto:hello@edenwise.org?subject=Volunteering%20with%20EdenWise">Volunteer</a><a href="#/circle" data-anchor="#faq">FAQ</a></div>
+      <div><h5>Contact</h5><a href="mailto:hello@edenwise.org">hello@edenwise.org</a><span>+1 (509) 300-EDEN</span><span>Fort-Liberté, Haïti</span></div>
+    </div>
+    <div class="foot-giant" aria-hidden="true">EDENWISE</div>
+    <div class="foot-base"><span>© <span id="yr" data-i18n-skip></span> EdenWise Ministry. All rights reserved.</span><span><a href="#" data-soon="The privacy policy">Privacy</a><a href="#" data-soon="The terms page">Terms</a></span></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" data-i18n-skip role="status"></div>
+
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
