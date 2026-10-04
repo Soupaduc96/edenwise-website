@@ -1334,3 +1334,83 @@ body.menu-open .quick-cta,body.is-loading .quick-cta{opacity:0;visibility:hidden
 
 /* keep the slide word clear of the heart toggle */
 @media (min-width:761px){.hero-index{right:clamp(120px,9vw,150px);bottom:36px}}
+
+/* =========================================================
+   Top bar: show every item on laptops too (compact tiers)
+========================================================= */
+@media (min-width:1280px){.nav-links{display:flex}}
+
+/* 1600–1899: compact language switch, slightly tighter logo */
+@media (min-width:1280px) and (max-width:1899px){
+  .lang-pill .lang-globe{display:none}
+  .lang-pill{padding:0 4px 0 6px}
+  .lang-quick:not(.on){display:none}
+  .lang-menu{right:-52px}
+  .lang-menu::before{right:70px}
+  .nav .brand-medal{width:66px;height:66px}
+  .nav .brand-medal .brand-mark{width:40px}
+  .nav .brand-word{font-size:25px}
+  .nav .brand-tag{font-size:8.5px;letter-spacing:.18em}
+}
+/* 1280–1599: booking button becomes a round calendar icon, links tighten */
+@media (min-width:1280px) and (max-width:1599px){
+  .nav,.nav.on-light{gap:10px;padding-left:24px;padding-right:24px}
+  .nav-links a{font-size:13px;padding:10px 7px;letter-spacing:.02em}
+  .nav-links a+a::before{height:18px}
+  .nav-indicator{height:40px}
+  .btn-book{width:56px;height:56px;padding:0;justify-content:center;border-radius:50%}
+  .btn-book span,.btn-book>svg:last-child{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .btn-book .ic-cal{width:24px;height:24px}
+  .nav .brand-medal{width:60px;height:60px}
+  .nav .brand-medal .brand-mark{width:36px}
+  .nav .brand-word{font-size:22px}
+  .nav .brand-sub{font-size:8.5px;letter-spacing:.42em}
+  .nav .brand-tag{font-size:7.5px;letter-spacing:.14em}
+  .burger{width:48px;height:48px}
+  .burger i{left:14px;right:14px}.burger i:first-child{top:18px}.burger i:last-child{top:28px}
+}
+
+/* smallest laptops (1280-1365): a little extra breathing room */
+@media (min-width:1280px) and (max-width:1365px){.nav-links a{padding:10px 6px;font-size:12.5px}.nav .brand{gap:10px}}
+
+/* =========================================================
+   Language selector (final): closed = active code only, "FR ▾"
+========================================================= */
+.lang-dd{position:relative;padding-left:14px;margin-left:2px}
+.nav .lang-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:auto;height:46px;padding:0 14px 0 18px;border-radius:999px;
+  border:1px solid rgba(219,165,43,.55);background:rgba(3,22,12,.38);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  color:#f3efe2;box-shadow:none;transition:border-color .2s ease,background-color .2s ease}
+.nav .lang-btn:hover,.lang-dd.open .lang-btn{border-color:#dba52b;background:rgba(219,165,43,.1)}
+.nav .lang-btn .lang-code{display:inline;width:auto;height:auto;background:none;box-shadow:none;border-radius:0;
+  font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.14em;color:#f8dc85}
+.nav .lang-btn .lang-chev{width:14px;height:14px;stroke:#dba52b;stroke-width:2;transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.lang-dd.open .lang-chev{transform:rotate(180deg)}
+
+/* the menu: forest-green glass, thin gold border, soft shadow */
+.lang-menu{top:calc(100% + 12px);right:0;width:248px;padding:8px;border-radius:16px;
+  background:linear-gradient(180deg,rgba(11,60,33,.94),rgba(5,33,18,.96));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(219,165,43,.5);box-shadow:0 22px 44px -18px rgba(0,0,0,.65);
+  opacity:0;visibility:hidden;transform:translateY(-6px);transform-origin:top right;
+  transition:opacity .22s cubic-bezier(.2,.8,.2,1),transform .22s cubic-bezier(.2,.8,.2,1),visibility 0s linear .22s}
+.lang-menu::before{display:none}
+.lang-dd.open .lang-menu{opacity:1;visibility:visible;transform:none;transition:opacity .22s cubic-bezier(.2,.8,.2,1),transform .22s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.lang-menu li{list-style:none}
+.lang-menu button{display:flex;align-items:center;gap:10px;width:100%;padding:11px 12px;border-radius:10px;border:1px solid transparent;
+  color:rgba(243,239,226,.78);font-size:14.5px;text-align:left;background:none;transition:background-color .18s ease,border-color .18s ease,color .18s ease}
+.lang-menu button:hover,.lang-menu button:focus-visible{outline:none;color:#f6f1e4;background:rgba(219,165,43,.08);border-color:rgba(219,165,43,.32)}
+.lang-menu b{width:auto;min-width:22px;color:#dba52b;font-size:12.5px;font-weight:700;letter-spacing:.12em}
+.lang-dash{color:rgba(219,165,43,.55)}
+.lang-name{flex:1;font-size:14.5px}
+/* active language: metallic-gold wash, small check, brighter text */
+.lang-menu button.on{color:#fffaf0;background:linear-gradient(90deg,rgba(219,165,43,.2),rgba(219,165,43,.06));border-color:rgba(219,165,43,.45)}
+.lang-menu button.on b{color:#f8dc85}
+.lang-check{order:-1;flex:none;width:14px;height:14px;padding:0;border-radius:0;background:none;fill:none;stroke:#f8dc85;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:none;transition:opacity .18s ease}
+.lang-menu button.on .lang-check{opacity:1;transform:none}
+
+/* same compact pill on every screen; menu stays on screen on phones */
+@media (max-width:760px){
+  .lang-dd{padding-left:0;margin-left:0}
+  .nav .lang-btn{height:42px;padding:0 10px 0 14px}
+  .lang-menu{right:-56px;width:232px}
+}
+@media (prefers-reduced-motion:reduce){.lang-menu,.lang-dd.open .lang-menu,.lang-chev{transition:none}}

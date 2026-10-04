@@ -39,8 +39,7 @@ const LANGS = ['en', 'fr', 'ht', 'es'];
 let lang = (() => {
   const saved = store.get('lang', null);
   if (LANGS.includes(saved)) return saved;
-  const nav = (navigator.language || 'en').toLowerCase();
-  return nav.startsWith('ht') ? 'ht' : nav.startsWith('fr') ? 'fr' : nav.startsWith('es') ? 'es' : 'en';
+  return 'fr';   // default language; a visitor's own choice (saved above) always wins
 })();
 const missing = new Set();
 function t(s, vars) {
@@ -967,7 +966,6 @@ window.addEventListener("hashchange", () => setQuickOpen(false));
 function applyLang(next, animate) {
   lang = next; store.set('lang', lang);
   langItems().forEach(b => { const on = b.dataset.lang === lang; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
-  $$('.lang-quick').forEach(b => { const on = b.dataset.lang === lang; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
   $('.lang-code').textContent = { en: 'EN', fr: 'FR', ht: 'KR', es: 'ES' }[lang];
   translateStatic();
   checkin.refresh(); booking.refresh(); if (typeof heroSlides !== "undefined") heroSlides.refresh(); renderPrograms(); academy.refresh(); seed.refresh(); circle.refresh();
@@ -978,7 +976,6 @@ function applyLang(next, animate) {
 // Language menu: globe button + dropdown with flags
 const langDd = $('#langDd'), langBtn = $('#langBtn'), langItems = () => $$('#langMenu [data-lang]');
 // inline codes switch directly; the chevron opens the menu with flags
-$$('.lang-quick').forEach(b => b.addEventListener('click', () => { setLangOpen(false); if (b.dataset.lang !== lang) applyLang(b.dataset.lang, true); }));
 function setLangOpen(open, focusItem) {
   langDd.classList.toggle('open', open);
   langBtn.setAttribute('aria-expanded', open);
@@ -993,8 +990,15 @@ $('#langMenu').addEventListener('click', e => {
 });
 $('#langMenu').addEventListener('keydown', e => {
   const items = langItems(), i = items.indexOf(document.activeElement);
-  if (e.key === 'ArrowDown') { e.preventDefault(); items[(i + 1) % items.length].focus(); }
-  if (e.key === 'ArrowUp') { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+  const to = n => { e.preventDefault(); items[(n + items.length) % items.length].focus(); };
+  if (e.key === 'ArrowDown') to(i + 1);
+  else if (e.key === 'ArrowUp') to(i - 1);
+  else if (e.key === 'Home') to(0);
+  else if (e.key === 'End') to(items.length - 1);
+  else if (e.key === 'Tab') setLangOpen(false);
+});
+langBtn.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); setLangOpen(true, true); }
 });
 document.addEventListener('click', e => { if (!e.target.closest('#langDd')) setLangOpen(false); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && langDd.classList.contains('open')) { setLangOpen(false); langBtn.focus(); } });
