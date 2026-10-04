@@ -111,7 +111,6 @@ const icon = {
   heart: '<svg viewBox="0 0 24 24"><path d="M12 20s-8-5-8-11a4.5 4.5 0 018-2.7A4.5 4.5 0 0120 9c0 6-8 11-8 11z"/></svg>',
   home: '<svg viewBox="0 0 24 24"><path d="M4 20V10l8-6 8 6v10z"/><path d="M10 20v-6h4v6"/></svg>',
   video: '<svg viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>',
-  pin: '<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0114 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
   phone: '<svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>',
   spark: '<svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M6 18l2.5-2.5M15.5 8.5L18 6"/></svg>',
   hands: '<svg viewBox="0 0 24 24"><path d="M12 21V11M8 21l-3-6 3-8 4 4 4-4 3 8-3 6"/></svg>',
@@ -534,7 +533,6 @@ const booking = (() => {
   ];
   const FORMATS = [
     ['Secure video', 'Meet from anywhere', icon.video],
-    ['In person', 'Fort-Liberté, Haïti', icon.pin],
     ['Phone call', 'Voice only, low bandwidth', icon.phone]
   ];
   const TIMES = ['9:00 AM', '10:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '6:00 PM'];
@@ -574,7 +572,7 @@ const booking = (() => {
       case 0: return `<h3>${t('Who is this session for?')}</h3><p class="sub">${t('This helps us prepare the right kind of care.')}</p>${optHTML(WHO, 'who')}`;
       case 1: return `<h3>${t('What would you like to focus on?')}</h3><p class="sub">${t('Choose any that apply. You can share more later.')}</p><div class="chips-sel">${FOCUS.map(f => `<button class="chip ${S.focus.includes(f) ? 'sel' : ''}" data-f="${f}">${t(f)}</button>`).join('')}</div>`;
       case 2: return `<h3>${t('Choose your counselor')}</h3><p class="sub">${t('Every counselor is under pastoral oversight and bound by confidentiality.')}</p>${optHTML(COUNSELORS, 'counselor', 'three')}`;
-      case 3: return `<h3>${t('How would you like to meet?')}</h3><p class="sub">${t('Sessions are 50 minutes.')}</p>${optHTML(FORMATS, 'format', 'three')}`;
+      case 3: return `<h3>${t('How would you like to meet?')}</h3><p class="sub">${t('Sessions are 50 minutes.')}</p>${optHTML(FORMATS, 'format')}`;
       case 4: return `<h3>${t('Select a date & time')}</h3><p class="sub">${t('Sundays are reserved for worship and rest.')}</p>${calHTML()}`;
       case 5: {
         const i = S.info;
@@ -811,8 +809,8 @@ const circle = (() => {
   const GROUPS = [
     ['Newlyweds Circle', 'The first years, together. Honest talk about building a home.', 'Tuesdays · Video'],
     ['Engaged & Preparing', 'Walk with other couples through the premarital journey.', 'Thursdays · Video'],
-    ['Parents of Teens', 'Grace, truth and a lot of patience. You are not alone.', 'Biweekly · Hybrid'],
-    ['Singles in Christ', 'Community, purpose and friendship for every stage of singleness.', 'Saturdays · In person']
+    ['Parents of Teens', 'Grace, truth and a lot of patience. You are not alone.', 'Biweekly · Video'],
+    ['Singles in Christ', 'Community, purpose and friendship for every stage of singleness.', 'Saturdays · Video']
   ];
   const trap = '<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">';
   const tabs = [
