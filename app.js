@@ -894,8 +894,59 @@ $('#yr').textContent = new Date().getFullYear();
    Per-route hooks
 --------------------------------------------------------- */
 function onRouteEnter(route) {
+  if (route === "home") setTimeout(() => heroSlides.start(), 50);
   if (route === 'counseling') booking.enter();
 }
+
+/* ---------------------------------------------------------
+   Hero: cinematic family slides (slow push-in + crossfade)
+--------------------------------------------------------- */
+const heroSlides = (() => {
+  const slides = $$("#heroSlides .hs"), bars = $$(".hi-bars i"), word = $("#heroWord");
+  const DURATION = 6500;
+  const mobile = matchMedia("(max-width: 760px)");
+  let i = 0, timer = null, visible = true;
+  const place = s => { s.style.setProperty("--pos", mobile.matches ? s.dataset.posm : s.dataset.pos); };
+  const load = s => { if (s && s.dataset.img) { s.style.setProperty("--img", "url('" + s.dataset.img + "')"); delete s.dataset.img; } };
+  slides.forEach(place);
+  mobile.addEventListener("change", () => slides.forEach(place));
+  function label() { word.textContent = t(slides[i].dataset.word); }
+  function go(n) {
+    const prev = slides[i]; i = (n + slides.length) % slides.length;
+    const cur = slides[i]; load(cur); load(slides[(i + 1) % slides.length]);
+    prev.classList.remove("on"); prev.classList.add("off");
+    setTimeout(() => prev.classList.remove("off"), 1900);
+    cur.classList.remove("on"); void cur.offsetWidth; cur.classList.add("on");
+    bars.forEach((b, k) => { b.classList.remove("on", "done"); if (k < i) b.classList.add("done"); });
+    void bars[i].offsetWidth; bars[i].classList.add("on");
+    word.classList.remove("swap"); void word.offsetWidth; word.classList.add("swap");
+    label();
+  }
+  function run() {
+    clearInterval(timer); timer = null;
+    if (reduced || !visible || current !== "home" || document.hidden) return;
+    timer = setInterval(() => go(i + 1), DURATION);
+  }
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; run(); }).observe($("#hero"));
+  document.addEventListener("visibilitychange", run);
+  window.addEventListener("hashchange", () => setTimeout(run, 1200));
+  load(slides[1]);
+  label();
+  return { start: run, refresh: label };
+})();
+
+/* ---------------------------------------------------------
+   Quick contact heart toggle
+--------------------------------------------------------- */
+const quickCta = $("#quickCta"), qcToggle = $("#qcToggle");
+function setQuickOpen(open) {
+  quickCta.classList.toggle("open", open);
+  qcToggle.setAttribute("aria-expanded", open);
+}
+qcToggle.addEventListener("click", () => setQuickOpen(!quickCta.classList.contains("open")));
+document.addEventListener("click", e => { if (!e.target.closest("#quickCta")) setQuickOpen(false); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && quickCta.classList.contains("open")) { setQuickOpen(false); qcToggle.focus(); } });
+window.addEventListener("hashchange", () => setQuickOpen(false));
 
 /* ---------------------------------------------------------
    Language switch
@@ -906,7 +957,7 @@ function applyLang(next, animate) {
   $$('.lang-quick').forEach(b => { const on = b.dataset.lang === lang; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
   $('.lang-code').textContent = { en: 'EN', fr: 'FR', ht: 'KR', es: 'ES' }[lang];
   translateStatic();
-  checkin.refresh(); booking.refresh(); renderPrograms(); academy.refresh(); seed.refresh(); circle.refresh();
+  checkin.refresh(); booking.refresh(); if (typeof heroSlides !== "undefined") heroSlides.refresh(); renderPrograms(); academy.refresh(); seed.refresh(); circle.refresh();
   if (current) document.title = `${viewTitle(views[current])} · EdenWise`;
   requestAnimationFrame(moveIndicator);
   if (animate && !reduced) { document.body.classList.remove('lang-swap'); void document.body.offsetWidth; document.body.classList.add('lang-swap'); }

@@ -18,7 +18,7 @@ const fr = {
   'Home': 'Accueil', 'About': 'À propos', 'Counseling': 'Accompagnement', 'Programs': 'Programmes',
   'Academy': 'Académie', 'EdenSeed': 'EdenSeed', 'Circle': 'Cercle', 'Covenant Circle': 'Cercle de l’Alliance',
   'Book a Session': 'Prendre rendez-vous', 'EdenWise home': 'Accueil EdenWise', 'Primary': 'Principal', 'Open menu': 'Ouvrir le menu',
-  'Scroll': 'Défiler', 'Landy Predvil Souffrant, founder of EdenWise Ministry': 'Landy Predvil Souffrant, fondatrice du Ministère EdenWise', 'Skip to content': 'Aller au contenu', 'Language': 'Langue', 'Choose language': 'Choisir la langue', 'Wisdom · Covenant · Glory': 'Sagesse · Alliance · Gloire',
+  'Scroll': 'Défiler', 'Landy Predvil Souffrant, founder of EdenWise Ministry': 'Landy Predvil Souffrant, fondatrice du Ministère EdenWise', 'Skip to content': 'Aller au contenu', 'Language': 'Langue', 'Choose language': 'Choisir la langue', 'Contact EdenWise': 'Contacter EdenWise', "One family.": "Une famille.", "One faith.": "Une foi.", "One destiny.": "Une destinée.", "EDENWISE walks with families and generations toward a life founded on the wisdom, covenant and glory of God.": "EDENWISE accompagne les familles et les générations vers une vie fondée sur la sagesse, l’alliance et la gloire de Dieu.", "Begin the journey": "Commencer le parcours", "Discover EdenWise": "Découvrir EdenWise", "Wisdom": "Sagesse", "Legacy": "Héritage", 'Wisdom · Covenant · Glory': 'Sagesse · Alliance · Gloire',
 
   /* ----- home: hero ----- */
   'Faith · Healing · Stronger Together': 'Foi · Guérison · Plus forts ensemble',
@@ -295,7 +295,7 @@ const ht = {
   'Home': 'Akèy', 'About': 'Apropo', 'Counseling': 'Konsèy', 'Programs': 'Pwogram',
   'Academy': 'Akademi', 'EdenSeed': 'EdenSeed', 'Circle': 'Sèk', 'Covenant Circle': 'Sèk Alyans lan',
   'Book a Session': 'Pran randevou', 'EdenWise home': 'Akèy EdenWise', 'Primary': 'Prensipal', 'Open menu': 'Louvri meni an',
-  'Scroll': 'Desann', 'Landy Predvil Souffrant, founder of EdenWise Ministry': 'Landy Predvil Souffrant, fondatris Ministè EdenWise', 'Skip to content': 'Ale nan kontni an', 'Language': 'Lang', 'Choose language': 'Chwazi lang', 'Wisdom · Covenant · Glory': 'Sajès · Alyans · Glwa',
+  'Scroll': 'Desann', 'Landy Predvil Souffrant, founder of EdenWise Ministry': 'Landy Predvil Souffrant, fondatris Ministè EdenWise', 'Skip to content': 'Ale nan kontni an', 'Language': 'Lang', 'Choose language': 'Chwazi lang', 'Contact EdenWise': 'Kontakte EdenWise', "One family.": "Yon fanmi.", "One faith.": "Yon lafwa.", "One destiny.": "Yon desten.", "EDENWISE walks with families and generations toward a life founded on the wisdom, covenant and glory of God.": "EDENWISE ap mache ak fanmi yo ak jenerasyon yo pou yo viv yon lavi ki chita sou sajès, alyans ak glwa Bondye.", "Begin the journey": "Kòmanse pakou a", "Discover EdenWise": "Dekouvri EdenWise", "Wisdom": "Sajès", "Legacy": "Eritaj", 'Wisdom · Covenant · Glory': 'Sajès · Alyans · Glwa',
 
   /* ----- home: hero ----- */
   'Faith · Healing · Stronger Together': 'Lafwa · Gerizon · Pi fò ansanm',
@@ -573,7 +573,7 @@ const es = {
   'Academy': 'Academia', 'EdenSeed': 'EdenSeed', 'Circle': 'Círculo', 'Covenant Circle': 'Círculo del Pacto',
   'Book a Session': 'Reservar sesión', 'EdenWise home': 'Inicio de EdenWise', 'Primary': 'Principal', 'Open menu': 'Abrir menú',
   'Scroll': 'Desliza', 'Landy Predvil Souffrant, founder of EdenWise Ministry': 'Landy Predvil Souffrant, fundadora del Ministerio EdenWise',
-  'Skip to content': 'Ir al contenido', 'Language': 'Idioma', 'Choose language': 'Elegir idioma', 'Wisdom · Covenant · Glory': 'Sabiduría · Pacto · Gloria',
+  'Skip to content': 'Ir al contenido', 'Language': 'Idioma', 'Choose language': 'Elegir idioma', 'Contact EdenWise': 'Contactar a EdenWise', "One family.": "Una familia.", "One faith.": "Una fe.", "One destiny.": "Un destino.", "EDENWISE walks with families and generations toward a life founded on the wisdom, covenant and glory of God.": "EDENWISE acompaña a las familias y a las generaciones hacia una vida fundada en la sabiduría, el pacto y la gloria de Dios.", "Begin the journey": "Comenzar el recorrido", "Discover EdenWise": "Descubrir EdenWise", "Wisdom": "Sabiduría", "Legacy": "Legado", 'Wisdom · Covenant · Glory': 'Sabiduría · Pacto · Gloria',
 
   /* ----- home: hero ----- */
   'Faith · Healing · Stronger Together': 'Fe · Sanidad · Más fuertes juntos',
