@@ -1,13 +1,14 @@
 /* =========================================================
    EdenWise — translations
-   Each entry maps the English text on the site to French (fr)
-   and Haitian Creole (ht). To change a translation, edit the
+   Each entry maps the English text on the site to French (fr),
+   Haitian Creole (ht) and Spanish (es). To change a translation, edit the
    right-hand side. Text missing here simply stays in English;
    run EW_missing() in the browser console to list it.
 
-   Please have a native speaker review both languages before
+   Please have a native speaker review each language before
    launch, especially the Kreyòl.
-   Scripture: French verses are Louis Segond 1910 (public domain).
+   Scripture: French verses are Louis Segond 1910 and Spanish
+   verses are Reina-Valera 1909 (both public domain).
    Kreyòl verses are working translations. Replace them with
    the Bible version your church uses.
 ========================================================= */
@@ -566,5 +567,283 @@ const ht = {
   'Follow EdenWise': 'Swiv EdenWise', 'WhatsApp channel': 'Chèn WhatsApp'
 };
 
-window.EW_I18N = { fr, ht };
+const es = {
+  /* ----- navigation & chrome ----- */
+  'Home': 'Inicio', 'About': 'Nosotros', 'Counseling': 'Consejería', 'Programs': 'Programas',
+  'Academy': 'Academia', 'EdenSeed': 'EdenSeed', 'Circle': 'Círculo', 'Covenant Circle': 'Círculo del Pacto',
+  'Book a Session': 'Reservar sesión', 'EdenWise home': 'Inicio de EdenWise', 'Primary': 'Principal', 'Open menu': 'Abrir menú',
+  'Scroll': 'Desliza', 'Landy Predvil Souffrant, founder of EdenWise Ministry': 'Landy Predvil Souffrant, fundadora del Ministerio EdenWise',
+  'Skip to content': 'Ir al contenido', 'Language': 'Idioma', 'Wisdom · Covenant · Glory': 'Sabiduría · Pacto · Gloria',
+
+  /* ----- home: hero ----- */
+  'Faith · Healing · Stronger Together': 'Fe · Sanidad · Más fuertes juntos',
+  'Building <em>Christ-centered</em> relationships that transform generations.': 'Construyendo relaciones <em>centradas en Cristo</em> que transforman generaciones.',
+  'Biblically rooted, clinically informed counseling and formation for singles, engaged couples, marriages and families — with a special heart for the Haitian community.': 'Consejería y formación con raíces bíblicas y respaldo clínico para solteros, parejas comprometidas, matrimonios y familias — con un corazón especial por la comunidad haitiana.',
+  'Book Counseling': 'Reservar consejería', 'Take the Relationship Check-in': 'Hacer el chequeo de la relación',
+  'Strictly confidential': 'Estrictamente confidencial', 'Scripture-anchored': 'Anclado en la Escritura', 'Trauma-informed care': 'Cuidado sensible al trauma',
+
+  /* ----- values marquee ----- */
+  'Biblical Truth': 'Verdad bíblica', 'Covenant Living': 'Vivir en pacto', 'Wisdom-Centered Love': 'Amor guiado por la sabiduría',
+  'Healing & Restoration': 'Sanidad y restauración', 'Holistic Growth': 'Crecimiento integral', 'Kingdom Impact': 'Impacto para el Reino',
+
+  /* ----- today's devotional strip ----- */
+  'EdenSeed · Today': 'EdenSeed · Hoy', 'Theme —': 'Tema —', 'Love': 'Amor',
+  '“This is my commandment, That ye love one another, as I have loved you.”': '«Este es mi mandamiento: Que os améis los unos a los otros, como yo os he amado.»',
+  'John 15:12': 'Juan 15:12', 'Open today’s devotional': 'Abrir el devocional de hoy',
+
+  /* ----- pathways ----- */
+  'Care Pathways': 'Caminos de acompañamiento',
+  'Care designed for <em>every season</em> of life.': 'Acompañamiento para <em>cada etapa</em> de la vida.',
+  'Each pathway begins with a careful intake, so the care you receive fits your story, your stage and your goals.': 'Cada camino comienza con una entrevista inicial cuidadosa, para que el acompañamiento se ajuste a tu historia, tu etapa y tus metas.',
+  'Singles': 'Solteros', 'Identity in Christ, emotional health, wise boundaries and preparation for godly relationships.': 'Identidad en Cristo, salud emocional, límites sabios y preparación para relaciones que honran a Dios.',
+  'Explore': 'Explorar', 'Engaged Couples': 'Parejas comprometidas',
+  'An 8-week premarital journey to build a strong covenant foundation before the wedding day.': 'Un recorrido prematrimonial de 8 semanas para construir un fundamento de pacto sólido antes de la boda.',
+  'Married Couples': 'Matrimonios', 'Restore communication, repair conflict patterns and deepen spiritual and emotional intimacy.': 'Restaurar la comunicación, sanar patrones de conflicto y profundizar la intimidad espiritual y emocional.',
+  'Families': 'Familias', 'Parenting with grace and truth, generational healing and a home built on the Rock.': 'Crianza con gracia y verdad, sanidad generacional y un hogar edificado sobre la Roca.',
+
+  /* ----- method ----- */
+  'The EdenWise Method': 'El método EdenWise',
+  'Where <em>Scripture</em>, science and soul meet.': 'Donde <em>la Escritura</em>, la ciencia y el alma se encuentran.',
+  'We join the authority of God’s Word with sound psychological practice. Faith and good clinical care are not in competition here. Both serve the whole person.': 'Unimos la autoridad de la Palabra de Dios con una práctica psicológica sólida. Aquí la fe y el buen cuidado clínico no compiten: ambos sirven a la persona completa.',
+  'Scripture': 'Escritura', 'Science': 'Ciencia', 'Soul': 'Alma',
+  'God’s design for identity, covenant and love is the foundation. Every conversation is framed by the Gospel.': 'El diseño de Dios para la identidad, el pacto y el amor es el fundamento. Cada conversación se enmarca en el Evangelio.',
+  'We use research-informed tools for attachment, communication, conflict repair and emotional regulation.': 'Usamos herramientas basadas en la investigación para el apego, la comunicación, la reparación de conflictos y la regulación emocional.',
+  'Prayer, lament, confession and spiritual disciplines bring lasting healing, not only managed symptoms.': 'La oración, el lamento, la confesión y las disciplinas espirituales traen una sanidad duradera, no solo síntomas controlados.',
+
+  /* ----- journey ----- */
+  'Your Journey': 'Tu recorrido',
+  'From first step to <em>lasting fruit</em>.': 'Del primer paso al <em>fruto duradero</em>.',
+  'A clear, gentle process, so you always know where you are and what comes next.': 'Un proceso claro y amable, para que siempre sepas dónde estás y qué sigue.',
+  'Request & intake': 'Solicitud y entrevista inicial', 'Share a little of your story in a confidential intake. We listen first.': 'Comparte un poco de tu historia en una entrevista confidencial. Primero escuchamos.',
+  'Discernment session': 'Sesión de discernimiento', 'We explore your goals together, assess safety and needs, and pray for direction.': 'Exploramos juntos tus metas, evaluamos la seguridad y las necesidades, y oramos por dirección.',
+  'A tailored care plan': 'Un plan de acompañamiento a tu medida', 'You get a clear pathway: sessions, readings, practices and measurable next steps.': 'Recibes un camino claro: sesiones, lecturas, prácticas y próximos pasos medibles.',
+  'Growth & accountability': 'Crecimiento y rendición de cuentas', 'Regular sessions, EdenSeed devotionals and Academy courses reinforce the work between meetings.': 'Sesiones regulares, devocionales EdenSeed y cursos de la Academia refuerzan el trabajo entre encuentros.',
+  'Community & commissioning': 'Comunidad y envío', 'Join the Covenant Circle, and in time become the one who walks others through.': 'Únete al Círculo del Pacto y, con el tiempo, acompaña tú a otros en su camino.',
+
+  /* ----- scripture band ----- */
+  'Foundation Scripture': 'Versículo fundamental',
+  '“Except the <em>Lord</em> build the house, they labour in vain that build it.”': '«Si <em>Jehová</em> no edificare la casa, en vano trabajan los que la edifican.»',
+  'Psalm 127 : 1': 'Salmo 127 : 1',
+
+  /* ----- check-in ----- */
+  'Relationship Check-in': 'Chequeo de la relación',
+  'Two minutes. <em>An honest</em> look.': 'Dos minutos. <em>Una mirada</em> honesta.',
+  'Rate five areas of your relationship from 1 (struggling) to 5 (flourishing). We’ll show your profile and suggest a gentle next step.': 'Califica cinco áreas de tu relación del 1 (con dificultades) al 5 (floreciendo). Te mostraremos tu perfil y te sugeriremos un siguiente paso con suavidad.',
+  'This is a reflection tool, not a clinical assessment or diagnosis. Your answers stay on your device.': 'Es una herramienta de reflexión, no una evaluación clínica ni un diagnóstico. Tus respuestas se quedan en tu dispositivo.',
+  'Communication': 'Comunicación', 'Conflict repair': 'Reparación de conflictos', 'Spiritual unity': 'Unidad espiritual', 'Trust': 'Confianza', 'Shared vision': 'Visión compartida',
+  'Flourishing': 'Floreciendo', 'Growing': 'Creciendo', 'Needs care': 'Necesita cuidado',
+  'Your foundation is strong. Protect it with ongoing enrichment. Keep an eye on <em>{area}</em>.': 'Su fundamento es sólido. Protéjanlo con un crecimiento constante. Estén atentos a: <em>{area}</em>.',
+  'There is real strength here. Focused work on <em>{area}</em> could change the whole relationship.': 'Aquí hay una fortaleza real. Trabajar en <em>{area}</em> podría transformar toda la relación.',
+  'You don’t have to carry this alone. A guided conversation about <em>{area}</em> is a wise first step.': 'No tienen que cargar esto solos. Una conversación acompañada sobre <em>{area}</em> es un primer paso sabio.',
+  'Talk with a counselor': 'Hablar con un consejero',
+
+  /* ----- team ----- */
+  'Care Team': 'Equipo', 'Shepherds who <em>listen</em> well.': 'Pastores que <em>saben escuchar</em>.',
+  'Pastor': 'Pastor', 'Pastor David Chen': 'Pastor David Chen', 'Family & Relationship Coach': 'Coach familiar y de relaciones',
+  'Family': 'Familia', 'Individual': 'Individual', 'Relationship coaching': 'Coaching de relaciones', 'Book': 'Reservar',
+  'Pastoral Counselor': 'Consejera pastoral', 'Trauma healing': 'Sanidad del trauma', 'Founder, EdenWise Ministry': 'Fundadora, Ministerio EdenWise',
+  'Marriage': 'Matrimonio', 'Premarital': 'Prematrimonial', 'Vision': 'Visión', 'Meet': 'Conocer',
+
+  /* ----- CTA ----- */
+  'A threefold cord is <em>not quickly broken.</em>': 'Cordón de tres dobleces <em>no presto se rompe.</em>',
+  'Ecclesiastes 4 : 12 — take the first step today.': 'Eclesiastés 4 : 12 — da el primer paso hoy.',
+  'Request a Session': 'Solicitar una sesión',
+
+  /* ----- about ----- */
+  'About EdenWise': 'Sobre EdenWise',
+  'Cultivating wisdom. <em>Restoring hope.</em>': 'Cultivando sabiduría. <em>Restaurando la esperanza.</em>',
+  'A ministry that guides young people, engaged couples and married couples to understand and live by God’s design for marriage and family.': 'Un ministerio que guía a jóvenes, parejas comprometidas y matrimonios a entender y vivir el diseño de Dios para el matrimonio y la familia.',
+  'Our Purpose': 'Nuestro propósito', 'Our <em>Mission</em>': 'Nuestra <em>misión</em>',
+  'The mission of EdenWise is to guide young people, engaged couples and married couples to understand and live according to God’s design for marriage.': 'La misión de EdenWise es guiar a jóvenes, parejas comprometidas y matrimonios a entender y vivir conforme al diseño de Dios para el matrimonio.',
+  'Through biblical teaching, counseling, prayer, conferences and practical resources, we equip individuals and families to build healthy relationships, fulfil their God-given destinies and live marriage under Kingdom wisdom. We serve everyone who seeks guidance, with a special focus on the Haitian community.': 'Mediante enseñanza bíblica, consejería, oración, conferencias y recursos prácticos, equipamos a personas y familias para construir relaciones sanas, cumplir el destino que Dios les ha dado y vivir el matrimonio con la sabiduría del Reino. Servimos a todos los que buscan orientación, con un enfoque especial en la comunidad haitiana.',
+  'Every generation, every home, every season.': 'Cada generación, cada hogar, cada etapa.',
+  'Mission': 'Misión', 'Values': 'Valores',
+  'To guide young people, engaged and married couples in living by God’s design for marriage through biblical teaching, counseling and prayer.': 'Guiar a jóvenes, parejas comprometidas y matrimonios a vivir según el diseño de Dios para el matrimonio, mediante la enseñanza bíblica, la consejería y la oración.',
+  'To see individuals, couples and families walking in God’s design for marriage, living as Kingdom-minded people in healthy, strong, covenant-centered relationships.': 'Ver a personas, parejas y familias caminando en el diseño de Dios para el matrimonio, viviendo con mentalidad de Reino en relaciones sanas, firmes y centradas en el pacto.',
+  'Rooted in biblical truth, covenant marriage, wisdom-centered living, love with responsibility, healing, holistic growth and Kingdom impact.': 'Arraigados en la verdad bíblica, el matrimonio de pacto, una vida guiada por la sabiduría, el amor responsable, la sanidad, el crecimiento integral y el impacto para el Reino.',
+  'A Word from the Founder': 'Unas palabras de la fundadora',
+  '“Healthy homes are not built by accident. They are built <em>on purpose</em>, on the Rock, one faithful choice at a time.”': '«Los hogares sanos no se construyen por accidente. Se edifican <em>con propósito</em>, sobre la Roca, una decisión fiel a la vez.»',
+  'Founder of EdenWise Ministry': 'Fundadora del Ministerio EdenWise',
+  'What We Do': 'Lo que hacemos', 'Five ways we <em>serve</em>.': 'Cinco maneras de <em>servir</em>.',
+  'Biblical Teaching': 'Enseñanza bíblica', 'Sound, practical instruction on identity, covenant and family.': 'Enseñanza sólida y práctica sobre identidad, pacto y familia.',
+  'Confidential one-on-one, couple and family sessions.': 'Sesiones confidenciales individuales, de pareja y de familia.',
+  'Prayer': 'Oración', 'Intercession and prayer ministry woven into every stage of care.': 'Intercesión y ministerio de oración presentes en cada etapa del acompañamiento.',
+  'Conferences': 'Conferencias', 'Gatherings that equip churches and communities at scale.': 'Encuentros que equipan a iglesias y comunidades a gran escala.',
+  'Resources': 'Recursos', 'Courses, devotionals and tools for growth between sessions.': 'Cursos, devocionales y herramientas para crecer entre sesiones.',
+
+  /* ----- counseling page ----- */
+  'Pastoral Counseling': 'Consejería pastoral', 'Request a <em>Session</em>': 'Solicita una <em>sesión</em>',
+  'Biblically grounded pastoral guidance for your season of life. It takes about three minutes.': 'Orientación pastoral fundamentada en la Biblia para tu etapa de vida. Toma unos tres minutos.',
+  'Confidential by design.': 'Confidencial por principio.', 'Only your assigned counselor sees your intake.': 'Solo tu consejero asignado ve tu información.',
+  'In crisis or danger?': '¿En crisis o en peligro?', 'Please contact local emergency services right away. Pastoral counseling is not an emergency service.': 'Comunícate de inmediato con los servicios de emergencia locales. La consejería pastoral no es un servicio de emergencia.',
+  'Back': 'Atrás', 'Continue': 'Continuar', 'Submit request': 'Enviar solicitud',
+  'Who is this for?': '¿Para quién?', 'Areas of focus': 'Temas', 'Choose a counselor': 'Consejero', 'Session format': 'Formato', 'Date & time': 'Fecha y hora', 'Intake': 'Datos', 'Review': 'Revisión',
+  'Who is this session for?': '¿Para quién es esta sesión?', 'This helps us prepare the right kind of care.': 'Esto nos ayuda a preparar el acompañamiento adecuado.',
+  'Personal growth, healing or direction': 'Crecimiento personal, sanidad u orientación',
+  'Engaged couple': 'Pareja comprometida', 'Preparing for covenant marriage': 'Preparándose para un matrimonio de pacto',
+  'Married couple': 'Matrimonio', 'Strengthen or restore your marriage': 'Fortalecer o restaurar su matrimonio',
+  'Parents, children and household dynamics': 'Padres, hijos y dinámica del hogar',
+  'What would you like to focus on?': '¿En qué te gustaría trabajar?', 'Choose any that apply. You can share more later.': 'Elige todo lo que aplique. Podrás contar más después.',
+  'Conflict & repair': 'Conflicto y reparación', 'Trust & betrayal': 'Confianza y traición', 'Premarital preparation': 'Preparación prematrimonial', 'Intimacy': 'Intimidad',
+  'Parenting': 'Crianza', 'Blended family': 'Familia reconstituida', 'Grief & loss': 'Duelo y pérdida', 'Anxiety & stress': 'Ansiedad y estrés',
+  'Faith & doubt': 'Fe y duda', 'Identity & purpose': 'Identidad y propósito',
+  'Choose your counselor': 'Elige a tu consejero', 'Every counselor is under pastoral oversight and bound by confidentiality.': 'Cada consejero está bajo supervisión pastoral y comprometido con la confidencialidad.',
+  'Family & relationship coach': 'Coach familiar y de relaciones', 'Pastoral counselor · trauma healing': 'Consejera pastoral · sanidad del trauma',
+  'First available': 'Primero disponible', 'We’ll match you thoughtfully': 'Te asignaremos con cuidado',
+  'How would you like to meet?': '¿Cómo te gustaría reunirte?', 'Sessions are 50 minutes.': 'Las sesiones duran 50 minutos.',
+  'Secure video': 'Video seguro', 'Meet from anywhere': 'Desde cualquier lugar', 'Phone call': 'Llamada telefónica', 'Voice only, low bandwidth': 'Solo voz, poca conexión',
+  'Select a date & time': 'Elige fecha y hora', 'Sundays are reserved for worship and rest.': 'Los domingos están reservados para la adoración y el descanso.',
+  'Select a date to see available times.': 'Elige una fecha para ver los horarios disponibles.', 'Previous month': 'Mes anterior', 'Next month': 'Mes siguiente',
+  'Available · your local time': 'Disponible · tu hora local',
+  '9:00 AM': '9:00', '10:30 AM': '10:30', '1:00 PM': '13:00', '2:30 PM': '14:30', '4:00 PM': '16:00', '6:00 PM': '18:00',
+  'Intake information': 'Información inicial', 'This information is strictly confidential.': 'Esta información es estrictamente confidencial.',
+  'Full name': 'Nombre completo', 'Email address': 'Correo electrónico', 'Phone number': 'Teléfono', 'Preferred language': 'Idioma preferido',
+  'What’s on your heart? (optional)': '¿Qué hay en tu corazón? (opcional)', 'Share as much or as little as you’d like.': 'Comparte tanto o tan poco como quieras.',
+  'I understand pastoral counseling is not an emergency or medical service, and I agree to the confidentiality terms.': 'Entiendo que la consejería pastoral no es un servicio de emergencia ni médico, y acepto los términos de confidencialidad.',
+  'Review your request': 'Revisa tu solicitud', 'Please confirm the details below.': 'Por favor confirma los datos a continuación.',
+  'For': 'Para', 'Counselor': 'Consejero', 'Format': 'Formato', 'When': 'Cuándo', 'Focus': 'Temas', 'Name': 'Nombre', 'Email': 'Correo',
+  'A counselor': 'Un consejero', 'Your request has been received.': 'Hemos recibido tu solicitud.',
+  'Thank you, {name}. {who} will confirm your session by email within one business day. Until then, may the peace of Christ guard your heart.': 'Gracias, {name}. {who} confirmará tu sesión por correo en un día hábil. Mientras tanto, que la paz de Cristo guarde tu corazón.',
+  'Read today’s devotional': 'Leer el devocional de hoy',
+  'Please choose who this session is for.': 'Indica para quién es esta sesión.', 'Please choose at least one area of focus.': 'Elige al menos un tema.',
+  'Please choose a counselor.': 'Elige un consejero.', 'Please choose a session format.': 'Elige un formato.',
+  'Please select a date and a time.': 'Elige una fecha y una hora.', 'Please enter your name.': 'Escribe tu nombre.',
+  'Please enter a valid email address.': 'Escribe un correo electrónico válido.', 'Please confirm the consent statement.': 'Confirma la declaración de consentimiento.',
+  'Request received. Check your email for confirmation.': 'Solicitud recibida. Revisa tu correo para la confirmación.',
+
+  /* ----- programs ----- */
+  'Equipping for <em>every season</em>.': 'Equipando para <em>cada etapa</em>.',
+  'Structured, cohort-based journeys that combine teaching, guided practice and pastoral care.': 'Recorridos estructurados en grupo que combinan enseñanza, práctica guiada y cuidado pastoral.',
+  'Premarital Preparation': 'Preparación prematrimonial', '8 weeks · Engaged couples': '8 semanas · Parejas comprometidas',
+  'A comprehensive 8-week journey to build a strong foundation before the wedding day. Couples learn God’s design for covenant and practise the skills that make love last.': 'Un recorrido completo de 8 semanas para construir un fundamento firme antes de la boda. Las parejas aprenden el diseño de Dios para el pacto y practican lo que hace que el amor perdure.',
+  'Cohort-based': 'En grupo', 'Workbook included': 'Cuaderno incluido', 'Certificate': 'Certificado',
+  'Wk 1–2': 'Sem. 1–2', 'Wk 3–4': 'Sem. 3–4', 'Wk 5–6': 'Sem. 5–6', 'Wk 7–8': 'Sem. 7–8', 'Wk 1–3': 'Sem. 1–3', 'Wk 4–7': 'Sem. 4–7', 'Wk 8–10': 'Sem. 8–10',
+  'Covenant, not contract: God’s blueprint': 'Pacto, no contrato: el plano de Dios',
+  'Communication & conflict repair': 'Comunicación y reparación de conflictos', 'Finances, families of origin & roles': 'Finanzas, familias de origen y roles',
+  'Intimacy, spiritual unity & vision': 'Intimidad, unidad espiritual y visión', 'Enroll / Learn more': 'Inscribirse / Saber más',
+  'Marriage Enrichment': 'Enriquecimiento matrimonial', '6 weeks · Married couples': '6 semanas · Matrimonios',
+  'For couples who want to go deeper. Renew friendship, repair old wounds and realign your home around shared calling.': 'Para parejas que quieren ir más profundo: renovar la amistad, sanar heridas antiguas y realinear el hogar en torno a un llamado compartido.',
+  'Evening sessions': 'Sesiones por la noche', 'Couples retreat option': 'Opción de retiro para parejas',
+  'Friendship & fondness revisited': 'Redescubrir la amistad y el cariño', 'Forgiveness and the repair cycle': 'El perdón y el ciclo de reparación', 'Praying together & shared mission': 'Orar juntos y misión compartida',
+  'Whole Before Two': 'Completo antes de ser dos', '6 weeks · Singles': '6 semanas · Solteros',
+  'Formation for singles: identity in Christ, emotional health and wise boundaries, so the next relationship is built on wholeness, not need.': 'Formación para solteros: identidad en Cristo, salud emocional y límites sabios, para que la próxima relación se construya sobre la plenitud y no sobre la necesidad.',
+  'Small groups': 'Grupos pequeños', 'Mentor pairing': 'Acompañamiento de un mentor',
+  'Identity, worth & belonging': 'Identidad, valor y pertenencia', 'Emotional health & attachment': 'Salud emocional y apego', 'Boundaries, discernment & dating well': 'Límites, discernimiento y noviazgo sano',
+  '10 weeks · Trauma-informed': '10 semanas · Sensible al trauma',
+  'A gentle, trauma-informed path through grief, betrayal and loss. We join biblical lament with proven practices for safety and stabilisation.': 'Un camino suave y sensible al trauma a través del duelo, la traición y la pérdida. Unimos el lamento bíblico con prácticas comprobadas de seguridad y estabilización.',
+  'Small cohorts': 'Grupos reducidos', 'Individual check-ins': 'Seguimiento individual',
+  'Safety, stabilisation & lament': 'Seguridad, estabilización y lamento', 'Processing the story before God': 'Llevar la historia delante de Dios', 'Forgiveness, meaning & renewal': 'Perdón, sentido y renovación',
+
+  /* ----- academy ----- */
+  'EdenWise Academy': 'Academia EdenWise', 'Wisdom, <em>on demand</em>.': 'Sabiduría, <em>cuando la necesites</em>.',
+  'Equipping the saints with deeply theological and practical wisdom for every season of life.': 'Equipando a los santos con sabiduría teológica y práctica para cada etapa de la vida.',
+  'Academy progress': 'Tu progreso', '1 course started': '1 curso iniciado', '{n} courses started': '{n} cursos iniciados',
+  'Search courses, instructors, topics…': 'Buscar cursos, maestros, temas…', 'No courses match that search yet.': 'Ningún curso coincide con esa búsqueda.',
+  'All': 'Todos', 'Relationships': 'Relaciones', 'Faith': 'Fe', 'Leadership': 'Liderazgo',
+  'Preview': 'Vista previa', 'Most popular': 'Más popular', 'By {name}': 'Por {name}', '{n} lessons': '{n} lecciones',
+  'Start course →': 'Comenzar →', 'Continue →': 'Continuar →', '“{course}” added to your learning path.': '«{course}» se añadió a tu ruta de aprendizaje.',
+  'The Covenant Foundations': 'Los fundamentos del pacto', 'Dr. Paul & Sarah Souffrant': 'Dr. Paul y Sarah Souffrant',
+  'Deconstruct worldly standards of marriage and build a covenant foundation aligned with God’s Word.': 'Desmontar los modelos del mundo sobre el matrimonio y construir un fundamento de pacto alineado con la Palabra de Dios.',
+  'Biblical Dating & Boundaries': 'Noviazgo bíblico y límites',
+  'Equip yourself with clarity, emotional boundaries and spiritual wisdom to navigate dating and engagement.': 'Recibe claridad, límites emocionales y sabiduría espiritual para vivir el noviazgo y el compromiso.',
+  'Raising Shepherds of Truth': 'Criando pastores de la verdad',
+  'Practical tools and theological anchors to raise confident, godly children in a confused culture.': 'Herramientas prácticas y anclas teológicas para criar hijos seguros y piadosos en una cultura confundida.',
+  'The Praying Home': 'El hogar que ora', 'EdenWise Faculty': 'Maestros de EdenWise',
+  'Build rhythms of family worship and prayer that fit real life, from newlyweds to full houses.': 'Crear ritmos de adoración familiar y oración que encajen en la vida real, desde recién casados hasta casas llenas.',
+  'Anchored in Anxious Seasons': 'Anclados en tiempos de ansiedad',
+  'Scripture and practical skills for worry, stress and uncertainty, without shame and without shortcuts.': 'La Escritura y herramientas prácticas para la preocupación, el estrés y la incertidumbre, sin vergüenza y sin atajos.',
+  'Servant Leadership at Home': 'Liderazgo de siervo en el hogar',
+  'Christlike leadership in marriage and family: humble, accountable and life-giving.': 'Un liderazgo como el de Cristo en el matrimonio y la familia: humilde, responsable y que da vida.',
+  'Healing After Betrayal': 'Sanar después de la traición',
+  'A trauma-informed roadmap for couples rebuilding trust after infidelity or deep breach.': 'Una hoja de ruta sensible al trauma para parejas que reconstruyen la confianza tras una infidelidad o una herida profunda.',
+  'Whole & Holy Singleness': 'Una soltería plena y santa',
+  'Singleness as calling, not waiting room: purpose, community and emotional health.': 'La soltería como llamado, no como sala de espera: propósito, comunidad y salud emocional.',
+
+  /* ----- EdenSeed ----- */
+  'EdenSeed · Daily walk with Christ': 'EdenSeed · Caminar cada día con Cristo',
+  'The Blueprint <em>of Love</em>': 'El plano <em>del amor</em>', 'LOVE': 'AMOR',
+  'Save devotional': 'Guardar', 'Saved': 'Guardado',
+  'Devotional saved to your library.': 'Devocional guardado en tu biblioteca.', 'Removed from your library.': 'Eliminado de tu biblioteca.',
+  'Read': 'Leer', 'John 15:12 (KJV)': 'Juan 15:12 (Reina-Valera 1909)',
+  'Jesus does not leave love undefined. He gives it a measure:': 'Jesús no deja el amor sin definir. Le da una medida:',
+  'as I have loved you': 'como yo os he amado',
+  '. That measure moves love out of feelings alone and into covenant. It becomes patient, costly, forgiving and faithful.': '. Esa medida lleva el amor más allá de los sentimientos, hacia el pacto. Se vuelve paciente, costoso, perdonador y fiel.',
+  'In counseling we often see couples who love each other sincerely but have no shared blueprint. Each partner builds from their own family’s plans, their own wounds and their own expectations. Christ offers a better blueprint. It is one we learn together and practise daily. It turns small, repeated choices into a house that stands.': 'En consejería vemos a menudo parejas que se aman sinceramente pero no tienen un plano en común. Cada uno construye con los planos de su propia familia, sus propias heridas y sus propias expectativas. Cristo ofrece un plano mejor. Lo aprendemos juntos y lo practicamos cada día. Convierte pequeñas decisiones repetidas en una casa que permanece en pie.',
+  'Reflect': 'Reflexiona',
+  'Where have I measured love by how I feel instead of how Christ loves?': '¿Dónde he medido el amor por lo que siento en lugar de por cómo ama Cristo?',
+  'What one small act of costly love can I offer today?': '¿Qué pequeño acto de amor costoso puedo ofrecer hoy?',
+  'Is there a hurt I need to bring to God before I can love freely?': '¿Hay alguna herida que necesito llevar a Dios para poder amar con libertad?',
+  'Practise · Breath Prayer': 'Practica · Oración de respiración',
+  'Breathe in:': 'Inhala:', 'Breathe out:': 'Exhala:',
+  '“Lord Jesus, You have loved me.”': '«Señor Jesús, tú me has amado.»', '“Teach me to love like You.”': '«Enséñame a amar como tú.»',
+  'Start 1-minute prayer': 'Comenzar (1 minuto)', 'Stop': 'Detener', 'Pray again': 'Orar de nuevo',
+  'Begin': 'Comenzar', 'Breathe in': 'Inhala', 'Breathe out': 'Exhala', 'Amen': 'Amén',
+  'Journal': 'Diario', 'Write a short prayer or response… (saved only on this device)': 'Escribe una breve oración o respuesta… (se guarda solo en este dispositivo)',
+  'Reading Plan': 'Plan de lectura', 'Day 12': 'Día 12', 'Covenant Love · 30 days': 'Amor de pacto · 30 días',
+  'Day 10 · Ruth 1': 'Día 10 · Rut 1', 'Day 11 · Hosea 3': 'Día 11 · Oseas 3', 'Day 12 · John 15': 'Día 12 · Juan 15',
+  'Day 13 · 1 Corinthians 13': 'Día 13 · 1 Corintios 13', 'Day 14 · Ephesians 5': 'Día 14 · Efesios 5',
+  'Delivered daily': 'Cada día', 'Get EdenSeed each morning': 'Recibe EdenSeed cada mañana', 'Subscribe': 'Suscribirse',
+  'Welcome. EdenSeed will reach your inbox soon.': '¡Bienvenido! EdenSeed llegará pronto a tu correo.',
+
+  /* ----- Covenant Circle ----- */
+  'The Covenant Circle': 'El Círculo del Pacto', 'Faith grows <em>in fellowship</em>.': 'La fe crece <em>en comunión</em>.',
+  '“…breaking bread from house to house, did eat their meat with gladness and singleness of heart.”': '«…partiendo el pan en las casas, comían juntos con alegría y con sencillez de corazón.»',
+  'Acts 2 : 46': 'Hechos 2 : 46',
+  'Fellowship Circles': 'Círculos de comunión', 'Scripture Exchange': 'Intercambio de versículos', 'Intercession Wall': 'Muro de intercesión',
+  'Newlyweds Circle': 'Círculo de recién casados', 'The first years, together. Honest talk about building a home.': 'Los primeros años, juntos. Conversaciones sinceras sobre cómo construir un hogar.', 'Tuesdays · Video': 'Martes · Video',
+  'Engaged & Preparing': 'Comprometidos en preparación', 'Walk with other couples through the premarital journey.': 'Camina con otras parejas durante la preparación prematrimonial.', 'Thursdays · Video': 'Jueves · Video',
+  'Parents of Teens': 'Padres de adolescentes', 'Grace, truth and a lot of patience. You are not alone.': 'Gracia, verdad y mucha paciencia. No estás solo.', 'Biweekly · Video': 'Cada 15 días · Video',
+  'Singles in Christ': 'Solteros en Cristo', 'Community, purpose and friendship for every stage of singleness.': 'Comunidad, propósito y amistad para cada etapa de la soltería.', 'Saturdays · Video': 'Sábados · Video',
+  'Join →': 'Unirme →', 'Your email': 'Tu correo', 'Request': 'Solicitar', 'Requested ✓': 'Solicitud enviada ✓',
+  'Request to join “{circle}” sent. We’ll email you.': 'Solicitud para unirte a «{circle}» enviada. Te escribiremos.',
+  'Philippians 4 : 6–7': 'Filipenses 4 : 6–7', 'Colossians 3 : 13': 'Colosenses 3 : 13', 'Proverbs 24 : 3–4': 'Proverbios 24 : 3–4', 'Isaiah 43 : 19': 'Isaías 43 : 19',
+  'Held onto this verse the night before our first counseling session.': 'Me aferré a este versículo la noche antes de nuestra primera sesión.',
+  'Our counselor gave us this for our week of practising forgiveness.': 'Nuestra consejera nos lo dio para nuestra semana de practicar el perdón.',
+  'Wisdom builds the house. Understanding establishes it.': 'La sabiduría edifica la casa. La prudencia la afirma.',
+  'For anyone waiting on God to do a new thing in their family.': 'Para quien espera que Dios haga algo nuevo en su familia.',
+  'Shared by a member': 'Compartido por un miembro',
+  'Share a prayer request (posted anonymously)': 'Comparte una petición de oración (se publica de forma anónima)', 'Prayer request': 'Petición de oración', 'Post': 'Publicar',
+  'Requests go privately to our prayer team. The wall below shows requests on this device.': 'Las peticiones llegan en privado a nuestro equipo de oración. El muro de abajo muestra las peticiones de este dispositivo.',
+  'For restoration in our marriage after a hard season.': 'Por la restauración de nuestro matrimonio después de una etapa difícil.',
+  'Wisdom as we prepare for our wedding in December.': 'Sabiduría mientras preparamos nuestra boda en diciembre.',
+  'Peace for my family in Cap-Haïtien.': 'Paz para mi familia en Cabo Haitiano.',
+  'Anonymous': 'Anónimo', 'An engaged couple': 'Una pareja comprometida', '{n} praying': '{n} orando', 'Praying': 'Orando', 'I’ll pray': 'Oraré',
+  'Your request was sent to our prayer team. We are praying with you.': 'Tu petición llegó a nuestro equipo de oración. Estamos orando contigo.',
+  'Spiritual Harvest': 'Cosecha espiritual', 'Prayers lifted this week': 'Oraciones esta semana', 'Active circles': 'Círculos activos', 'Scriptures shared': 'Versículos compartidos',
+  'Sample figures for this preview.': 'Cifras de ejemplo para esta vista previa.',
+  'Membership': 'Membresía', 'Choose your <em>path</em>.': 'Elige tu <em>camino</em>.', 'Monthly': 'Mensual', 'Yearly': 'Anual',
+  'Pilgrim': 'Peregrino', 'Begin the walk with daily devotionals and open fellowship.': 'Comienza el camino con devocionales diarios y comunión abierta.',
+  'EdenSeed daily devotional': 'Devocional diario EdenSeed', 'Public intercession wall': 'Muro de intercesión público', '2 free Academy lessons': '2 lecciones gratis de la Academia', 'Start free': 'Comenzar gratis',
+  'Most chosen': 'El más elegido', 'Covenant': 'Pacto', 'Full Academy access and a place in a guided fellowship circle.': 'Acceso completo a la Academia y un lugar en un círculo de comunión guiado.',
+  'All Academy courses': 'Todos los cursos de la Academia', 'Private fellowship circle': 'Círculo de comunión privado', 'Monthly live Q&A with counselors': 'Preguntas y respuestas en vivo cada mes con los consejeros', 'Priority session booking': 'Prioridad para reservar sesiones', 'Join Covenant': 'Unirme a Pacto',
+  'Covenant Family': 'Pacto Familia', 'Designed for households, with individual journeys for everyone.': 'Pensado para familias, con un recorrido personal para cada uno.',
+  'Everything in Covenant': 'Todo lo de Pacto', 'Up to 4 family profiles': 'Hasta 4 perfiles familiares', 'Parenting & family tracks': 'Rutas de crianza y familia', 'Quarterly family check-in': 'Chequeo familiar trimestral', 'Choose Family': 'Elegir Familia',
+  'Questions': 'Preguntas', 'Frequently <em>asked</em>.': 'Preguntas <em>frecuentes</em>.',
+  'Is counseling confidential?': '¿La consejería es confidencial?',
+  'Yes. Your intake and sessions are shared only with your assigned counselor. The only exceptions are situations where someone’s safety is at risk, and we explain these limits clearly at your first session.': 'Sí. Tu información y tus sesiones solo las conoce tu consejero asignado. Las únicas excepciones son situaciones en las que la seguridad de alguien está en riesgo, y explicamos estos límites con claridad en tu primera sesión.',
+  'Do I need to be a Christian to receive care?': '¿Necesito ser cristiano para recibir acompañamiento?',
+  'No. Our care is openly Christ-centered, and everyone seeking guidance is welcome. We never pressure you. We invite you.': 'No. Nuestro acompañamiento está abiertamente centrado en Cristo, y toda persona que busca orientación es bienvenida. Nunca te presionamos: te invitamos.',
+  'How do sessions work?': '¿Cómo funcionan las sesiones?',
+  'EdenWise is an online ministry. Every session takes place by secure video or phone call, so you can join from anywhere in the world.': 'EdenWise es un ministerio en línea. Todas las sesiones son por video seguro o llamada telefónica, para que puedas unirte desde cualquier parte del mundo.',
+  'Online, worldwide': 'En línea, en todo el mundo',
+  'What happens if I cancel my membership?': '¿Qué pasa si cancelo mi membresía?',
+  'You keep access until the end of your current billing period. Your account then moves to the free Pilgrim level, and your progress is preserved.': 'Conservas el acceso hasta el final del periodo pagado. Después, tu cuenta pasa al nivel gratuito Peregrino y tu progreso se conserva.',
+  'Do you offer multi-user family plans?': '¿Ofrecen planes familiares para varios usuarios?',
+  'Yes. The Covenant Family tier is built for households and gives up to four family members their own profile and journey.': 'Sí. El plan Pacto Familia está pensado para hogares y da a hasta cuatro miembros de la familia su propio perfil y recorrido.',
+
+  /* ----- footer ----- */
+  'Wisdom to your inbox.': 'Sabiduría en tu correo.', 'Weekly biblical insight on marriage, family and relationships.': 'Cada semana, una reflexión bíblica sobre matrimonio, familia y relaciones.',
+  'Cultivating wisdom, restoring hope, and reaching the world with the transformative truth of the Gospel.': 'Cultivando sabiduría, restaurando la esperanza y alcanzando al mundo con la verdad transformadora del Evangelio.',
+  'Ministry': 'Ministerio', 'Support': 'Apoyo', 'Request Prayer': 'Pedir oración', 'Give to Ministry': 'Ofrendar', 'Volunteer': 'Ser voluntario', 'FAQ': 'Preguntas', 'Contact': 'Contacto',
+  'EdenWise Ministry. All rights reserved.': 'Ministerio EdenWise. Todos los derechos reservados.', 'Privacy': 'Privacidad', 'Terms': 'Términos',
+  'Follow EdenWise': 'Sigue a EdenWise', 'WhatsApp channel': 'Canal de WhatsApp',
+
+  /* ----- system messages ----- */
+  '{thing} is coming soon.': '{thing}: muy pronto.',
+  'Online giving': 'Las ofrendas en línea', 'The privacy policy': 'La política de privacidad', 'The terms page': 'Los términos de uso',
+  'Online requests aren’t connected yet. Please message us on Instagram @_edenwise_.': 'Las solicitudes en línea aún no están activas. Escríbenos por Instagram @_edenwise_.',
+  'Something went wrong sending this. Please try again, or message us on Instagram @_edenwise_.': 'No se pudo enviar. Inténtalo de nuevo o escríbenos por Instagram @_edenwise_.'
+};
+
+window.EW_I18N = { fr, ht, es };
 })();

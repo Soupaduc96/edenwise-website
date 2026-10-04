@@ -839,3 +839,19 @@ a,button,summary,label,.cover,.opt,.chip,[data-start]{cursor:pointer}
 .menu-foot a{color:var(--gold-hi);display:inline-block;padding:10px 4px}
 /* small text buttons: larger invisible tap area on every device */
 .c-foot button,.cp-meta button{padding:12px 10px;margin:-12px -10px}
+
+/* =========================================================
+   Language switch: compact dropdown on phones
+========================================================= */
+.lang-wrap{position:relative}
+@media (max-width:560px){
+  .lang-wrap{width:58px;height:44px}
+  .lang{position:absolute;top:0;right:0;flex-direction:column;gap:2px;padding:3px;background:rgba(8,26,19,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:22px;z-index:2}
+  .nav.on-light .lang{background:rgba(251,248,242,.96)}
+  .lang button{display:none;min-width:50px;height:38px}
+  .lang button.on{display:block;order:-1}
+  .lang button.on::after{content:" ▾";font-size:9px}
+  .lang.open button{display:block}
+  .lang.open button.on::after{content:" ▴"}
+  .lang.open{box-shadow:0 20px 40px -10px rgba(0,0,0,.45)}
+}

@@ -16,7 +16,7 @@ It's a static site with no build step and no dependencies. Open `index.html` or 
 | EdenSeed | Daily devotional with reflection questions, guided breath prayer and journal |
 | Covenant Circle | Fellowship circles, Scripture exchange, prayer wall, membership tiers, FAQ |
 
-The site is available in **English, Français and Kreyòl ayisyen**. Visitors switch with the EN · FR · KR control, and the site remembers their choice.
+The site is available in **English, Français, Kreyòl ayisyen and Español**. Visitors switch with the EN · FR · KR · ES control, and the site remembers their choice.
 
 ## Files
 
@@ -24,7 +24,7 @@ The site is available in **English, Français and Kreyòl ayisyen**. Visitors sw
 index.html   page structure and English text
 styles.css   design system, layout, animations
 app.js       routing, transitions, booking, forms, language switching
-i18n.js      French and Kreyòl translations
+i18n.js      French, Kreyòl and Spanish translations
 ```
 
 ## Setup before launch
@@ -42,7 +42,7 @@ Until you do this, nothing is sent. Visitors are asked to message EdenWise on In
 - [ ] **Prices** on the membership tiers ($0 / $19 / $39) are placeholders.
 - [ ] **Founder quote**, program week-by-week outlines, and courses credited to "EdenWise Faculty" are draft copy.
 - [ ] **Community figures** (prayers, circles, scriptures) and sample prayer requests are for the preview.
-- [ ] **Translations**: have a native speaker review both languages. French verses are Louis Segond 1910 (public domain). **Kreyòl verses are working translations**, so replace them with the Bible version your church uses.
+- [ ] **Translations**: have a native speaker review each language. French verses are Louis Segond 1910 and Spanish verses are Reina-Valera 1909 (both public domain). **Kreyòl verses are working translations**, so replace them with the Bible version your church uses.
 - [ ] **Privacy, Terms and Give** currently show "coming soon". Add the real pages or links in `index.html`.
 - [ ] **Photos** are from [Unsplash](https://unsplash.com) (free to use). Swap in ministry photography when available.
 
@@ -55,7 +55,7 @@ A WhatsApp **channel** is one-way (broadcast). If visitors should be able to mes
 
 ### Editing text
 - **English:** edit `index.html`, or the data arrays in `app.js` (programs, courses, circles).
-- **French and Kreyòl:** edit `i18n.js`. Each line maps the English text to its translation. If you change English text, update its key in `i18n.js` too. Run `EW_missing()` in the browser console to list anything untranslated.
+- **French, Kreyòl and Spanish:** edit `i18n.js`. Each line maps the English text to its translation. If you change English text, update its key in `i18n.js` too. Run `EW_missing()` in the browser console to list anything untranslated.
 
 ## Publishing with GitHub Pages
 In the repository, go to **Settings → Pages → Build and deployment**. Choose **Deploy from a branch**, then select `main` and `/ (root)`. The site goes live at `https://<username>.github.io/<repo>/`. On a free account, the repository must be public for this.

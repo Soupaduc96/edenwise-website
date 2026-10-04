@@ -32,15 +32,15 @@ const IMG = (id, w = 1200) => `https://images.unsplash.com/photo-${id}?auto=form
 /* ---------------------------------------------------------
    Language
    English is the source text; i18n.js maps each English
-   string to French (fr) and Haitian Creole (ht).
+   string to French (fr), Haitian Creole (ht) and Spanish (es).
 --------------------------------------------------------- */
 const DICT = window.EW_I18N || {};
-const LANGS = ['en', 'fr', 'ht'];
+const LANGS = ['en', 'fr', 'ht', 'es'];
 let lang = (() => {
   const saved = store.get('lang', null);
   if (LANGS.includes(saved)) return saved;
   const nav = (navigator.language || 'en').toLowerCase();
-  return nav.startsWith('ht') ? 'ht' : nav.startsWith('fr') ? 'fr' : 'en';
+  return nav.startsWith('ht') ? 'ht' : nav.startsWith('fr') ? 'fr' : nav.startsWith('es') ? 'es' : 'en';
 })();
 const missing = new Set();
 function t(s, vars) {
@@ -58,7 +58,7 @@ const MONTHS_HT = ['janvye', 'fevriye', 'mas', 'avril', 'me', 'jen', 'jiyè', 'o
 const DAYS_HT = ['dimanch', 'lendi', 'madi', 'mèkredi', 'jedi', 'vandredi', 'samdi'];
 const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 function fmtDate(d, o) {
-  if (lang !== 'ht') return d.toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', o);
+  if (lang !== 'ht') return d.toLocaleDateString({ fr: 'fr-FR', es: 'es-ES' }[lang] || 'en-US', o);
   const parts = [];
   if (o.weekday) parts.push(o.weekday === 'short' ? cap(DAYS_HT[d.getDay()].slice(0, 3)) : cap(DAYS_HT[d.getDay()]));
   if (o.day) parts.push(d.getDate());
@@ -223,7 +223,7 @@ new MutationObserver(() => requestAnimationFrame(revealCheck)).observe($('#app')
 
 function countUp(el) {
   const to = +el.dataset.to, dur = 1800, t0 = performance.now();
-  const loc = lang === 'en' ? 'en-US' : 'fr-FR';
+  const loc = { en: 'en-US', es: 'es-ES' }[lang] || 'fr-FR';
   const step = now => {
     const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 4);
     el.textContent = Math.round(to * e).toLocaleString(loc);
@@ -536,8 +536,8 @@ const booking = (() => {
     ['Phone call', 'Voice only, low bandwidth', icon.phone]
   ];
   const TIMES = ['9:00 AM', '10:30 AM', '1:00 PM', '2:30 PM', '4:00 PM', '6:00 PM'];
-  const LANG_OPTS = ['English', 'Français', 'Kreyòl ayisyen'];
-  const DOW = { en: ['S', 'M', 'T', 'W', 'T', 'F', 'S'], fr: ['D', 'L', 'M', 'M', 'J', 'V', 'S'], ht: ['D', 'L', 'M', 'M', 'J', 'V', 'S'] };
+  const LANG_OPTS = ['English', 'Français', 'Kreyòl ayisyen', 'Español'];
+  const DOW = { en: ['S', 'M', 'T', 'W', 'T', 'F', 'S'], fr: ['D', 'L', 'M', 'M', 'J', 'V', 'S'], ht: ['D', 'L', 'M', 'M', 'J', 'V', 'S'], es: ['D', 'L', 'M', 'X', 'J', 'V', 'S'] };
   const personName = n => n === 'Pastor David Chen' ? t('Pastor') + ' David Chen' : t(n);
 
   function renderSteps() {
@@ -909,10 +909,18 @@ function applyLang(next, animate) {
   requestAnimationFrame(moveIndicator);
   if (animate && !reduced) { document.body.classList.remove('lang-swap'); void document.body.offsetWidth; document.body.classList.add('lang-swap'); }
 }
-$('.lang').addEventListener('click', e => {
+// On phones the switch collapses to the current language; tapping it opens the others.
+const langBox = $('.lang'), compactLang = matchMedia('(max-width: 560px)');
+const setLangOpen = open => { langBox.classList.toggle('open', open); $$('.lang button.on').forEach(b => b.setAttribute('aria-expanded', open)); };
+langBox.addEventListener('click', e => {
   const b = e.target.closest('[data-lang]');
-  if (b && b.dataset.lang !== lang) applyLang(b.dataset.lang, true);
+  if (!b) return;
+  if (b.dataset.lang === lang) { if (compactLang.matches) setLangOpen(!langBox.classList.contains('open')); return; }
+  setLangOpen(false);
+  applyLang(b.dataset.lang, true);
 });
+document.addEventListener('click', e => { if (!e.target.closest('.lang')) setLangOpen(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setLangOpen(false); });
 applyLang(lang, false);
 
 /* ---------------------------------------------------------
