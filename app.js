@@ -454,7 +454,7 @@ if (fine && !reduced) {
     ctx.clearRect(0, 0, w, h);
     if (mouse.x > 0) {
       const g = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 320);
-      g.addColorStop(0, 'rgba(207,169,104,.13)'); g.addColorStop(1, 'rgba(207,169,104,0)');
+      g.addColorStop(0, 'rgba(219,165,43,.13)'); g.addColorStop(1, 'rgba(219,165,43,0)');
       ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
     }
     for (const p of parts) {
@@ -464,8 +464,8 @@ if (fine && !reduced) {
       if (p.y < -10) Object.assign(p, spawn(false));
       const a = p.a * (.6 + .4 * Math.sin(tick * p.tw + p.ph));
       ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.283);
-      ctx.fillStyle = `rgba(241,221,176,${a})`;
-      ctx.shadowColor = 'rgba(207,169,104,.9)'; ctx.shadowBlur = p.r * 6;
+      ctx.fillStyle = `rgba(246,218,140,${a})`;
+      ctx.shadowColor = 'rgba(219,165,43,.9)'; ctx.shadowBlur = p.r * 6;
       ctx.fill();
     }
     ctx.shadowBlur = 0;
@@ -681,19 +681,19 @@ document.addEventListener('click', e => {
    Programs
 --------------------------------------------------------- */
 const PROGRAMS = [
-  { t: 'Premarital Preparation', img: '1515934751635-c81c6bc9a2d8', tag: '8 weeks · Engaged couples', bg: '#0c241b',
+  { t: 'Premarital Preparation', img: '1515934751635-c81c6bc9a2d8', tag: '8 weeks · Engaged couples', bg: '#08301b',
     d: 'A comprehensive 8-week journey to build a strong foundation before the wedding day. Couples learn God’s design for covenant and practise the skills that make love last.',
     meta: ['Cohort-based', 'Workbook included', 'Certificate'],
     w: [['Wk 1–2', 'Covenant, not contract: God’s blueprint'], ['Wk 3–4', 'Communication & conflict repair'], ['Wk 5–6', 'Finances, families of origin & roles'], ['Wk 7–8', 'Intimacy, spiritual unity & vision']] },
-  { t: 'Marriage Enrichment', img: '1484876632310-ddb3b48133cc', tag: '6 weeks · Married couples', bg: '#081a13',
+  { t: 'Marriage Enrichment', img: '1484876632310-ddb3b48133cc', tag: '6 weeks · Married couples', bg: '#052112',
     d: 'For couples who want to go deeper. Renew friendship, repair old wounds and realign your home around shared calling.',
     meta: ['Evening sessions', 'Couples retreat option'],
     w: [['Wk 1–2', 'Friendship & fondness revisited'], ['Wk 3–4', 'Forgiveness and the repair cycle'], ['Wk 5–6', 'Praying together & shared mission']] },
-  { t: 'Whole Before Two', img: '1474367658825-e5858839e99d', tag: '6 weeks · Singles', bg: '#0c241b',
+  { t: 'Whole Before Two', img: '1474367658825-e5858839e99d', tag: '6 weeks · Singles', bg: '#08301b',
     d: 'Formation for singles: identity in Christ, emotional health and wise boundaries, so the next relationship is built on wholeness, not need.',
     meta: ['Small groups', 'Mentor pairing'],
     w: [['Wk 1–2', 'Identity, worth & belonging'], ['Wk 3–4', 'Emotional health & attachment'], ['Wk 5–6', 'Boundaries, discernment & dating well']] },
-  { t: 'Healing & Restoration', img: '1528222354212-a29573cdb844', tag: '10 weeks · Trauma-informed', bg: '#06110d',
+  { t: 'Healing & Restoration', img: '1528222354212-a29573cdb844', tag: '10 weeks · Trauma-informed', bg: '#03160c',
     d: 'A gentle, trauma-informed path through grief, betrayal and loss. We join biblical lament with proven practices for safety and stabilisation.',
     meta: ['Small cohorts', 'Individual check-ins'],
     w: [['Wk 1–3', 'Safety, stabilisation & lament'], ['Wk 4–7', 'Processing the story before God'], ['Wk 8–10', 'Forgiveness, meaning & renewal']] }
@@ -702,7 +702,7 @@ function renderPrograms() {
   const wasIn = new Set($$('#progList .in').map(el => el.dataset.key));
   $('#progList').innerHTML = PROGRAMS.map((p, pi) => `
   <article class="prog">
-    <div class="prog-art pa-photo" data-key="a${pi}"><div class="pa-bg" style="background:linear-gradient(180deg,rgba(6,17,13,.05),rgba(6,17,13,.55)),url('${IMG(p.img, 1200)}') center/cover,${p.bg}"></div><div class="pa-tag">${t(p.tag)}</div></div>
+    <div class="prog-art pa-photo" data-key="a${pi}"><div class="pa-bg" style="background:linear-gradient(180deg,rgba(3,22,12,.05),rgba(3,22,12,.55)),url('${IMG(p.img, 1200)}') center/cover,${p.bg}"></div><div class="pa-tag">${t(p.tag)}</div></div>
     <div class="prog-copy">
       <div class="kicker r" data-key="k${pi}">${t(p.tag)}</div>
       <h2 class="r" data-key="h${pi}" style="--d:.05s">${t(p.t)}</h2>
@@ -721,14 +721,14 @@ renderPrograms();
    Academy
 --------------------------------------------------------- */
 const COURSES = [
-  { t: 'The Covenant Foundations', c: 'Marriage', by: 'Dr. Paul & Sarah Souffrant', d: 'Deconstruct worldly standards of marriage and build a covenant foundation aligned with God’s Word.', l: 12, pop: 1, img: '1606800052052-a08af7148866', bg: 'linear-gradient(135deg,#6d5230,#1a4533)' },
-  { t: 'Biblical Dating & Boundaries', c: 'Relationships', by: 'Pastor Marcus Vance', d: 'Equip yourself with clarity, emotional boundaries and spiritual wisdom to navigate dating and engagement.', l: 9, img: '1541518926503-a6fdabd94147', bg: 'linear-gradient(135deg,#1a4533,#8c6a3a)' },
-  { t: 'Raising Shepherds of Truth', c: 'Parenting', by: 'Elizabeth Stone, M.A.', d: 'Practical tools and theological anchors to raise confident, godly children in a confused culture.', l: 10, img: '1624272864537-8ecc72b67958', bg: 'linear-gradient(135deg,#0c241b,#6d5230)' },
-  { t: 'The Praying Home', c: 'Prayer', by: 'EdenWise Faculty', d: 'Build rhythms of family worship and prayer that fit real life, from newlyweds to full houses.', l: 7, img: '1437603568260-1950d3ca6eab', bg: 'linear-gradient(135deg,#8c6a3a,#081a13)' },
-  { t: 'Anchored in Anxious Seasons', c: 'Faith', by: 'EdenWise Faculty', d: 'Scripture and practical skills for worry, stress and uncertainty, without shame and without shortcuts.', l: 8, img: '1495552665515-46e119a10545', bg: 'linear-gradient(135deg,#123326,#2a5a44)' },
-  { t: 'Servant Leadership at Home', c: 'Leadership', by: 'EdenWise Faculty', d: 'Christlike leadership in marriage and family: humble, accountable and life-giving.', l: 6, img: '1529180979161-06b8b6d6f2be', bg: 'linear-gradient(135deg,#3b2d18,#1a4533)' },
-  { t: 'Healing After Betrayal', c: 'Marriage', by: 'EdenWise Faculty', d: 'A trauma-informed roadmap for couples rebuilding trust after infidelity or deep breach.', l: 11, img: '1529634597503-139d3726fed5', bg: 'linear-gradient(135deg,#1a4533,#3b2d18)' },
-  { t: 'Whole & Holy Singleness', c: 'Relationships', by: 'EdenWise Faculty', d: 'Singleness as calling, not waiting room: purpose, community and emotional health.', l: 6, img: '1522008342704-6b265b543c37', bg: 'linear-gradient(135deg,#6d5230,#0c241b)' }
+  { t: 'The Covenant Foundations', c: 'Marriage', by: 'Dr. Paul & Sarah Souffrant', d: 'Deconstruct worldly standards of marriage and build a covenant foundation aligned with God’s Word.', l: 12, pop: 1, img: '1606800052052-a08af7148866', bg: 'linear-gradient(135deg,#6d5230,#10582f)' },
+  { t: 'Biblical Dating & Boundaries', c: 'Relationships', by: 'Pastor Marcus Vance', d: 'Equip yourself with clarity, emotional boundaries and spiritual wisdom to navigate dating and engagement.', l: 9, img: '1541518926503-a6fdabd94147', bg: 'linear-gradient(135deg,#10582f,#9c6c12)' },
+  { t: 'Raising Shepherds of Truth', c: 'Parenting', by: 'Elizabeth Stone, M.A.', d: 'Practical tools and theological anchors to raise confident, godly children in a confused culture.', l: 10, img: '1624272864537-8ecc72b67958', bg: 'linear-gradient(135deg,#08301b,#6d5230)' },
+  { t: 'The Praying Home', c: 'Prayer', by: 'EdenWise Faculty', d: 'Build rhythms of family worship and prayer that fit real life, from newlyweds to full houses.', l: 7, img: '1437603568260-1950d3ca6eab', bg: 'linear-gradient(135deg,#9c6c12,#052112)' },
+  { t: 'Anchored in Anxious Seasons', c: 'Faith', by: 'EdenWise Faculty', d: 'Scripture and practical skills for worry, stress and uncertainty, without shame and without shortcuts.', l: 8, img: '1495552665515-46e119a10545', bg: 'linear-gradient(135deg,#0c4224,#1c6b3e)' },
+  { t: 'Servant Leadership at Home', c: 'Leadership', by: 'EdenWise Faculty', d: 'Christlike leadership in marriage and family: humble, accountable and life-giving.', l: 6, img: '1529180979161-06b8b6d6f2be', bg: 'linear-gradient(135deg,#3b2d18,#10582f)' },
+  { t: 'Healing After Betrayal', c: 'Marriage', by: 'EdenWise Faculty', d: 'A trauma-informed roadmap for couples rebuilding trust after infidelity or deep breach.', l: 11, img: '1529634597503-139d3726fed5', bg: 'linear-gradient(135deg,#10582f,#3b2d18)' },
+  { t: 'Whole & Holy Singleness', c: 'Relationships', by: 'EdenWise Faculty', d: 'Singleness as calling, not waiting room: purpose, community and emotional health.', l: 6, img: '1522008342704-6b265b543c37', bg: 'linear-gradient(135deg,#6d5230,#08301b)' }
 ];
 const academy = (() => {
   const cats = ['All', 'Marriage', 'Relationships', 'Parenting', 'Prayer', 'Faith', 'Leadership'];
@@ -746,7 +746,7 @@ const academy = (() => {
     const list = COURSES.filter(c => (cat === 'All' || c.c === cat) && (!q || [c.t, c.by, c.c, c.d].map(s => s + ' ' + t(s)).join(' ').toLowerCase().includes(q)));
     $('#courseGrid').innerHTML = list.map((c, i) => `
       <article class="course" style="animation-delay:${i * 70}ms">
-        <div class="cover cv-photo" data-cursor="${t('Preview')}"><div class="cv-bg" style="background:linear-gradient(180deg,rgba(6,17,13,0) 45%,rgba(6,17,13,.5)),url('${IMG(c.img, 800)}') center/cover,${c.bg}"></div>${c.pop ? `<span class="badge-pop">${t('Most popular')}</span>` : ''}<span class="play">${icon.play}</span></div>
+        <div class="cover cv-photo" data-cursor="${t('Preview')}"><div class="cv-bg" style="background:linear-gradient(180deg,rgba(3,22,12,0) 45%,rgba(3,22,12,.5)),url('${IMG(c.img, 800)}') center/cover,${c.bg}"></div>${c.pop ? `<span class="badge-pop">${t('Most popular')}</span>` : ''}<span class="play">${icon.play}</span></div>
         <div class="c-body"><span class="c-cat">${t(c.c)}</span><h3>${t(c.t)}</h3><div class="c-by">${t('By {name}', { name: author(c.by) })}</div><p>${t(c.d)}</p>
         <div class="c-foot"><span>${t('{n} lessons', { n: c.l })}</span><button data-start="${esc(c.t)}">${done.has(c.t) ? t('Continue →') : t('Start course →')}</button></div></div>
       </article>`).join('');
@@ -820,7 +820,7 @@ const circle = (() => {
       ['Colossians 3 : 13', 'Our counselor gave us this for our week of practising forgiveness.'],
       ['Proverbs 24 : 3–4', 'Wisdom builds the house. Understanding establishes it.'],
       ['Isaiah 43 : 19', 'For anyone waiting on God to do a new thing in their family.']
-    ].map(([r, n]) => `<div class="cp-card"><div class="kicker" style="color:#a07a45">${t(r)}</div><p style="font-family:var(--serif);font-size:20px;color:var(--text)">${t(n)}</p><div class="cp-meta"><span>${t('Shared by a member')}</span><button data-amen>${t('Amen')}</button></div></div>`).join('')}</div>`,
+    ].map(([r, n]) => `<div class="cp-card"><div class="kicker" style="color:#a8740f">${t(r)}</div><p style="font-family:var(--serif);font-size:20px;color:var(--text)">${t(n)}</p><div class="cp-meta"><span>${t('Shared by a member')}</span><button data-amen>${t('Amen')}</button></div></div>`).join('')}</div>`,
     () => `<form class="pray-form" id="prayForm" data-form="prayer">${trap}<input name="request" placeholder="${t('Share a prayer request (posted anonymously)')}" maxlength="400" required aria-label="${t('Prayer request')}"><button class="btn btn-dark"><span>${t('Post')}</span></button></form>
       <p class="fine" style="margin:-8px 0 16px 6px">${t('Requests go privately to our prayer team. The wall below shows requests on this device.')}</p>
       <div class="pray-list">${prayers.map((p, i) => `<div class="pray"><div><p>${esc(t(p.t))}</p><small>${t(p.w)} · ${t('{n} praying', { n: p.n + (prayed.has(i) ? 1 : 0) })}</small></div><button data-pray="${i}" class="${prayed.has(i) ? 'on' : ''}">${icon.hands}${prayed.has(i) ? t('Praying') : t('I’ll pray')}</button></div>`).join('')}</div>`
