@@ -17,7 +17,7 @@ const fr = {
   'Home': 'Accueil', 'About': 'À propos', 'Counseling': 'Accompagnement', 'Programs': 'Programmes',
   'Academy': 'Académie', 'EdenSeed': 'EdenSeed', 'Circle': 'Cercle', 'Covenant Circle': 'Cercle de l’Alliance',
   'Book a Session': 'Prendre rendez-vous', 'EdenWise home': 'Accueil EdenWise', 'Primary': 'Principal', 'Open menu': 'Ouvrir le menu',
-  'Scroll': 'Défiler', 'Skip to content': 'Aller au contenu', 'Language': 'Langue', 'Wisdom · Covenant · Glory': 'Sagesse · Alliance · Gloire',
+  'Scroll': 'Défiler', 'Landy Predvil Souffrant, founder of EdenWise Ministry': 'Landy Predvil Souffrant, fondatrice du Ministère EdenWise', 'Skip to content': 'Aller au contenu', 'Language': 'Langue', 'Wisdom · Covenant · Glory': 'Sagesse · Alliance · Gloire',
 
   /* ----- home: hero ----- */
   'Faith · Healing · Stronger Together': 'Foi · Guérison · Plus forts ensemble',
@@ -85,7 +85,7 @@ const fr = {
   'Care Team': 'L’équipe', 'Shepherds who <em>listen</em> well.': 'Des bergers qui <em>savent écouter</em>.',
   'Pastor': 'Pasteur', 'Pastor David Chen': 'Pasteur David Chen', 'Family & Relationship Coach': 'Coach familial et relationnel',
   'Family': 'Famille', 'Individual': 'Individuel', 'Relationship coaching': 'Coaching relationnel', 'Book': 'Réserver',
-  'Pastoral Counselor': 'Conseillère pastorale', 'Trauma healing': 'Guérison du trauma', 'Founder, EdenWise Ministry': 'Fondateur, Ministère EdenWise',
+  'Pastoral Counselor': 'Conseillère pastorale', 'Trauma healing': 'Guérison du trauma', 'Founder, EdenWise Ministry': 'Fondatrice, Ministère EdenWise',
   'Marriage': 'Mariage', 'Premarital': 'Prénuptial', 'Vision': 'Vision', 'Meet': 'Découvrir',
 
   /* ----- CTA ----- */
@@ -105,9 +105,9 @@ const fr = {
   'To guide young people, engaged and married couples in living by God’s design for marriage through biblical teaching, counseling and prayer.': 'Guider les jeunes, les fiancés et les couples mariés à vivre selon le dessein de Dieu pour le mariage, par l’enseignement biblique, l’accompagnement et la prière.',
   'To see individuals, couples and families walking in God’s design for marriage, living as Kingdom-minded people in healthy, strong, covenant-centered relationships.': 'Voir des personnes, des couples et des familles marcher selon le dessein de Dieu pour le mariage, vivant selon les valeurs du Royaume dans des relations saines, solides et centrées sur l’alliance.',
   'Rooted in biblical truth, covenant marriage, wisdom-centered living, love with responsibility, healing, holistic growth and Kingdom impact.': 'Enracinés dans la vérité biblique, le mariage d’alliance, une vie guidée par la sagesse, l’amour responsable, la guérison, la croissance intégrale et l’impact pour le Royaume.',
-  'A Word from the Founder': 'Un mot du fondateur',
+  'A Word from the Founder': 'Un mot de la fondatrice',
   '“Healthy homes are not built by accident. They are built <em>on purpose</em>, on the Rock, one faithful choice at a time.”': '« Un foyer sain ne se construit pas par hasard. Il se bâtit <em>avec intention</em>, sur le Roc, un choix fidèle à la fois. »',
-  'Founder of EdenWise Ministry': 'Fondateur du Ministère EdenWise',
+  'Founder of EdenWise Ministry': 'Fondatrice du Ministère EdenWise',
   'What We Do': 'Ce que nous faisons', 'Five ways we <em>serve</em>.': 'Cinq façons de <em>servir</em>.',
   'Biblical Teaching': 'Enseignement biblique', 'Sound, practical instruction on identity, covenant and family.': 'Un enseignement solide et pratique sur l’identité, l’alliance et la famille.',
   'Confidential one-on-one, couple and family sessions.': 'Des séances confidentielles individuelles, de couple et de famille.',
@@ -292,7 +292,7 @@ const ht = {
   'Home': 'Akèy', 'About': 'Apropo', 'Counseling': 'Konsèy', 'Programs': 'Pwogram',
   'Academy': 'Akademi', 'EdenSeed': 'EdenSeed', 'Circle': 'Sèk', 'Covenant Circle': 'Sèk Alyans lan',
   'Book a Session': 'Pran randevou', 'EdenWise home': 'Akèy EdenWise', 'Primary': 'Prensipal', 'Open menu': 'Louvri meni an',
-  'Scroll': 'Desann', 'Skip to content': 'Ale nan kontni an', 'Language': 'Lang', 'Wisdom · Covenant · Glory': 'Sajès · Alyans · Glwa',
+  'Scroll': 'Desann', 'Landy Predvil Souffrant, founder of EdenWise Ministry': 'Landy Predvil Souffrant, fondatris Ministè EdenWise', 'Skip to content': 'Ale nan kontni an', 'Language': 'Lang', 'Wisdom · Covenant · Glory': 'Sajès · Alyans · Glwa',
 
   /* ----- home: hero ----- */
   'Faith · Healing · Stronger Together': 'Lafwa · Gerizon · Pi fò ansanm',
