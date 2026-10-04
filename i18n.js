@@ -283,8 +283,9 @@ const fr = {
   /* ----- system messages ----- */
   '{thing} is coming soon.': '{thing} : bientôt disponible.',
   'Online giving': 'Le don en ligne', 'The privacy policy': 'La politique de confidentialité', 'The terms page': 'Les conditions d’utilisation',
-  'Online requests aren’t connected yet. Please email us at {email}.': 'Les demandes en ligne ne sont pas encore activées. Écrivez-nous à {email}.',
-  'Something went wrong sending this. Please try again, or email {email}.': 'L’envoi a échoué. Veuillez réessayer ou écrire à {email}.'
+  'Online requests aren’t connected yet. Please message us on Instagram @_edenwise_.': 'Les demandes en ligne ne sont pas encore activées. Écrivez-nous sur Instagram @_edenwise_.',
+  'Something went wrong sending this. Please try again, or message us on Instagram @_edenwise_.': 'L’envoi a échoué. Veuillez réessayer ou nous écrire sur Instagram @_edenwise_.',
+  'Follow EdenWise': 'Suivre EdenWise', 'WhatsApp channel': 'Chaîne WhatsApp'
 };
 
 const ht = {
@@ -554,13 +555,14 @@ const ht = {
   'Cultivating wisdom, restoring hope, and reaching the world with the transformative truth of the Gospel.': 'Kiltive sajès, rebay espwa epi rive jwenn lemonn ak verite Levanjil la ki transfòme lavi.',
   'Ministry': 'Ministè', 'Support': 'Sipòte', 'Request Prayer': 'Mande lapriyè', 'Give to Ministry': 'Bay ofrann', 'Volunteer': 'Vin volontè', 'FAQ': 'Kesyon', 'Contact': 'Kontak',
   'EdenWise Ministry. All rights reserved.': 'Ministè EdenWise. Tout dwa rezève.', 'Privacy': 'Konfidansyalite', 'Terms': 'Kondisyon',
-  'Fort-Liberté, Haïti': 'Fò Libète, Ayiti', 'hello@edenwise.org · Fort-Liberté, Haïti': 'hello@edenwise.org · Fò Libète, Ayiti',
+  'Fort-Liberté, Haïti': 'Fò Libète, Ayiti',
 
   /* ----- system messages ----- */
   '{thing} is coming soon.': '{thing}: ap vini byento.',
   'Online giving': 'Ofrann sou entènèt', 'The privacy policy': 'Politik konfidansyalite a', 'The terms page': 'Paj kondisyon yo',
-  'Online requests aren’t connected yet. Please email us at {email}.': 'Demann sou entènèt poko konekte. Tanpri ekri nou nan {email}.',
-  'Something went wrong sending this. Please try again, or email {email}.': 'Gen yon pwoblèm ki fè li pa pati. Tanpri eseye ankò, oswa ekri {email}.'
+  'Online requests aren’t connected yet. Please message us on Instagram @_edenwise_.': 'Demann sou entènèt poko konekte. Tanpri ekri nou sou Instagram @_edenwise_.',
+  'Something went wrong sending this. Please try again, or message us on Instagram @_edenwise_.': 'Gen yon pwoblèm ki fè li pa pati. Tanpri eseye ankò, oswa ekri nou sou Instagram @_edenwise_.',
+  'Follow EdenWise': 'Swiv EdenWise', 'WhatsApp channel': 'Chèn WhatsApp'
 };
 
 window.EW_I18N = { fr, ht };

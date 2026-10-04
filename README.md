@@ -36,15 +36,22 @@ Counseling requests, newsletter sign-ups, prayer requests and circle join reques
 2. Copy its URL, for example `https://formspree.io/f/abcdwxyz`.
 3. Paste it into `CONFIG.formEndpoint` at the top of `app.js`.
 
-Until you do this, nothing is sent. Visitors are asked to email `hello@edenwise.org` instead, and what they typed is kept.
+Until you do this, nothing is sent. Visitors are asked to message EdenWise on Instagram (@_edenwise_) instead, and what they typed is kept.
 
 ### 2. Review before going live
 - [ ] **Prices** on the membership tiers ($0 / $19 / $39) are placeholders.
 - [ ] **Founder quote**, program week-by-week outlines, and courses credited to "EdenWise Faculty" are draft copy.
 - [ ] **Community figures** (prayers, circles, scriptures) and sample prayer requests are for the preview.
 - [ ] **Translations**: have a native speaker review both languages. French verses are Louis Segond 1910 (public domain). **Kreyòl verses are working translations**, so replace them with the Bible version your church uses.
-- [ ] **Social links, Privacy, Terms and Give** currently show "coming soon". Add the real links in `index.html`.
+- [ ] **Privacy, Terms and Give** currently show "coming soon". Add the real pages or links in `index.html`.
 - [ ] **Photos** are from [Unsplash](https://unsplash.com) (free to use). Swap in ministry photography when available.
+
+### Contact & social
+- Instagram: https://www.instagram.com/_edenwise_/
+- TikTok: https://www.tiktok.com/@edenwise08
+- WhatsApp channel: https://whatsapp.com/channel/0029Vb7ESIr7tkj52xn7pX1n
+
+A WhatsApp **channel** is one-way (broadcast). If visitors should be able to message EdenWise directly on WhatsApp, add a `https://wa.me/<number>` link.
 
 ### Editing text
 - **English:** edit `index.html`, or the data arrays in `app.js` (programs, courses, circles).

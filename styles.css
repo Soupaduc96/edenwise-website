@@ -785,3 +785,57 @@ body.lang-swap main,body.lang-swap .footer{animation:langSwap .7s var(--ease)}
 .founder-orbit::before{top:-5px;animation:none}
 .avatar img{position:absolute;inset:0;z-index:1;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 15%}
 @media (max-width:900px){.founder-art{max-width:320px}}
+
+/* =========================================================
+   Touch devices: phones & tablets
+========================================================= */
+/* instant taps (no 300ms double-tap-zoom wait) and no grey flash */
+html{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+a,button,summary,label,.cover,.opt,.chip,[data-start]{cursor:pointer}
+/* visible press feedback instead of hover */
+.btn:active{transform:scale(.97)}
+.opt:active,.chip:active,.path-card:active,.course:active,.cal-grid button:active,.times button:active,.lang button:active,.filters button:active,.circle-tabs button:active,.billing button:active{transform:scale(.97);transition-duration:.1s}
+
+@media (hover:none),(pointer:coarse){
+  /* fingertip-sized targets (44px minimum) */
+  .lang button{min-width:40px;height:38px}
+  .filters button,.circle-tabs button,.billing button{min-height:44px}
+  .chip{min-height:44px}
+  .cal-grid button{min-height:40px}
+  .times button{min-height:46px}
+  .faq summary{min-height:56px}
+  .foot-grid a,.foot-grid span{padding:9px 0}
+  .socials a{width:46px;height:46px}
+  .pray button,.cp-meta button,.c-foot button{min-height:40px;padding-inline:12px}
+  /* hover effects would "stick" after a tap, so keep cards in their resting look */
+  .path-card:hover{background:var(--paper);color:var(--text);box-shadow:none}
+  .path-card:hover p{color:var(--text-2)}
+  .path-card:hover .path-num{color:var(--text-3)}
+  .path-card:hover .path-icon{transform:none;border-color:rgba(160,122,69,.35)}
+  .path-card:hover .path-icon svg{stroke:#a07a45}
+  .path-card[data-photo]:hover::before,.path-card[data-photo]:hover::after{opacity:0}
+  .course:hover,.team-card:hover,.tier:hover,.cp-card:hover{transform:none}
+  .serve-row:hover{padding-left:0;background:none}
+  /* photos still deserve to be seen: show a soft version on pathway cards */
+  .path-card[data-photo]::before{opacity:.14;transform:none}
+  /* course play button is hover-only on desktop; show it on touch */
+  .cover .play{opacity:1;transform:none;width:40px;height:40px}
+  .btn::before{display:none}
+}
+
+/* the next section was painting over the bottom half of this link */
+.devo-strip{position:relative;z-index:1;padding-bottom:28px}
+.devo-strip .link-arrow{position:relative;z-index:1;padding:12px 0 8px}
+/* bigger tap areas for small text links (layout stays the same) */
+.foot-base a{display:inline-block;padding:12px 6px;margin:-12px 0 -12px 12px}
+.ci-rec a{padding:12px 4px;margin-top:0}
+@media (hover:none),(pointer:coarse){
+  .link-arrow{padding-block:12px}
+}
+
+/* founder: follow row */
+.founder-follow{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.founder-follow .socials a{color:var(--on-dark)}
+.menu-foot a{color:var(--gold-hi);display:inline-block;padding:10px 4px}
+/* small text buttons: larger invisible tap area on every device */
+.c-foot button,.cp-meta button{padding:12px 10px;margin:-12px -10px}

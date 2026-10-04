@@ -12,7 +12,8 @@ const CONFIG = {
   //   formEndpoint: 'https://formspree.io/f/abcdwxyz'
   // While this is empty, forms tell visitors to email you instead.
   formEndpoint: '',
-  contactEmail: 'hello@edenwise.org'
+  // Shown to visitors when a form can't be sent
+  instagram: 'https://www.instagram.com/_edenwise_/'
 };
 
 (() => {
@@ -92,8 +93,8 @@ async function sendForm(kind, fields) {
 }
 function formErrorText(err) {
   return err instanceof FormError && err.message === 'not-configured'
-    ? t('Online requests aren’t connected yet. Please email us at {email}.', { email: CONFIG.contactEmail })
-    : t('Something went wrong sending this. Please try again, or email {email}.', { email: CONFIG.contactEmail });
+    ? t('Online requests aren’t connected yet. Please message us on Instagram @_edenwise_.')
+    : t('Something went wrong sending this. Please try again, or message us on Instagram @_edenwise_.');
 }
 // success handlers per form kind (data-form="…"); modules register their own
 const onSent = {};
