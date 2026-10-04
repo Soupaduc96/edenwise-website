@@ -68,14 +68,15 @@
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
+  <span class="nav-frame" aria-hidden="true"></span>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="leafG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c6b3e"/><stop offset="1" stop-color="#0a3d22"/></linearGradient></defs></svg>
-  <svg class="nav-leaves left" viewBox="0 0 120 90" aria-hidden="true"><g fill="url(#leafG)"><path d="M10 80C20 50 45 34 80 30C66 50 44 70 10 80Z"/><path d="M4 50C14 30 32 18 58 14C48 30 30 44 4 50Z" opacity=".75"/><path d="M30 88C50 70 78 64 108 68C88 80 62 88 30 88Z" opacity=".6"/></g><g fill="none" stroke="rgba(219,165,43,.35)" stroke-width=".8"><path d="M10 80C30 62 52 46 80 30M4 50C22 38 38 26 58 14M30 88C56 78 82 72 108 68"/></g></svg><svg class="nav-leaves right" viewBox="0 0 120 90" aria-hidden="true"><g fill="url(#leafG)"><path d="M10 80C20 50 45 34 80 30C66 50 44 70 10 80Z"/><path d="M4 50C14 30 32 18 58 14C48 30 30 44 4 50Z" opacity=".75"/><path d="M30 88C50 70 78 64 108 68C88 80 62 88 30 88Z" opacity=".6"/></g><g fill="none" stroke="rgba(219,165,43,.35)" stroke-width=".8"><path d="M10 80C30 62 52 46 80 30M4 50C22 38 38 26 58 14M30 88C56 78 82 72 108 68"/></g></svg>
+  <svg class="nav-leaves left" viewBox="0 0 220 150" aria-hidden="true"><g fill="url(#leafG)"><path d="M14 132C30 86 70 58 128 50C106 84 70 116 14 132Z"/><path d="M6 84C22 52 52 32 96 24C80 52 50 74 6 84Z" opacity=".8"/><path d="M48 146C80 116 126 104 176 110C142 130 100 144 48 146Z" opacity=".7"/><path d="M60 40C78 18 106 6 140 6C122 26 96 38 60 40Z" opacity=".55"/><path d="M120 92C146 74 178 70 212 78C186 94 156 100 120 92Z" opacity=".45"/></g><g fill="none" stroke="rgba(248,220,133,.35)" stroke-width=".9"><path d="M14 132C46 104 82 76 128 50M6 84C36 64 62 44 96 24M48 146C90 128 132 116 176 110M60 40C86 26 110 14 140 6M120 92C152 84 182 80 212 78"/></g></svg><svg class="nav-leaves right" viewBox="0 0 220 150" aria-hidden="true"><g fill="url(#leafG)"><path d="M14 132C30 86 70 58 128 50C106 84 70 116 14 132Z"/><path d="M6 84C22 52 52 32 96 24C80 52 50 74 6 84Z" opacity=".8"/><path d="M48 146C80 116 126 104 176 110C142 130 100 144 48 146Z" opacity=".7"/><path d="M60 40C78 18 106 6 140 6C122 26 96 38 60 40Z" opacity=".55"/><path d="M120 92C146 74 178 70 212 78C186 94 156 100 120 92Z" opacity=".45"/></g><g fill="none" stroke="rgba(248,220,133,.35)" stroke-width=".9"><path d="M14 132C46 104 82 76 128 50M6 84C36 64 62 44 96 24M48 146C90 128 132 116 176 110M60 40C86 26 110 14 140 6M120 92C152 84 182 80 212 78"/></g></svg>
   <a href="#/home" class="brand" aria-label="EdenWise home">
     <span class="brand-medal"><svg class="brand-mark" viewBox="0 0 120 136" aria-hidden="true"><use href="#ew-emblem"/></svg></span>
     <span class="brand-text"><span class="brand-word"><b class="w-eden">EDEN</b><b class="w-wise">WISE</b></span><span class="brand-sub">Ministries</span><span class="brand-tag" data-i18n-skip>Wisdom <i>•</i> Covenant <i>•</i> Glory</span></span>
   </a>
   <nav class="nav-links" aria-label="Primary">
-    <span class="nav-indicator" id="navIndicator"></span>
+    <span class="nav-indicator" id="navIndicator"></span><span class="nav-hover" id="navHover" aria-hidden="true"></span>
     <a href="#/home" data-route="home">Home</a>
     <a href="#/about" data-route="about">About</a>
     <a href="#/counseling" data-route="counseling">Counseling</a>

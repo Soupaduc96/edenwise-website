@@ -1253,3 +1253,69 @@ body.menu-open .quick-cta,body.is-loading .quick-cta{opacity:0;visibility:hidden
 
 /* keep each headline line whole on tablets and desktops */
 @media (min-width:761px){.hero-cine .hero-content{max-width:min(980px,80vw)}.ht-line{white-space:nowrap}}
+
+/* =========================================================
+   Top bar v5: full-width band, inner gold frame, menu always visible
+========================================================= */
+.nav,.nav.on-light{top:0;width:100%;min-height:104px;padding:14px clamp(20px,2.4vw,40px);border:0;border-radius:0;
+  border-bottom:1px solid rgba(219,165,43,.35);
+  box-shadow:0 26px 50px -26px rgba(0,0,0,.75)}
+.nav.hide{transform:translate(-50%,-110%)}
+/* rounded gold frame drawn inside the band */
+.nav-frame{position:absolute;inset:10px clamp(10px,1.2vw,18px);border:1px solid rgba(219,165,43,.55);border-radius:34px;pointer-events:none;z-index:0;
+  box-shadow:inset 0 0 22px rgba(219,165,43,.06),0 0 18px rgba(219,165,43,.08)}
+.nav::before{left:18%;right:18%;top:9px}
+.nav::after{left:18%;right:18%;bottom:9px}
+
+/* leaves: fuller, layered over both ends */
+.nav-leaves{width:230px;height:156px;opacity:.95;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35))}
+.nav-leaves.left{left:-46px;top:58%}
+.nav-leaves.right{right:-46px;top:46%}
+
+/* medallion: bigger, with a glowing ring */
+.nav .brand-medal{width:78px;height:78px;
+  box-shadow:0 0 0 1.5px #dba52b,0 0 0 5px rgba(5,33,18,.9),0 0 0 6px rgba(219,165,43,.45),0 0 28px rgba(219,165,43,.35)}
+.nav .brand-medal .brand-mark{width:48px}
+
+/* hover marker: thin gold line with a dot under the hovered link */
+.nav-hover{position:absolute;left:0;bottom:4px;height:1px;width:40px;opacity:0;pointer-events:none;
+  background:linear-gradient(90deg,transparent,#dba52b,transparent);transition:transform .55s var(--ease),width .55s var(--ease),opacity .3s}
+.nav-hover::after{content:"";position:absolute;left:50%;top:-2px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#f8dc85;box-shadow:0 0 8px #f8dc85}
+.nav-links{position:relative}
+
+/* the round menu button is part of the design at every width */
+.burger{display:block;width:54px;height:54px;border:1px solid rgba(219,165,43,.75);background:rgba(3,22,12,.35);box-shadow:0 0 14px rgba(219,165,43,.2)}
+.burger:hover{box-shadow:0 0 20px rgba(219,165,43,.4)}
+.burger i{left:16px;right:16px}
+.burger i:first-child{top:21px}.burger i:last-child{top:31px}
+.btn-book{height:58px}
+
+/* content below the taller bar */
+.hero-cine{padding-top:170px}
+.page-hero{padding-top:clamp(190px,21vw,250px)}
+
+@media (max-width:760px){
+  .nav,.nav.on-light{min-height:80px;padding:10px 14px}
+  .nav-frame{inset:7px 8px;border-radius:24px}
+  .nav::before,.nav::after{left:22%;right:22%}
+  .nav::before{top:6px}.nav::after{bottom:6px}
+  .nav .brand-medal{width:54px;height:54px}
+  .nav .brand-medal .brand-mark{width:34px}
+  .burger{width:46px;height:46px}
+  .burger i{left:13px;right:13px}.burger i:first-child{top:17px}.burger i:last-child{top:26px}
+  .hero-index{top:112px}
+}
+@media (max-width:420px){
+  .nav .brand-medal{width:44px;height:44px}
+  .nav .brand-medal .brand-mark{width:28px}
+  .nav .burger{width:42px;height:42px}
+  .nav .burger i{left:12px;right:12px}.nav .burger i:first-child{top:16px}.nav .burger i:last-child{top:24px}
+}
+
+/* the frame is decoration: keep it out of the flex row */
+.nav>.nav-frame{position:absolute;z-index:0}
+
+/* v5 fit: tighter spacing; full link row only where it truly fits */
+.nav,.nav.on-light{gap:14px}
+.nav-links a{padding:11px 9px}
+@media (max-width:1899px){.nav-links{display:none}.nav-actions{margin-left:auto}}

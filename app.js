@@ -351,6 +351,19 @@ function moveIndicator() {
   indicator.style.transform = `translateX(${a.offsetLeft}px)`;
 }
 window.addEventListener('resize', moveIndicator);
+// hover marker: a thin gold line with a dot glides under the hovered link
+const navHover = $("#navHover");
+function placeHover(a) {
+  if (!a || !a.offsetWidth) { navHover.style.opacity = 0; return; }
+  navHover.style.opacity = 1;
+  navHover.style.width = Math.max(24, a.offsetWidth * .5) + "px";
+  navHover.style.transform = `translateX(${a.offsetLeft + a.offsetWidth * .25}px)`;
+}
+$$(".nav-links a").forEach(a => {
+  a.addEventListener("mouseenter", () => { if (!a.classList.contains("active")) placeHover(a); else navHover.style.opacity = 0; });
+  a.addEventListener("focus", () => { if (!a.classList.contains("active")) placeHover(a); });
+});
+$(".nav-links").addEventListener("mouseleave", () => { navHover.style.opacity = 0; });
 // web fonts change link widths after first paint
 if (document.fonts) document.fonts.ready.then(moveIndicator);
 
