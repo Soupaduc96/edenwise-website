@@ -1414,3 +1414,11 @@ body.menu-open .quick-cta,body.is-loading .quick-cta{opacity:0;visibility:hidden
   .lang-menu{right:-56px;width:232px}
 }
 @media (prefers-reduced-motion:reduce){.lang-menu,.lang-dd.open .lang-menu,.lang-chev{transition:none}}
+
+/* hero slides: progress bars hidden; slower, softer, warmer, with a vignette */
+.hi-bars{display:none!important}
+.hs{transition:opacity 2.2s cubic-bezier(.4,0,.2,1);filter:saturate(.95) contrast(1.05) sepia(.1) brightness(.95)}
+.hs.on{animation-duration:10.5s}
+.hero-slides::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 85% 75% at 60% 45%,transparent 55%,rgba(3,22,12,.55) 100%),
+             linear-gradient(120deg,rgba(219,165,43,.10),transparent 45%)}

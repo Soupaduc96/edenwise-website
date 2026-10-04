@@ -915,7 +915,7 @@ function onRouteEnter(route) {
 --------------------------------------------------------- */
 const heroSlides = (() => {
   const slides = $$("#heroSlides .hs"), bars = $$(".hi-bars i"), word = $("#heroWord");
-  const DURATION = 6500;
+  const DURATION = 7500;
   const mobile = matchMedia("(max-width: 760px)");
   let i = 0, timer = null, visible = true;
   const place = s => { s.style.setProperty("--pos", mobile.matches ? s.dataset.posm : s.dataset.pos); };
