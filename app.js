@@ -902,25 +902,38 @@ function onRouteEnter(route) {
 --------------------------------------------------------- */
 function applyLang(next, animate) {
   lang = next; store.set('lang', lang);
-  $$('.lang button').forEach(b => { b.classList.toggle('on', b.dataset.lang === lang); b.setAttribute('aria-pressed', b.dataset.lang === lang); });
+  langItems().forEach(b => { const on = b.dataset.lang === lang; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
+  $$('.lang-quick').forEach(b => { const on = b.dataset.lang === lang; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+  $('.lang-code').textContent = { en: 'EN', fr: 'FR', ht: 'KR', es: 'ES' }[lang];
   translateStatic();
   checkin.refresh(); booking.refresh(); renderPrograms(); academy.refresh(); seed.refresh(); circle.refresh();
   if (current) document.title = `${viewTitle(views[current])} · EdenWise`;
   requestAnimationFrame(moveIndicator);
   if (animate && !reduced) { document.body.classList.remove('lang-swap'); void document.body.offsetWidth; document.body.classList.add('lang-swap'); }
 }
-// On phones the switch collapses to the current language; tapping it opens the others.
-const langBox = $('.lang'), compactLang = matchMedia('(max-width: 560px)');
-const setLangOpen = open => { langBox.classList.toggle('open', open); $$('.lang button.on').forEach(b => b.setAttribute('aria-expanded', open)); };
-langBox.addEventListener('click', e => {
+// Language menu: globe button + dropdown with flags
+const langDd = $('#langDd'), langBtn = $('#langBtn'), langItems = () => $$('#langMenu [data-lang]');
+// inline codes switch directly; the chevron opens the menu with flags
+$$('.lang-quick').forEach(b => b.addEventListener('click', () => { setLangOpen(false); if (b.dataset.lang !== lang) applyLang(b.dataset.lang, true); }));
+function setLangOpen(open, focusItem) {
+  langDd.classList.toggle('open', open);
+  langBtn.setAttribute('aria-expanded', open);
+  if (open && focusItem) (langItems().find(b => b.dataset.lang === lang) || langItems()[0]).focus();
+}
+langBtn.addEventListener('click', () => setLangOpen(!langDd.classList.contains('open'), true));
+$('#langMenu').addEventListener('click', e => {
   const b = e.target.closest('[data-lang]');
   if (!b) return;
-  if (b.dataset.lang === lang) { if (compactLang.matches) setLangOpen(!langBox.classList.contains('open')); return; }
-  setLangOpen(false);
-  applyLang(b.dataset.lang, true);
+  setLangOpen(false); langBtn.focus();
+  if (b.dataset.lang !== lang) applyLang(b.dataset.lang, true);
 });
-document.addEventListener('click', e => { if (!e.target.closest('.lang')) setLangOpen(false); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') setLangOpen(false); });
+$('#langMenu').addEventListener('keydown', e => {
+  const items = langItems(), i = items.indexOf(document.activeElement);
+  if (e.key === 'ArrowDown') { e.preventDefault(); items[(i + 1) % items.length].focus(); }
+  if (e.key === 'ArrowUp') { e.preventDefault(); items[(i - 1 + items.length) % items.length].focus(); }
+});
+document.addEventListener('click', e => { if (!e.target.closest('#langDd')) setLangOpen(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && langDd.classList.contains('open')) { setLangOpen(false); langBtn.focus(); } });
 applyLang(lang, false);
 
 /* ---------------------------------------------------------

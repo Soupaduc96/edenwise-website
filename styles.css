@@ -934,3 +934,176 @@ a,button,summary,label,.cover,.opt,.chip,[data-start]{cursor:pointer}
 .foot-grid .brand .brand-text{display:flex}
 .foot-grid .brand .brand-word{display:flex;font-size:23px}
 .foot-grid .brand .brand-sub{display:block;font-size:8.5px;color:#a8740f}
+
+/* =========================================================
+   Top bar: dark forest green with gold trim (v3)
+========================================================= */
+.nav,.nav.on-light{
+  top:14px;width:min(1480px,calc(100% - 28px));min-height:84px;padding:10px 14px 10px 12px;gap:18px;border-radius:30px;
+  color:var(--on-dark);border:1px solid rgba(219,165,43,.6);
+  background:
+    radial-gradient(ellipse 34% 140% at 50% -20%,rgba(219,165,43,.16),transparent 70%),
+    radial-gradient(ellipse 20% 120% at 0% 50%,rgba(28,107,62,.5),transparent 70%),
+    radial-gradient(ellipse 20% 120% at 100% 50%,rgba(28,107,62,.5),transparent 70%),
+    linear-gradient(180deg,#0b3c21 0%,#06290f 55%,#052112 100%);
+  box-shadow:inset 0 0 0 5px rgba(5,33,18,.85),inset 0 0 0 6px rgba(219,165,43,.22),0 26px 60px -24px rgba(0,0,0,.75);
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+}
+/* glowing gold hairlines along the top and bottom edges, with a slow shimmer */
+.nav::before,.nav::after{content:"";position:absolute;left:12%;right:12%;height:1.5px;pointer-events:none;border-radius:2px;
+  background:linear-gradient(90deg,transparent,rgba(248,220,133,.15) 20%,#f8dc85 50%,rgba(248,220,133,.15) 80%,transparent);
+  background-size:200% 100%;filter:drop-shadow(0 0 6px rgba(219,165,43,.9));animation:navGlint 7s ease-in-out infinite}
+.nav::before{top:-1px}
+.nav::after{bottom:-1px;animation-delay:-3.5s}
+@keyframes navGlint{0%,100%{background-position:100% 0;opacity:.55}50%{background-position:0 0;opacity:1}}
+.nav-leaves{position:absolute;top:50%;width:120px;height:90px;translate:0 -50%;opacity:.55;pointer-events:none;z-index:0}
+.nav-leaves.left{left:-18px}
+.nav-leaves.right{right:-18px;transform:scaleX(-1)}
+.nav>*:not(.nav-leaves){position:relative;z-index:1}
+
+/* logo medallion + wordmark */
+.brand{gap:14px;padding-right:6px}
+.brand-medal{width:62px;height:62px;flex:none;border-radius:50%;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 40%,#0f4a28,#052112 70%);
+  box-shadow:0 0 0 1.5px #dba52b,0 0 0 4px rgba(5,33,18,.9),0 0 0 5px rgba(219,165,43,.4),0 0 22px rgba(219,165,43,.25)}
+.brand-medal .brand-mark{width:40px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.brand-word{font-size:30px;letter-spacing:.01em}
+.brand-word .w-eden{color:#f6f1e4;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.brand-word .w-wise{background:linear-gradient(180deg,#e0303e,#a3121f);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 0 rgba(0,0,0,.4))}
+.brand-sub{display:flex;align-items:center;gap:8px;font-size:10px;letter-spacing:.5em;color:#e2ad34;margin-top:4px;padding-left:0}
+.brand-sub::before,.brand-sub::after{content:"";flex:1;min-width:14px;height:1px;background:linear-gradient(90deg,transparent,#dba52b)}
+.brand-sub::after{background:linear-gradient(90deg,#dba52b,transparent)}
+
+/* links: serif caps with gold dividers; active = gold pill with a dot */
+.nav-links{align-items:center;gap:0;margin-left:auto}
+.nav-links a{font-family:var(--serif);font-weight:600;font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:#f3efe2;opacity:.92;padding:11px 18px;border-radius:999px;transition:color .3s,opacity .3s}
+.nav-links a:hover{opacity:1;color:#f8dc85}
+.nav-links a.active{color:#f8dc85;opacity:1}
+.nav-links a+a::before{content:"";position:absolute;left:0;top:50%;width:1px;height:24px;translate:0 -50%;background:linear-gradient(transparent,rgba(219,165,43,.6),transparent)}
+.nav-indicator{height:46px;top:50%;translate:0 -50%;background:radial-gradient(ellipse at 50% 0%,rgba(219,165,43,.18),rgba(219,165,43,.04) 70%);border:1px solid rgba(219,165,43,.85);box-shadow:0 0 18px rgba(219,165,43,.25),inset 0 0 10px rgba(219,165,43,.12)}
+.nav-indicator::after{content:"";position:absolute;left:50%;bottom:5px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#f8dc85;box-shadow:0 0 8px #f8dc85}
+
+/* actions: divider, language dropdown, booking button */
+.nav-actions{gap:14px}
+.lang-dd{position:relative;padding-left:16px;margin-left:4px}
+.lang-dd::before{content:"";position:absolute;left:0;top:50%;width:1px;height:30px;translate:0 -50%;background:linear-gradient(transparent,rgba(219,165,43,.6),transparent)}
+.lang-btn{display:flex;align-items:center;gap:10px;height:52px;padding:0 12px 0 14px;border-radius:999px;border:1px solid rgba(219,165,43,.55);background:rgba(3,22,12,.35);color:#f3efe2;transition:border-color .3s,box-shadow .3s}
+.lang-btn:hover,.lang-dd.open .lang-btn{border-color:#dba52b;box-shadow:0 0 16px rgba(219,165,43,.25)}
+.lang-globe{width:22px;height:22px;fill:none;stroke:#e2ad34;stroke-width:1.5}
+.lang-code{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--gold-grad);color:#052112;font-size:12px;font-weight:800;letter-spacing:.04em;box-shadow:inset 0 1px 0 rgba(255,255,255,.45)}
+.lang-chev{width:18px;height:18px;fill:none;stroke:#e2ad34;stroke-width:2;transition:transform .4s var(--ease)}
+.lang-dd.open .lang-chev{transform:rotate(180deg)}
+.lang-menu{list-style:none;position:absolute;top:calc(100% + 16px);right:-10px;width:262px;padding:10px;border-radius:22px;z-index:5;
+  background:radial-gradient(ellipse at 50% 0%,rgba(219,165,43,.12),transparent 60%),linear-gradient(180deg,#0b3c21,#052112);
+  border:1px solid rgba(219,165,43,.6);box-shadow:inset 0 0 0 4px rgba(5,33,18,.8),inset 0 0 0 5px rgba(219,165,43,.18),0 30px 60px -20px rgba(0,0,0,.8);
+  opacity:0;visibility:hidden;transform:translateY(-8px) scale(.97);transform-origin:80% 0;transition:opacity .3s var(--ease),transform .4s var(--ease),visibility .3s}
+.lang-menu::before{content:"";position:absolute;top:-7px;right:46px;width:12px;height:12px;rotate:45deg;background:#0b3c21;border-left:1px solid rgba(219,165,43,.6);border-top:1px solid rgba(219,165,43,.6)}
+.lang-dd.open .lang-menu{opacity:1;visibility:visible;transform:none}
+.lang-menu button{position:relative;display:flex;align-items:center;gap:14px;width:100%;padding:11px 12px;border-radius:14px;color:#f3efe2;border:1px solid transparent;transition:background .25s,border-color .25s}
+.lang-menu button:hover,.lang-menu button:focus-visible{background:rgba(219,165,43,.08);outline:none;border-color:rgba(219,165,43,.3)}
+.lang-menu button.on{background:linear-gradient(90deg,rgba(219,165,43,.18),rgba(219,165,43,.06));border-color:rgba(219,165,43,.45)}
+.lang-menu .flag{width:34px;height:24px;flex:none;border-radius:6px;overflow:hidden;box-shadow:0 0 0 1px rgba(255,255,255,.25),0 3px 8px rgba(0,0,0,.4)}
+.lang-menu .flag svg{width:100%;height:100%;display:block}
+.lang-menu b{width:26px;color:#e2ad34;font-size:13px;letter-spacing:.06em;text-align:left}
+.lang-name{flex:1;text-align:left;font-size:15px}
+.lang-check{width:28px;height:28px;padding:6px;border-radius:50%;background:var(--gold-grad);fill:none;stroke:#052112;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:0;transform:scale(.6);transition:all .3s var(--ease)}
+.lang-menu button.on .lang-check{opacity:1;transform:none}
+.btn-book{height:56px;padding:0 24px 0 20px;gap:12px;font-family:var(--serif);font-size:15px;font-weight:700;letter-spacing:.04em;margin-left:4px;box-shadow:0 0 0 1px rgba(248,220,133,.6),0 0 24px rgba(219,165,43,.35),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn-book .cal{width:26px;height:26px;fill:none;stroke:#052112;stroke-width:1.5}
+.btn-book .cal circle{fill:#052112;stroke:none}
+.btn-book:hover .cal{transform:none}
+.burger{border-color:rgba(219,165,43,.7);color:#f8dc85;opacity:1;width:48px;height:48px}
+.burger i{left:14px;right:14px}
+.burger i:first-child{top:19px}.burger i:last-child{top:27px}
+
+/* responsive: links move into the menu button before they get cramped */
+@media (max-width:1440px){.nav-links a{padding:11px 13px;font-size:14px}.brand-word{font-size:26px}}
+@media (max-width:1320px){.nav-links{display:none}.burger{display:block}.nav-actions{margin-left:auto}}
+@media (max-width:760px){
+  .nav,.nav.on-light{min-height:72px;padding:8px 10px;border-radius:24px}
+  .btn-book{display:none}
+  .lang-dd{padding-left:0}.lang-dd::before{display:none}
+  .lang-globe{display:none}
+  .lang-btn{height:46px;padding:0 8px 0 6px;gap:6px}
+  .lang-menu{right:-56px}
+  .lang-menu::before{right:102px}
+  .nav-leaves{display:none}
+  .brand-medal{width:50px;height:50px}.brand-medal .brand-mark{width:32px}
+  .brand-word{font-size:22px}
+}
+@media (max-width:400px){.brand-word{font-size:19px}.brand-sub{font-size:8px;letter-spacing:.4em}.brand{gap:10px}.brand-medal{width:44px;height:44px}.brand-medal .brand-mark{width:28px}.burger{width:44px;height:44px}.burger i{left:12px;right:12px}.burger i:first-child{top:17px}.burger i:last-child{top:25px}}
+
+/* =========================================================
+   Top bar v4: full logo lockup + inline language codes
+========================================================= */
+/* logo: EDEN green, WISE crimson, MINISTRIES gold, slogan beneath */
+.nav .brand-word .w-eden{background:linear-gradient(180deg,#5cc27a,#1f8a45 55%,#13643a);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 1px 0 rgba(0,0,0,.45))}
+.brand-tag{display:block;margin-top:5px;font-family:var(--serif);font-weight:600;font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:#efe6cf;white-space:nowrap}
+.brand-tag i{font-style:normal;color:#dba52b;margin:0 .15em}
+.nav .brand-medal{width:70px;height:70px}
+.nav .brand-medal .brand-mark{width:44px}
+.nav .brand-sub{margin-top:5px}
+
+/* language pill: globe, four codes inline, chevron opens the flag menu */
+.lang-pill{display:flex;align-items:center;gap:4px;height:54px;padding:0 6px 0 14px;border-radius:999px;border:1px solid rgba(219,165,43,.55);background:rgba(3,22,12,.35);transition:border-color .3s,box-shadow .3s}
+.lang-pill:hover,.lang-dd.open .lang-pill{border-color:#dba52b;box-shadow:0 0 16px rgba(219,165,43,.25)}
+.lang-pill .lang-globe{margin-right:6px}
+.lang-codes{display:flex;align-items:center;gap:2px}
+.lang-quick{min-width:38px;height:38px;padding:0 8px;border-radius:999px;font-size:12.5px;font-weight:700;letter-spacing:.06em;color:#f3efe2;opacity:.85;transition:color .3s,opacity .3s,background .4s var(--ease),box-shadow .4s}
+.lang-quick:hover{opacity:1;color:#f8dc85}
+.lang-quick.on{opacity:1;color:#052112;background:var(--gold-grad);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 0 12px rgba(219,165,43,.4)}
+.lang-pill .lang-btn{height:40px;width:40px;padding:0;justify-content:center;border:0;background:none;box-shadow:none;border-radius:50%}
+.lang-pill .lang-btn:hover{background:rgba(219,165,43,.12)}
+.lang-pill .lang-code{display:none}
+.lang-menu{right:-4px}
+.lang-menu::before{right:20px}
+
+/* leaves: fuller and more visible at both ends, like the mockup */
+.nav-leaves{width:170px;height:120px;opacity:.85}
+.nav-leaves.left{left:-30px}
+.nav-leaves.right{right:-30px}
+
+/* the bar is wider now, so links fold into the menu a little earlier */
+@media (max-width:1600px){.nav-links a{padding:11px 12px;font-size:13.5px}.brand-word{font-size:26px}}
+@media (max-width:1480px){.nav-links{display:none}.burger{display:block}.nav-actions{margin-left:auto}}
+@media (max-width:760px){
+  .lang-pill{height:46px;padding:0 4px 0 6px}
+  .lang-pill .lang-globe{display:none}
+  .lang-quick:not(.on){display:none}
+  .lang-pill .lang-btn{width:34px;height:34px}
+  .lang-menu{right:-52px}
+  .lang-menu::before{right:70px}
+  .nav .brand-medal{width:52px;height:52px}
+  .nav .brand-medal .brand-mark{width:34px}
+  .brand-tag{font-size:7px;letter-spacing:.16em}
+}
+@media (max-width:400px){.brand-tag{display:none}}
+
+/* =========================================================
+   Full logo lockup (footer): emblem, EDEN WISE, MINISTRIES,
+   WISDOM • COVENANT • GLORY, gold ornament
+========================================================= */
+.logo-full{position:relative;display:flex;flex-direction:column;align-items:center;margin:90px auto 46px;width:fit-content;text-decoration:none}
+.logo-full::before{content:"";position:absolute;left:50%;top:38%;width:min(760px,90vw);height:340px;translate:-50% -50%;background:radial-gradient(ellipse at center,rgba(219,165,43,.16),transparent 65%);pointer-events:none;z-index:0}
+.logo-full>*{position:relative;z-index:1}
+.lf-emblem{width:clamp(110px,13vw,170px);height:auto;aspect-ratio:120/136;margin-bottom:-14px;filter:drop-shadow(0 8px 22px rgba(219,165,43,.35));transition:transform 1.2s var(--ease)}
+.logo-full:hover .lf-emblem{transform:translateY(-4px)}
+.lf-word{display:flex;font-family:var(--serif);font-weight:700;font-size:clamp(52px,9vw,124px);line-height:.95;letter-spacing:.01em}
+.lf-eden{background:linear-gradient(180deg,#5cc27a 0%,#1f8a45 50%,#0e5a2e 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(0,0,0,.45))}
+.lf-wise{background:linear-gradient(180deg,#e0303e 0%,#b3242f 50%,#7a1019 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 0 rgba(0,0,0,.45))}
+.lf-sub{display:flex;align-items:center;gap:clamp(12px,2vw,26px);width:100%;margin-top:clamp(6px,1vw,12px)}
+.lf-sub i{flex:1;height:2px;min-width:30px;background:linear-gradient(90deg,transparent,#dba52b)}
+.lf-sub i:last-child{background:linear-gradient(90deg,#dba52b,transparent)}
+.lf-sub span{font-family:var(--serif);font-weight:600;font-size:clamp(18px,2.6vw,36px);letter-spacing:.42em;padding-left:.42em;text-transform:uppercase;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lf-tag{margin-top:clamp(8px,1.2vw,14px);font-family:var(--serif);font-weight:700;font-size:clamp(12px,1.5vw,20px);letter-spacing:.2em;text-transform:uppercase;color:#f3efe2}
+.lf-tag b{color:#dba52b;margin:0 .35em}
+.lf-orn{display:flex;align-items:center;gap:10px;width:58%;margin-top:clamp(10px,1.4vw,16px)}
+.lf-orn i{flex:1;height:1.5px;background:linear-gradient(90deg,transparent,#dba52b)}
+.lf-orn i:last-child{background:linear-gradient(90deg,#dba52b,transparent)}
+.lf-orn b{width:12px;height:12px;rotate:45deg;background:var(--gold-grad);box-shadow:0 0 10px rgba(219,165,43,.6)}
+@media (max-width:640px){.logo-full{margin:60px auto 34px}.lf-tag{letter-spacing:.12em}}
+
+/* header fit: links never wrap; they fold into the menu before the bar overflows */
+.nav-links a{white-space:nowrap}
+.btn-book{white-space:nowrap}
+@media (max-width:1760px){.nav-links{display:none}.burger{display:block}.nav-actions{margin-left:auto}}

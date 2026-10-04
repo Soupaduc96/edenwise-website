@@ -68,9 +68,11 @@
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="leafG" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c6b3e"/><stop offset="1" stop-color="#0a3d22"/></linearGradient></defs></svg>
+  <svg class="nav-leaves left" viewBox="0 0 120 90" aria-hidden="true"><g fill="url(#leafG)"><path d="M10 80C20 50 45 34 80 30C66 50 44 70 10 80Z"/><path d="M4 50C14 30 32 18 58 14C48 30 30 44 4 50Z" opacity=".75"/><path d="M30 88C50 70 78 64 108 68C88 80 62 88 30 88Z" opacity=".6"/></g><g fill="none" stroke="rgba(219,165,43,.35)" stroke-width=".8"><path d="M10 80C30 62 52 46 80 30M4 50C22 38 38 26 58 14M30 88C56 78 82 72 108 68"/></g></svg><svg class="nav-leaves right" viewBox="0 0 120 90" aria-hidden="true"><g fill="url(#leafG)"><path d="M10 80C20 50 45 34 80 30C66 50 44 70 10 80Z"/><path d="M4 50C14 30 32 18 58 14C48 30 30 44 4 50Z" opacity=".75"/><path d="M30 88C50 70 78 64 108 68C88 80 62 88 30 88Z" opacity=".6"/></g><g fill="none" stroke="rgba(219,165,43,.35)" stroke-width=".8"><path d="M10 80C30 62 52 46 80 30M4 50C22 38 38 26 58 14M30 88C56 78 82 72 108 68"/></g></svg>
   <a href="#/home" class="brand" aria-label="EdenWise home">
-    <svg class="brand-mark" viewBox="0 0 120 136" aria-hidden="true"><use href="#ew-emblem"/></svg>
-    <span class="brand-text"><span class="brand-word"><b class="w-eden">EDEN</b><b class="w-wise">WISE</b></span><span class="brand-sub">Ministries</span></span>
+    <span class="brand-medal"><svg class="brand-mark" viewBox="0 0 120 136" aria-hidden="true"><use href="#ew-emblem"/></svg></span>
+    <span class="brand-text"><span class="brand-word"><b class="w-eden">EDEN</b><b class="w-wise">WISE</b></span><span class="brand-sub">Ministries</span><span class="brand-tag" data-i18n-skip>Wisdom <i>•</i> Covenant <i>•</i> Glory</span></span>
   </a>
   <nav class="nav-links" aria-label="Primary">
     <span class="nav-indicator" id="navIndicator"></span>
@@ -83,12 +85,24 @@
     <a href="#/circle" data-route="circle">Circle</a>
   </nav>
   <div class="nav-actions">
-    <div class="lang-wrap">
-    <div class="lang" role="group" aria-label="Language">
-      <button data-lang="en" title="English">EN</button><button data-lang="fr" title="Français">FR</button><button data-lang="ht" title="Kreyòl ayisyen">KR</button><button data-lang="es" title="Español">ES</button>
+    <div class="lang-dd" id="langDd">
+      <div class="lang-pill" role="group" aria-label="Language">
+        <svg class="lang-globe" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
+        <span class="lang-codes" data-i18n-skip><button type="button" class="lang-quick" data-lang="en" title="English">EN</button><button type="button" class="lang-quick" data-lang="fr" title="Français">FR</button><button type="button" class="lang-quick" data-lang="ht" title="Kreyòl">KR</button><button type="button" class="lang-quick" data-lang="es" title="Español">ES</button></span>
+        <button class="lang-btn" id="langBtn" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="langMenu" aria-label="Choose language"><span class="lang-code" data-i18n-skip>EN</span><svg class="lang-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+      <ul class="lang-menu" id="langMenu" role="listbox" aria-label="Choose language" data-i18n-skip>
+        <li><button type="button" role="option" data-lang="en" aria-selected="false"><span class="flag"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#fff"/><rect y="0.00" width="30" height="1.54" fill="#b22234"/><rect y="3.08" width="30" height="1.54" fill="#b22234"/><rect y="6.15" width="30" height="1.54" fill="#b22234"/><rect y="9.23" width="30" height="1.54" fill="#b22234"/><rect y="12.31" width="30" height="1.54" fill="#b22234"/><rect y="15.38" width="30" height="1.54" fill="#b22234"/><rect y="18.46" width="30" height="1.54" fill="#b22234"/><rect width="13" height="10.8" fill="#3c3b6e"/><circle cx="2" cy="2" r=".55" fill="#fff"/><circle cx="5" cy="2" r=".55" fill="#fff"/><circle cx="8" cy="2" r=".55" fill="#fff"/><circle cx="11" cy="2" r=".55" fill="#fff"/><circle cx="3.5" cy="4.5" r=".55" fill="#fff"/><circle cx="6.5" cy="4.5" r=".55" fill="#fff"/><circle cx="9.5" cy="4.5" r=".55" fill="#fff"/><circle cx="2" cy="7" r=".55" fill="#fff"/><circle cx="5" cy="7" r=".55" fill="#fff"/><circle cx="8" cy="7" r=".55" fill="#fff"/><circle cx="11" cy="7" r=".55" fill="#fff"/><circle cx="3.5" cy="9.3" r=".55" fill="#fff"/><circle cx="6.5" cy="9.3" r=".55" fill="#fff"/><circle cx="9.5" cy="9.3" r=".55" fill="#fff"/></svg></span><b>EN</b><span class="lang-name">English</span><svg class="lang-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></button></li>
+        <li><button type="button" role="option" data-lang="fr" aria-selected="false"><span class="flag"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="10" height="20" fill="#002395"/><rect x="10" width="10" height="20" fill="#fff"/><rect x="20" width="10" height="20" fill="#ed2939"/></svg></span><b>FR</b><span class="lang-name">Français</span><svg class="lang-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></button></li>
+        <li><button type="button" role="option" data-lang="ht" aria-selected="false"><span class="flag"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="10" fill="#00209f"/><rect y="10" width="30" height="10" fill="#d21034"/><rect x="10.5" y="6.5" width="9" height="7" fill="#fff"/><path d="M15 7.6v4.6M13.3 9.2c1-.9 2.4-.9 3.4 0" stroke="#016a16" stroke-width=".8" fill="none"/><rect x="12.2" y="11.6" width="5.6" height="1.1" fill="#016a16"/></svg></span><b>KR</b><span class="lang-name">Kreyòl</span><svg class="lang-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></button></li>
+        <li><button type="button" role="option" data-lang="es" aria-selected="false"><span class="flag"><svg viewBox="0 0 30 20" aria-hidden="true"><rect width="30" height="20" fill="#aa151b"/><rect y="5" width="30" height="10" fill="#f1bf00"/><rect x="6.5" y="7.2" width="3.6" height="5.4" rx=".8" fill="#aa151b"/><rect x="7.3" y="6.2" width="2" height="1.2" fill="#c8a300"/></svg></span><b>ES</b><span class="lang-name">Español</span><svg class="lang-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12.5l4 4 8-9"/></svg></button></li>
+      </ul>
     </div>
-    </div>
-    <a href="#/counseling" class="btn btn-gold btn-sm magnetic" data-book><span>Book a Session</span></a>
+    <a href="#/counseling" class="btn btn-gold btn-book magnetic" data-book>
+      <svg class="cal" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle cx="8" cy="14" r=".9"/><circle cx="12" cy="14" r=".9"/><circle cx="16" cy="14" r=".9"/><circle cx="8" cy="17.3" r=".9"/><circle cx="12" cy="17.3" r=".9"/></svg>
+      <span>Book a Session</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
   </div>
 </header>
@@ -668,10 +682,6 @@
     </div>
     <div class="foot-grid">
       <div class="foot-brand">
-        <a href="#/home" class="brand light">
-          <svg class="brand-mark" viewBox="0 0 120 136" aria-hidden="true"><use href="#ew-emblem"/></svg>
-          <span class="brand-text"><span class="brand-word"><b class="w-eden">EDEN</b><b class="w-wise">WISE</b></span><span class="brand-sub">Ministries</span></span>
-        </a>
         <p>Cultivating wisdom, restoring hope, and reaching the world with the transformative truth of the Gospel.</p>
         <div class="socials">
           <a href="https://www.instagram.com/_edenwise_/" target="_blank" rel="noopener" aria-label="Instagram @_edenwise_"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a>
@@ -683,7 +693,13 @@
       <div><h5>Support</h5><a href="#/circle" data-tab="2">Request Prayer</a><a href="#/circle" data-soon="Online giving">Give to Ministry</a><a href="https://www.instagram.com/_edenwise_/" target="_blank" rel="noopener">Volunteer</a><a href="#/circle" data-anchor="#faq">FAQ</a></div>
       <div><h5>Contact</h5><a href="https://www.instagram.com/_edenwise_/" target="_blank" rel="noopener">Instagram · @_edenwise_</a><a href="https://www.tiktok.com/@edenwise08" target="_blank" rel="noopener">TikTok · @edenwise08</a><a href="https://whatsapp.com/channel/0029Vb7ESIr7tkj52xn7pX1n" target="_blank" rel="noopener">WhatsApp channel</a><span>Online, worldwide</span></div>
     </div>
-    <div class="foot-giant" aria-hidden="true">EDENWISE</div>
+    <a href="#/home" class="logo-full" aria-label="EdenWise Ministries: Wisdom, Covenant, Glory">
+      <svg class="lf-emblem" viewBox="0 0 120 136" aria-hidden="true"><use href="#ew-emblem"/></svg>
+      <span class="lf-word" aria-hidden="true"><span class="lf-eden">EDEN</span><span class="lf-wise">WISE</span></span>
+      <span class="lf-sub" aria-hidden="true" data-i18n-skip><i></i><span>Ministries</span><i></i></span>
+      <span class="lf-tag" aria-hidden="true" data-i18n-skip>Wisdom <b>•</b> Covenant <b>•</b> Glory</span>
+      <span class="lf-orn" aria-hidden="true"><i></i><b></b><i></i></span>
+    </a>
     <div class="foot-base"><span>© <span id="yr" data-i18n-skip></span> EdenWise Ministry. All rights reserved.</span><span><a href="#" data-soon="The privacy policy">Privacy</a><a href="#" data-soon="The terms page">Terms</a></span></div>
   </div>
 </footer>
