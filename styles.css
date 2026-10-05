@@ -1422,3 +1422,55 @@ body.menu-open .quick-cta,body.is-loading .quick-cta{opacity:0;visibility:hidden
 .hero-slides::after{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 85% 75% at 60% 45%,transparent 55%,rgba(3,22,12,.55) 100%),
              linear-gradient(120deg,rgba(219,165,43,.10),transparent 45%)}
+
+/* =========================================================
+   Opening film: the EdenWise logo video, as-is
+   (background = the video's own edge color, so it has no "box")
+========================================================= */
+.preloader{background:radial-gradient(ellipse 60% 60% at 50% 50%,#0f3a1c 0%,rgb(10,24,19) 70%)}
+.pre-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity 1.2s cubic-bezier(.4,0,.2,1)}
+.preloader.has-video .pre-video{opacity:1}
+.preloader.has-video .pre-inner{display:none}
+.preloader.film-out .pre-video{opacity:0;transform:scale(1.02);transition:opacity .7s ease,transform .9s ease}
+/* thin gold progress line along the bottom */
+.pre-vbar{position:absolute;left:50%;bottom:clamp(28px,5vh,48px);width:min(240px,50vw);height:1px;translate:-50% 0;background:rgba(219,165,43,.18);opacity:0;transition:opacity .8s ease}
+.pre-vbar i{position:absolute;inset:0;background:linear-gradient(90deg,#9c6c12,#f8dc85,#9c6c12);transform:scaleX(0);transform-origin:left}
+.preloader.has-video .pre-vbar{opacity:1}
+/* "Enter" — quiet, glassy, appears after a moment */
+.pre-skip{position:absolute;right:clamp(18px,4vw,48px);bottom:clamp(18px,4vh,40px);display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 18px 0 20px;border-radius:999px;
+  border:1px solid rgba(219,165,43,.55);background:rgba(3,22,12,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  color:#f3efe2;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .5s ease,transform .5s ease,visibility .5s,border-color .2s,background-color .2s}
+.pre-skip svg{width:15px;height:15px;fill:none;stroke:#f8dc85;stroke-width:1.8;transition:transform .3s ease}
+.pre-skip:hover{border-color:#f8dc85;background:rgba(219,165,43,.14)}
+.pre-skip:hover svg{transform:translateX(3px)}
+.pre-skip.show{opacity:1;visibility:visible;transform:none}
+.preloader.film-out .pre-skip,.preloader.film-out .pre-vbar{opacity:0}
+/* fallback logo now sits on the dark film background */
+.pre-word span{background:linear-gradient(180deg,#5cc27a,#1f8a45 55%,#13643a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pre-word em{background:linear-gradient(180deg,#e0303e,#a3121f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pre-tag{color:#efe6cf}
+.pre-count{color:rgba(239,230,207,.6)}
+.pre-bar{background:rgba(219,165,43,.2)}
+
+/* =========================================================
+   Footer film: same video, looping, edges dissolving into the footer
+========================================================= */
+.lf-fallback{display:flex;flex-direction:column;align-items:center}
+.lf-video{display:none;width:min(920px,94vw);aspect-ratio:16/9;object-fit:cover;
+  -webkit-mask-image:radial-gradient(ellipse 58% 60% at 50% 50%,#000 60%,transparent 100%);
+          mask-image:radial-gradient(ellipse 58% 60% at 50% 50%,#000 60%,transparent 100%)}
+.logo-full.has-video .lf-video{display:block;animation:lfIn 1.4s cubic-bezier(.4,0,.2,1) both}
+.logo-full.has-video .lf-fallback{display:none}
+.logo-full.has-video{margin-top:50px;margin-bottom:20px}
+@keyframes lfIn{from{opacity:0}to{opacity:1}}
+@media (max-width:640px){.lf-video{width:108vw;margin:0 -4vw}}
+
+/* opening film, refined: flat background = the video's exact edge color,
+   soft edges so no frame line ever shows, larger logo on tall screens */
+.preloader{background:rgb(10,24,19)}
+.pre-video{-webkit-mask-image:radial-gradient(ellipse 62% 64% at 50% 50%,#000 62%,transparent 100%);
+          mask-image:radial-gradient(ellipse 62% 64% at 50% 50%,#000 62%,transparent 100%)}
+@media (max-aspect-ratio:4/5){
+  .pre-video{inset:auto;left:50%;top:50%;width:138vw;height:auto;aspect-ratio:16/9;translate:-50% -54%;object-fit:cover}
+}

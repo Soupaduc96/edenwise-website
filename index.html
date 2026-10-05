@@ -45,8 +45,11 @@
 <a class="skip" href="#app">Skip to content</a>
 
 <!-- ============ PRELOADER ============ -->
-<div class="preloader" id="preloader" aria-hidden="true">
-  <div class="pre-inner">
+<div class="preloader" id="preloader">
+  <video class="pre-video" id="preVideo" src="media/edenwise-logo-360.mp4" muted playsinline preload="auto" aria-hidden="true"></video>
+  <div class="pre-vbar" aria-hidden="true"><i></i></div>
+  <button class="pre-skip" id="preSkip" type="button"><span>Enter</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <div class="pre-inner" aria-hidden="true">
     <svg class="pre-mark" viewBox="0 0 120 136" aria-hidden="true"><use href="#ew-emblem"/></svg>
     <div class="pre-word"><span>EDEN</span><em>WISE</em></div>
     <div class="pre-sub" data-i18n-skip><i></i><span>Ministries</span><i></i></div>
@@ -699,11 +702,14 @@
       <div><h5>Contact</h5><a href="https://www.instagram.com/_edenwise_/" target="_blank" rel="noopener">Instagram · @_edenwise_</a><a href="https://www.tiktok.com/@edenwise08" target="_blank" rel="noopener">TikTok · @edenwise08</a><a href="https://whatsapp.com/channel/0029Vb7ESIr7tkj52xn7pX1n" target="_blank" rel="noopener">WhatsApp channel</a><span>Online, worldwide</span></div>
     </div>
     <a href="#/home" class="logo-full" aria-label="EdenWise Ministries: Wisdom, Covenant, Glory">
+      <video class="lf-video" muted loop playsinline preload="none" data-src="media/edenwise-logo-360.mp4" aria-hidden="true"></video>
+      <span class="lf-fallback">
       <svg class="lf-emblem" viewBox="0 0 120 136" aria-hidden="true"><use href="#ew-emblem"/></svg>
       <span class="lf-word" aria-hidden="true"><span class="lf-eden">EDEN</span><span class="lf-wise">WISE</span></span>
       <span class="lf-sub" aria-hidden="true" data-i18n-skip><i></i><span>Ministries</span><i></i></span>
       <span class="lf-tag" aria-hidden="true" data-i18n-skip>Wisdom <b>•</b> Covenant <b>•</b> Glory</span>
       <span class="lf-orn" aria-hidden="true"><i></i><b></b><i></i></span>
+          </span>
     </a>
     <div class="foot-base"><span>© <span id="yr" data-i18n-skip></span> EdenWise Ministry. All rights reserved.</span><span><a href="#" data-soon="The privacy policy">Privacy</a><a href="#" data-soon="The terms page">Terms</a></span></div>
   </div>

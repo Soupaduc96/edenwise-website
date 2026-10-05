@@ -1007,21 +1007,68 @@ applyLang(lang, false);
 /* ---------------------------------------------------------
    Boot — preloader
 --------------------------------------------------------- */
+/* ---------------------------------------------------------
+   Opening film: the EdenWise logo video, played as-is.
+   Full length once per visit (skippable), short on later loads;
+   falls back to the animated logo if video can't play.
+--------------------------------------------------------- */
+let introActive = false;
+async function playIntro(pre) {
+  const v = $('#preVideo');
+  if (!v || reduced) return false;
+  let seen = null; try { seen = sessionStorage.getItem('ew_intro'); } catch {}
+  // start playback, but never wait more than 2.5s for it to begin
+  const started = await Promise.race([
+    v.play().then(() => true).catch(() => false),
+    wait(2500).then(() => false)
+  ]);
+  if (!started) { v.pause(); return false; }
+  introActive = true;
+  pre.classList.add('has-video');
+  try { sessionStorage.setItem('ew_intro', '1'); } catch {}
+  const limit = seen ? 2800 : ((v.duration || 10) * 1000);
+  const bar = $('.pre-vbar i'), skip = $('#preSkip');
+  setTimeout(() => skip.classList.add('show'), seen ? 400 : 1600);
+  await new Promise(res => {
+    let done = false;
+    const finish = () => { if (done) return; done = true; res(); };
+    v.addEventListener('ended', finish, { once: true });
+    v.addEventListener('error', finish, { once: true });
+    skip.addEventListener('click', finish, { once: true });
+    const t0 = performance.now();
+    const tick = () => {
+      if (done) return;
+      const p = Math.min(1, (performance.now() - t0) / limit);
+      bar.style.transform = `scaleX(${p})`;
+      p >= 1 ? finish() : setTimeout(tick, 50);
+    };
+    tick();
+    setTimeout(finish, limit + 3000);   // a stalled video never traps the visitor
+  });
+  pre.classList.add('film-out');
+  await wait(700);
+  introActive = false;
+  return true;
+}
+
 (async function boot() {
   if (!location.hash.startsWith('#/')) history.replaceState(null, '', '#/home');
   const route = routeFromHash() || 'home';
   const pre = $('#preloader'), cnt = $('#preCount'), bar = $('.pre-bar i');
-  // setTimeout (not requestAnimationFrame) so the loader still finishes in
-  // background tabs and embedded browsers where animation frames are paused
-  const dur = reduced ? 200 : 2200, t0 = performance.now();
-  await new Promise(res => {
-    const step = () => {
-      const p = Math.min(1, (performance.now() - t0) / dur), e = 1 - Math.pow(1 - p, 3);
-      cnt.textContent = Math.round(e * 100); bar.style.width = e * 100 + '%';
-      p < 1 ? setTimeout(step, 16) : res();
-    };
-    step();
-  });
+  const usedFilm = await playIntro(pre);
+  if (!usedFilm) {
+    // fallback: the animated logo with its counter
+    // (setTimeout, not requestAnimationFrame, so it also finishes in background tabs)
+    const dur = reduced ? 200 : 2200, t0 = performance.now();
+    await new Promise(res => {
+      const step = () => {
+        const p = Math.min(1, (performance.now() - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+        cnt.textContent = Math.round(e * 100); bar.style.width = e * 100 + '%';
+        p < 1 ? setTimeout(step, 16) : res();
+      };
+      step();
+    });
+  }
   // keep the view hidden until the curtain lifts so reveals play on screen
   views[route].classList.add('active');
   await wait(250);
@@ -1033,10 +1080,31 @@ applyLang(lang, false);
 })();
 
 // failsafe: never leave a visitor on the loader or a blank page
-setTimeout(() => {
-  const pre = $('#preloader');
-  if (pre) { pre.classList.add('done'); setTimeout(() => pre.remove(), 1400); }
-  document.body.classList.remove('is-loading');
-  if (!current) show(routeFromHash() || 'home');
-}, 6000);
+// (waits while the opening film is legitimately playing, up to ~20s)
+(function failsafe(waited = 0) {
+  setTimeout(() => {
+    if (introActive && waited < 14000) return failsafe(waited + 6000);
+    const pre = $('#preloader');
+    if (pre) { pre.classList.add('done'); setTimeout(() => pre.remove(), 1400); }
+    document.body.classList.remove('is-loading');
+    if (!current) show(routeFromHash() || 'home');
+  }, 6000);
+})();
+
+/* ---------------------------------------------------------
+   Footer film: loads only when the footer comes into view,
+   plays while visible; the drawn logo stays as fallback
+--------------------------------------------------------- */
+(function footerFilm() {
+  const box = $('.logo-full'), v = $('.lf-video');
+  if (!box || !v || reduced) return;
+  v.addEventListener('canplay', () => box.classList.add('has-video'), { once: true });
+  v.addEventListener('error', () => box.classList.remove('has-video'));
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      if (!v.src) { v.src = v.dataset.src; v.load(); }
+      v.play().catch(() => {});
+    } else v.pause();
+  }, { rootMargin: '200px' }).observe(box);
+})();
 })();
