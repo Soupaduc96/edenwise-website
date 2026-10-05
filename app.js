@@ -205,6 +205,12 @@ function revealCheck() {
   });
 }
 
+// stagger: items in a grid/list reveal one after another (unless a delay was set by hand)
+const STAGGER = '.path-grid,.team-grid,.tiers,.mvv,.serve-list,.journey-steps,.faq,.triad,.cp-grid,.prog-meta,.hero-cta,.foot-grid';
+$$(STAGGER).forEach(g => [...g.children].forEach((c, i) => { if (!c.style.getPropertyValue('--d')) c.style.setProperty('--d', (i * 0.09).toFixed(2) + 's'); }));
+// photos drift slightly slower than the page (depth)
+$$('.wide-photo .photo').forEach(el => { el.dataset.speed = '-0.08'; });
+$$('.founder-frame img').forEach(el => { el.dataset.speed = '-0.05'; });
 function armReveals(view) {
   $$('.r, [data-split], .prog-art, .reveal-img, .count', view).forEach(el => {
     el.classList.remove('in');
@@ -380,7 +386,12 @@ const progress = $('#scrollProgress');
 function onScroll() {
   const y = scrollY, max = document.documentElement.scrollHeight - innerHeight;
   progress.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
-  if (!document.body.classList.contains('menu-open')) nav.classList.toggle('hide', y > lastY && y > 300);
+  if (!document.body.classList.contains('menu-open')) {
+    const hide = y > lastY && y > 300;
+    nav.classList.toggle('hide', hide);
+    // An open language menu would ride away with the bar and hang over the page.
+    if (hide && document.getElementById('langDd')?.classList.contains('open')) setLangOpen(false);
+  }
   lastY = y;
   // light/dark under nav
   const probe = document.elementsFromPoint(innerWidth / 2, 40).find(el => !el.closest('.nav,.grain,.cursor,.scroll-progress,.curtain,.menu'));
@@ -389,7 +400,7 @@ function onScroll() {
   if (!reduced) $$('.view.active [data-speed]').forEach(el => {
     const r = el.parentElement.getBoundingClientRect();
     const off = (r.top + r.height / 2 - innerHeight / 2) * parseFloat(el.dataset.speed);
-    el.style.transform = `translate3d(0,${off}px,0)`;
+    el.style.translate = `0 ${off.toFixed(1)}px`;
   });
   // journey meter
   const j = $('.view.active .journey-steps');
@@ -398,6 +409,19 @@ function onScroll() {
     const p = Math.min(1, Math.max(0, (innerHeight * .6 - r.top) / r.height));
     $('#journeyFill').style.transform = `scaleX(${p})`;
   }
+  // hero: words drift up and fade, footage settles deeper as you scroll away
+  if (!reduced && current === 'home') {
+    const k = Math.min(1, y / innerHeight);
+    const hc = $('.hero-cine .hero-content'), hs = $('#heroSlides');
+    if (hc) { hc.style.translate = `0 ${(y * .28).toFixed(1)}px`; hc.style.opacity = (1 - k * 1.25).toFixed(3); }
+    if (hs) hs.style.scale = (1 + k * .08).toFixed(4);
+  }
+  // header settles into a compact bar once you leave the top
+  nav.classList.toggle('scrolled', y > 60);
+  // marquee leans gently with scroll speed
+  const mq = $('.view.active .marquee');
+  if (mq && !reduced) { const v = Math.max(-1, Math.min(1, (y - (onScroll.prevY ?? y)) / 40)); mq.style.setProperty('--lean', (v * -4).toFixed(2) + 'deg'); }
+  onScroll.prevY = y;
   revealCheck();
   ticking = false;
 }
@@ -1007,59 +1031,14 @@ applyLang(lang, false);
 /* ---------------------------------------------------------
    Boot — preloader
 --------------------------------------------------------- */
-/* ---------------------------------------------------------
-   Opening film: the EdenWise logo video, played as-is.
-   Full length once per visit (skippable), short on later loads;
-   falls back to the animated logo if video can't play.
---------------------------------------------------------- */
-let introActive = false;
-async function playIntro(pre) {
-  const v = $('#preVideo');
-  if (!v || reduced) return false;
-  let seen = null; try { seen = sessionStorage.getItem('ew_intro'); } catch {}
-  // start playback, but never wait more than 2.5s for it to begin
-  const started = await Promise.race([
-    v.play().then(() => true).catch(() => false),
-    wait(2500).then(() => false)
-  ]);
-  if (!started) { v.pause(); return false; }
-  introActive = true;
-  pre.classList.add('has-video');
-  try { sessionStorage.setItem('ew_intro', '1'); } catch {}
-  const limit = seen ? 2800 : ((v.duration || 10) * 1000);
-  const bar = $('.pre-vbar i'), skip = $('#preSkip');
-  setTimeout(() => skip.classList.add('show'), seen ? 400 : 1600);
-  await new Promise(res => {
-    let done = false;
-    const finish = () => { if (done) return; done = true; res(); };
-    v.addEventListener('ended', finish, { once: true });
-    v.addEventListener('error', finish, { once: true });
-    skip.addEventListener('click', finish, { once: true });
-    const t0 = performance.now();
-    const tick = () => {
-      if (done) return;
-      const p = Math.min(1, (performance.now() - t0) / limit);
-      bar.style.transform = `scaleX(${p})`;
-      p >= 1 ? finish() : setTimeout(tick, 50);
-    };
-    tick();
-    setTimeout(finish, limit + 3000);   // a stalled video never traps the visitor
-  });
-  pre.classList.add('film-out');
-  await wait(700);
-  introActive = false;
-  return true;
-}
-
 (async function boot() {
   if (!location.hash.startsWith('#/')) history.replaceState(null, '', '#/home');
   const route = routeFromHash() || 'home';
   const pre = $('#preloader'), cnt = $('#preCount'), bar = $('.pre-bar i');
-  const usedFilm = await playIntro(pre);
-  if (!usedFilm) {
-    // fallback: the animated logo with its counter
+  {
+    // the animated logo with its counter
     // (setTimeout, not requestAnimationFrame, so it also finishes in background tabs)
-    const dur = reduced ? 200 : 2200, t0 = performance.now();
+    const dur = reduced ? 200 : 1700, t0 = performance.now();
     await new Promise(res => {
       const step = () => {
         const p = Math.min(1, (performance.now() - t0) / dur), e = 1 - Math.pow(1 - p, 3);
@@ -1080,10 +1059,8 @@ async function playIntro(pre) {
 })();
 
 // failsafe: never leave a visitor on the loader or a blank page
-// (waits while the opening film is legitimately playing, up to ~20s)
-(function failsafe(waited = 0) {
+(function failsafe() {
   setTimeout(() => {
-    if (introActive && waited < 14000) return failsafe(waited + 6000);
     const pre = $('#preloader');
     if (pre) { pre.classList.add('done'); setTimeout(() => pre.remove(), 1400); }
     document.body.classList.remove('is-loading');
@@ -1100,11 +1077,22 @@ async function playIntro(pre) {
   if (!box || !v || reduced) return;
   v.addEventListener('canplay', () => box.classList.add('has-video'), { once: true });
   v.addEventListener('error', () => box.classList.remove('has-video'));
-  new IntersectionObserver(([e]) => {
-    if (e.isIntersecting) {
-      if (!v.src) { v.src = v.dataset.src; v.load(); }
+  // measured directly (like the reveals) instead of IntersectionObserver,
+  // which can stay silent in embedded browsers and background tabs
+  let near = false;
+  const check = () => {
+    const r = box.getBoundingClientRect();
+    const isNear = r.top < innerHeight + 200 && r.bottom > -200;
+    if (isNear === near) return;
+    near = isNear;
+    if (near) {
+      if (!v.getAttribute('src')) { v.src = v.dataset.src; v.load(); }
       v.play().catch(() => {});
     } else v.pause();
-  }, { rootMargin: '200px' }).observe(box);
+  };
+  window.addEventListener('scroll', check, { passive: true });
+  window.addEventListener('resize', check);
+  setInterval(check, 500);
+  check();
 })();
 })();
