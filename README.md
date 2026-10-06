@@ -25,7 +25,12 @@ index.html   page structure and English text
 styles.css   design system, layout, animations
 app.js       routing, transitions, booking, forms, language switching
 i18n.js      French, Kreyòl and Spanish translations
+serve.js     tiny local preview server (node serve.js)
 ```
+
+## Preview on your computer
+
+Double-click `Open-EdenWise.cmd`. It starts the preview server and opens http://localhost:5792. Keep that window open while you browse, and close it to stop the server. If Node.js is not installed, it opens `index.html` directly instead.
 
 ## Setup before launch
 

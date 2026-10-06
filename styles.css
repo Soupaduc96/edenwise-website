@@ -1578,3 +1578,97 @@ html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px) + 16px)
   .slats i{transition:none!important}
   .btn-gold::after{display:none}
 }
+
+/* =========================================================
+   Luxe & cinema: letterbox opening, masked title, light,
+   photo-first pathway panels, deeper scripture & CTA scenes
+========================================================= */
+
+/* ---- hero: anamorphic letterbox bars retract once the loader leaves ---- */
+.lbox{position:absolute;left:0;right:0;z-index:3;height:11vh;background:#020d07;pointer-events:none;transform:scaleY(1);
+  transition:transform 1.7s cubic-bezier(.76,0,.24,1) .25s}
+.lbox-t{top:0;transform-origin:50% 0}
+.lbox-b{bottom:0;transform-origin:50% 100%}
+body:not(.is-loading) .lbox{transform:scaleY(0)}
+
+/* ---- hero title: each line rises out of a mask instead of fading ---- */
+.hero-title .ht-line.r{opacity:1;filter:none;transform:translateY(.55em);clip-path:inset(100% -100vw -25% -10%);
+  transition:transform 1.4s cubic-bezier(.16,1,.3,1),clip-path 1.4s cubic-bezier(.16,1,.3,1);transition-delay:calc(var(--d,0s) + .35s)}
+.hero-title .ht-line.r.in{transform:none;clip-path:inset(-25% -100vw -25% -10%)}
+/* a slow sheen of light travels across "One destiny." */
+.ht-gold{background:linear-gradient(100deg,#a8740f 0%,#dba52b 28%,#fff1bf 44%,#f8dc85 50%,#dba52b 64%,#a8740f 100%);background-size:260% 100%;
+  -webkit-background-clip:text;background-clip:text;animation:goldSweep 7s cubic-bezier(.45,0,.55,1) 2.6s infinite}
+@keyframes goldSweep{0%{background-position:100% 0}55%,100%{background-position:0 0}}
+/* warm light leak drifting over the photographs */
+.hero-shade::after{content:"";position:absolute;inset:-20%;pointer-events:none;mix-blend-mode:screen;opacity:.55;
+  background:radial-gradient(ellipse 28% 34% at 70% 30%,rgba(248,220,133,.22),transparent 70%),radial-gradient(ellipse 22% 26% at 90% 75%,rgba(219,165,43,.12),transparent 70%);
+  animation:leak 18s ease-in-out infinite alternate}
+@keyframes leak{from{transform:translate3d(-4%,2%,0) scale(1)}to{transform:translate3d(5%,-3%,0) scale(1.12)}}
+.hero-kicker{letter-spacing:.5em}
+
+/* ---- pathway panels: photography first, gold editorial type ---- */
+.path-grid{gap:clamp(14px,1.6vw,22px)}
+.path-card,.path-card:hover{color:#f6f1e4}
+.path-card{min-height:clamp(420px,36vw,520px);justify-content:flex-end;padding:30px 28px 28px;background:#052112;border:1px solid rgba(219,165,43,.22);
+  box-shadow:0 30px 60px -36px rgba(3,22,12,.7);transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .6s var(--ease)}
+.path-card[data-photo]::before{background:var(--img) center 22%/cover;opacity:1;transform:scale(1.06);filter:saturate(.92) contrast(1.05) brightness(.9);transition:transform 2.2s cubic-bezier(.2,.8,.2,1),filter 1s ease}
+.path-card[data-photo]::after{opacity:1;background:linear-gradient(180deg,rgba(3,22,12,.05) 0%,rgba(3,22,12,.25) 35%,rgba(3,22,12,.88) 72%,rgba(3,22,12,.97) 100%);transition:opacity .6s ease}
+.path-card:hover{background:#052112;border-color:rgba(248,220,133,.7);box-shadow:0 0 0 1px rgba(219,165,43,.25),0 40px 80px -30px rgba(3,22,12,.85),0 0 60px -20px rgba(219,165,43,.35)}
+.path-card[data-photo]:hover::before{opacity:1;transform:scale(1.14);filter:saturate(1) contrast(1.05) brightness(.95)}
+.path-card>.path-num{position:absolute;top:22px;right:24px;font-family:var(--serif);font-size:58px;font-weight:500;line-height:1;letter-spacing:0;
+  color:transparent;-webkit-text-stroke:1px rgba(248,220,133,.75);transition:color .6s ease}
+.path-card:hover>.path-num{color:rgba(219,165,43,.25)}
+.path-card .path-icon{margin-bottom:auto;border-color:rgba(219,165,43,.55);background:rgba(3,22,12,.35);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.path-card .path-icon svg{stroke:#f8dc85}
+.path-card:hover .path-icon{border-color:#f8dc85}
+.path-card h3{font-size:clamp(28px,2.3vw,34px);color:#f6f1e4}
+.path-card h3::after{content:"";display:block;width:34px;height:1px;margin-top:14px;background:linear-gradient(90deg,#dba52b,transparent);transition:width .7s var(--ease)}
+.path-card:hover h3::after{width:90px}
+.path-card p,.path-card:hover p{flex:none;color:rgba(243,239,226,.8)}
+.path-card .path-go{color:#f8dc85}
+@media (hover:none),(pointer:coarse){
+  .path-card:hover{background:#052112;color:#f6f1e4;box-shadow:0 30px 60px -36px rgba(3,22,12,.7)}
+  .path-card:hover p{color:rgba(243,239,226,.8)}
+  .path-card:hover>.path-num{color:transparent}
+  .path-card[data-photo]::before,.path-card[data-photo]:hover::before{opacity:1;transform:scale(1.06)}
+  .path-card[data-photo]::after,.path-card[data-photo]:hover::after{opacity:1}
+  .path-card:hover .path-icon{border-color:rgba(219,165,43,.55)}
+  .path-card:hover .path-icon svg{stroke:#f8dc85}
+}
+@media (max-width:640px){.path-card{min-height:400px}}
+
+/* ---- ivory sections: warm light from above, like a gallery ---- */
+.section.ivory{background:radial-gradient(ellipse 55% 38% at 85% 0%,rgba(219,165,43,.09),transparent 70%),radial-gradient(ellipse 45% 30% at 0% 100%,rgba(31,138,69,.05),transparent 70%),var(--ivory)}
+
+/* ---- dark sections: cinematic vignette ---- */
+.section.dark{position:relative;isolation:isolate}
+.section.dark::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 80% 70% at 50% 45%,transparent 50%,rgba(1,8,4,.55) 100%)}
+
+/* ---- scripture: the photograph breathes slowly behind the verse ---- */
+.scripture{min-height:100vh}
+.scripture-bg::before{opacity:.34;filter:saturate(.7) contrast(1.05);animation:kenburns 30s ease-in-out infinite alternate}
+.scripture-quote{text-shadow:0 4px 40px rgba(0,0,0,.45)}
+.scripture-inner::before,.scripture-inner::after{content:"";width:1px;height:70px;background:linear-gradient(180deg,transparent,#dba52b,transparent)}
+
+/* ---- closing CTA: a praying family behind the aurora ---- */
+.cta-photo{position:absolute;inset:-6%;background:var(--img) center 40%/cover;opacity:.3;filter:saturate(.75) contrast(1.05);animation:kenburns 34s ease-in-out infinite alternate}
+.cta-band::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(3,22,12,.25),rgba(3,22,12,.92) 85%)}
+.cta-band .cta-aurora{opacity:.45;mix-blend-mode:screen}
+.cta-band .cta-inner{position:relative;z-index:1}
+
+/* ---- team cards & triad: a touch of gold ---- */
+.team-card{border:1px solid rgba(219,165,43,.22);transition:transform .6s var(--ease),box-shadow .6s var(--ease),border-color .6s var(--ease)}
+.team-card:hover{border-color:rgba(219,165,43,.6);box-shadow:0 30px 60px -30px rgba(5,33,18,.45)}
+.triad-ring{box-shadow:0 0 0 1px rgba(219,165,43,.35),0 0 40px -10px rgba(219,165,43,.45)}
+
+/* ---- gold scrollbar ---- */
+html{scrollbar-color:#a8740f #03160c;scrollbar-width:thin}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#03160c}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#f8dc85,#a8740f);border-radius:10px;border:2px solid #03160c}
+
+@media (prefers-reduced-motion:reduce){
+  .lbox{display:none}
+  .hero-title .ht-line.r{transform:none;clip-path:none;transition:none}
+  .ht-gold,.hero-shade::after,.scripture-bg::before,.cta-photo{animation:none}
+}
